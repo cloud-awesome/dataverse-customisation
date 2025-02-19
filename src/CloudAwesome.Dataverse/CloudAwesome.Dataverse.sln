@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Dataverse.Cli"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Dataverse.Core", "CloudAwesome.Dataverse.Core\CloudAwesome.Dataverse.Core.csproj", "{BE56939B-51E4-4FAB-8DCA-6DB0C66B4172}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Dataverse.Processes", "CloudAwesome.Dataverse.Processes\CloudAwesome.Dataverse.Processes.csproj", "{7D777ECC-8459-40D3-86A4-F14076F6D1B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{BE56939B-51E4-4FAB-8DCA-6DB0C66B4172}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE56939B-51E4-4FAB-8DCA-6DB0C66B4172}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE56939B-51E4-4FAB-8DCA-6DB0C66B4172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D777ECC-8459-40D3-86A4-F14076F6D1B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D777ECC-8459-40D3-86A4-F14076F6D1B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D777ECC-8459-40D3-86A4-F14076F6D1B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D777ECC-8459-40D3-86A4-F14076F6D1B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

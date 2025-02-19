@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CloudAwesome.Dataverse.Core\CloudAwesome.Dataverse.Core.csproj" />
+    </ItemGroup>
+
 </Project>
