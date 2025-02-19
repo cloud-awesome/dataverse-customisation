@@ -21,27 +21,27 @@ public class DataverseConnection
 	/// <summary>
 	/// Base URL for CDS environment. Required if ConnectionType == AppRegistration or UserNameAndPassword
 	/// </summary>
-	public string CdsUrl { get; set; }
+	public string Url { get; set; }
 
 	/// <summary>
 	/// Required if ConnectionType == UserNAmeAndPassword
 	/// </summary>
-	public string CdsUserName { get; set; }
+	public string UserName { get; set; }
 
 	/// <summary>
 	/// Required if ConnectionType == UserNAmeAndPassword
 	/// </summary>
-	public string CdsPassword { get; set; }
+	public string Password { get; set; }
 
 	/// <summary>
 	/// Required if ConnectionType == AppRegistration
 	/// </summary>
-	public string CdsAppId { get; set; }
+	public string ClientId { get; set; }
 
 	/// <summary>
 	/// Required if ConnectionType == AppRegistration
 	/// </summary>
-	public string CdsAppSecret { get; set; }
+	public string ClientSecret { get; set; }
         
 	/// <summary>
 	/// Required if ConnectionType = BearerToken

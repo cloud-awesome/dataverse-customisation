@@ -1,4 +1,5 @@
-﻿using Microsoft.PowerPlatform.Dataverse.Client;
+﻿using CloudAwesome.Dataverse.Core.Models;
+using Microsoft.PowerPlatform.Dataverse.Client;
 using Microsoft.Xrm.Sdk;
 
 namespace CloudAwesome.Dataverse.Core;
@@ -20,7 +21,7 @@ public static class DataverseConnectionExtensions
 		return GetServiceClient(connectionString);
 	}
 	
-	public static IOrganizationService GetCrmServiceClientWithBearerToken(string url, string bearerToken)
+	public static IOrganizationService GetServiceClient(string url, string bearerToken)
 	{
 		var serviceClient = new ServiceClient(
 			new Uri(url),
@@ -29,5 +30,22 @@ public static class DataverseConnectionExtensions
 		);
 
 		return serviceClient;
+	}
+
+	public static IOrganizationService GetServiceClient(DataverseConnection dataverseConnection)
+	{
+		return dataverseConnection.ConnectionType switch
+		{
+			DataverseConnectionType.AppRegistration => GetServiceClient(dataverseConnection.Url,
+				dataverseConnection.ClientId, dataverseConnection.ClientSecret),
+			
+			DataverseConnectionType.ConnectionString => GetServiceClient(dataverseConnection.ConnectionString),
+			
+			DataverseConnectionType.BearerToken => GetServiceClient(dataverseConnection.Url,
+				dataverseConnection.BearerToken),
+			
+			DataverseConnectionType.UserNameAndPassword => throw new NotImplementedException(),
+			_ => throw new ArgumentOutOfRangeException()
+		};
 	}
 }

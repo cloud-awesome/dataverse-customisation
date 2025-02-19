@@ -1,7 +1,9 @@
 ﻿using CloudAwesome.Dataverse.Cli.CommandInterfaces;
 using CloudAwesome.Dataverse.Core;
 using CloudAwesome.Dataverse.Core.Models;
+using CloudAwesome.Dataverse.Customisation;
 using Microsoft.Crm.Sdk.Messages;
+using Microsoft.Extensions.Logging;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
@@ -11,22 +13,16 @@ public class WhoAmICommand: Command<WhoAmISettings>
 {
 	public override int Execute(CommandContext context, WhoAmISettings settings)
 	{
-		AnsiConsole.MarkupLine($"[green]Running 'who-am-i' command with placeholder:[/] {settings.ConnectionType}");
+		var client = DataverseConnectionExtensions.GetServiceClient(settings.ConnectionDetails);
 
-		if (settings.ConnectionType == DataverseConnectionType.BearerToken)
+		var tracer = new TracingHelper(new LoggingConfiguration
 		{
-			AnsiConsole.MarkupLine($"[red]{settings.ConnectionType} is not currently supported[/]");
-			return 0;
-		}
+			LoggerConfigurationType = LoggingConfigurationType.Console,
+			LogLevelToTrace = LogLevel.Debug
+		});
 		
-		var client = DataverseConnectionExtensions.GetServiceClient(settings.ConnectionString);
-		var request = new WhoAmIRequest();
-
-		var response = (WhoAmIResponse)client.Execute(request);
-		
-		AnsiConsole.MarkupLine($"[green]UserId:[/] {response.UserId}");
-		AnsiConsole.MarkupLine($"[green]BusinessUnitId:[/] {response.BusinessUnitId}");
-		AnsiConsole.MarkupLine($"[green]OrganizationId:[/] {response.OrganizationId}");
+		var whoAmI = new WhoAmI();
+		whoAmI.Run(client, tracer);
 		
 		return 0;
 	}

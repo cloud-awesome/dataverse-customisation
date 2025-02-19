@@ -5,16 +5,16 @@ namespace CloudAwesome.Dataverse.Cli.CommandInterfaces;
 
 public abstract class SupportsDataverseConnection: CommandSettings
 {
-	internal readonly DataverseConnection CdsConnectionDetails = new DataverseConnection();
+	internal readonly DataverseConnection ConnectionDetails = new DataverseConnection();
 	internal bool OverrideManifestConnectionDetails = false;
 
 	[CommandOption("--connection-type")]
 	public DataverseConnectionType ConnectionType
 	{
-		get => CdsConnectionDetails.ConnectionType;
+		get => ConnectionDetails.ConnectionType;
 		set
 		{
-			CdsConnectionDetails.ConnectionType = value;
+			ConnectionDetails.ConnectionType = value;
 			OverrideManifestConnectionDetails = true;
 		}
 	}
@@ -22,39 +22,39 @@ public abstract class SupportsDataverseConnection: CommandSettings
 	[CommandOption("--url")]
 	public string Url
 	{
-		get => CdsConnectionDetails.CdsUrl; 
-		set => CdsConnectionDetails.CdsUrl = value;
+		get => ConnectionDetails.Url; 
+		set => ConnectionDetails.Url = value;
 	}
 
 	[CommandOption("--client-id")]
 	public string ClientId
 	{
-		get => CdsConnectionDetails.CdsAppId;
-		set => CdsConnectionDetails.CdsAppId = value;
+		get => ConnectionDetails.ClientId;
+		set => ConnectionDetails.ClientId = value;
 	}
         
 	[CommandOption("--client-secret")]
 	public string clientSecret
 	{
-		set => CdsConnectionDetails.CdsAppSecret = value;
+		set => ConnectionDetails.ClientSecret = value;
 	}
         
 	[CommandOption("--username")]
 	public string UserName
 	{
-		set => CdsConnectionDetails.CdsUserName = value;
+		set => ConnectionDetails.UserName = value;
 	}
         
 	[CommandOption("--password")]
 	public string UserPassword
 	{
-		set => CdsConnectionDetails.CdsUserName = value;
+		set => ConnectionDetails.UserName = value;
 	}
 	
 	[CommandOption("--connection-string")]
 	public string ConnectionString
 	{
-		get => CdsConnectionDetails.ConnectionString;
-		set => CdsConnectionDetails.ConnectionString = value;
+		get => ConnectionDetails.ConnectionString;
+		set => ConnectionDetails.ConnectionString = value;
 	}
 }
