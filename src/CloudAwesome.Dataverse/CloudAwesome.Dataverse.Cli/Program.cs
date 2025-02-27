@@ -26,7 +26,8 @@ public static class Program
 	
 			config.AddBranch("processes", settings =>
 			{
-				settings.AddCommand<PlaceholderCommand>("placeholder");
+				settings.AddCommand<ProcessActivationCommand>("activate").WithData(true);
+				settings.AddCommand<ProcessActivationCommand>("deactivate").WithData(false);
 			});
 	
 			config.AddBranch("dependencies", settings =>

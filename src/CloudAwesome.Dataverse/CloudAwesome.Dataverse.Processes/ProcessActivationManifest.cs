@@ -11,15 +11,15 @@ public class ProcessActivationManifest
 	public DataverseConnection DataverseConnection { get; set; }
 	public LoggingConfiguration LoggingConfiguration { get; set; }
 
-	public CdsPluginAssembly[] PluginAssemblies { get; set; }
+	public CdsPluginAssembly[] PluginAssemblies { get; set; } = Array.Empty<CdsPluginAssembly>();
 
-	public CdsSolution[] Solutions { get; set; }
+	public CdsSolution[] Solutions { get; set; } = Array.Empty<CdsSolution>();
 
-	public CdsEntity[] Entities { get; set; }
+	public CdsEntity[] Entities { get; set; } = Array.Empty<CdsEntity>();
 
-	public string[] Workflows { get; set; }
+	public string[] Workflows { get; set; } = Array.Empty<string>();
 	
-	public string[] ModernFlows { get; set; }
+	public string[] ModernFlows { get; set; } = Array.Empty<string>();
 	
-	public string[] RecordCreationRules { get; set; }
+	public string[] RecordCreationRules { get; set; } = Array.Empty<string>();
 }

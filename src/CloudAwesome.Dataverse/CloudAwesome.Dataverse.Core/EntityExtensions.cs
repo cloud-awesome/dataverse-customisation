@@ -94,7 +94,7 @@ public static class EntityExtensions
     /// <exception cref="OperationPreventedException">Throws when primary GUID of the record is null</exception>
     /// <returns>Entity retrieved. Use entity.ToEntity&lt;&gt;() to parse into an early bound entity type</returns>
     public static Entity Retrieve(this Entity entity,
-        IOrganizationService organizationService, ColumnSet columnSet = null)
+        IOrganizationService organizationService, ColumnSet? columnSet = null)
     {
         if (Guid.Empty == entity.Id)
         {
