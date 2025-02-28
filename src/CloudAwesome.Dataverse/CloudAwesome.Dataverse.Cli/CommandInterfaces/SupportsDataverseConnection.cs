@@ -57,4 +57,11 @@ public abstract class SupportsDataverseConnection: CommandSettings
 		get => ConnectionDetails.ConnectionString;
 		set => ConnectionDetails.ConnectionString = value;
 	}
+
+	[CommandOption("--bearer-token")]
+	public string BearerToken
+	{
+		get => ConnectionDetails.BearerToken;
+		set => ConnectionDetails.BearerToken = value;
+	}
 }

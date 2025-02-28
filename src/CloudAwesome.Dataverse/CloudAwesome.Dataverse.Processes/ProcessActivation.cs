@@ -26,12 +26,49 @@ public class ProcessActivation
 				
 				ProcessFlows(flows, flowState, flowStatus, client, t);
 			}
-		}
-	}
 
-	private void ProcessPluginSteps(TracingHelper t)
+			if (solution.AllPluginSteps)
+			{
+				var plugins = GetPluginStepsFromSolution(client, solution.Name);
+				var pluginStatus = TargetPluginStepStatus(activate);
+				var pluginState = TargetPluginStepState(activate);
+				
+				ProcessPluginSteps(plugins, pluginState, pluginStatus, client, t);
+			}
+		}
+		
+		t.Info($"{traceMessagePrefixMessage} processes complete.");
+	}
+	
+	private void ProcessPluginSteps(EntityCollection steps, OptionSetValue pluginState, OptionSetValue pluginStatus, 
+		IOrganizationService client, TracingHelper t)
 	{
-		t.Warning("Plugin Steps are not supported while this feature is in alpha.");
+		var i = 0;
+		
+		foreach (var step in steps.Entities)
+		{
+			var workflow = (new Workflow(Guid.Parse(step["objectid"].ToString() ?? throw new InvalidOperationException()))
+				.Retrieve(client));
+			i++;
+
+			try
+			{
+				var setState = new SetStateRequest
+				{
+					EntityMoniker = new EntityReference(workflow.LogicalName, workflow.Id),
+					State = pluginState,
+					Status = pluginStatus
+				};
+
+				client.Execute(setState);
+				
+				t.Info($"{i}/{steps.Entities.Count}. '{workflow["name"]}' updated");
+			}
+			catch (Exception e)
+			{
+				t.Error($"*** Failed to set: {i}/{steps.Entities.Count}. {workflow["name"]}, ({e.Message})");
+			}
+		}
 	}
 
 	private void ProcessFlows(EntityCollection flows, OptionSetValue flowState, OptionSetValue flowStatus, 
@@ -70,7 +107,10 @@ public class ProcessActivation
 		return SolutionWrapper.RetrieveSolutionComponents(client, solutionName, ComponentType.Workflow);
 	}
 	
-	
+	private EntityCollection GetPluginStepsFromSolution(IOrganizationService client, string solutionName)
+	{
+		return SolutionWrapper.RetrieveSolutionComponents(client, solutionName, ComponentType.SdkMessageProcessingStep);
+	}
 
 	private OptionSetValue TargetFlowState(bool activate)
 	{

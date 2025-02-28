@@ -35,7 +35,8 @@ public class ProcessActivationCommand: Command<ProcessActivationSettings>
 					new CdsSolution
 					{
 						Name = settings.SolutionName,
-						AllFlows = settings.AllFlows
+						AllFlows = settings.AllFlows,
+						AllPluginSteps = settings.AllPluginSteps
 					}
 				],
 				Status = activate
@@ -63,4 +64,7 @@ public class ProcessActivationSettings : SupportsDataverseConnection
 	
 	[CommandOption("--all-flows")]
 	public bool AllFlows { get; set; }
+	
+	[CommandOption("--all-plugins")]
+	public bool AllPluginSteps { get; set; }
 }
