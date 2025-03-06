@@ -32,6 +32,8 @@ whoami</ActionsWhitelist>
     <EntitiesWhitelist>customapi|
 customapirequestparameter|
 customapiresponseproperty|
+environmentvariabledefinition|
+environmentvariablevalue|
 msdyn_customapirulesetconfiguration|
 pluginassembly|
 pluginpackage|
@@ -138,7 +140,7 @@ VoiceMail</TokenCapitalizationOverrides>
   <Namespace>CloudAwesome.Dataverse.Core.EarlyBoundEntities</Namespace>
   <ServiceContextName />
   <SuppressGeneratedCodeAttribute>true</SuppressGeneratedCodeAttribute>
-  <SettingsVersion>2.2024.5.16</SettingsVersion>
+  <SettingsVersion>2.2024.11.8</SettingsVersion>
   <UpdateBuilderSettingsJson>true</UpdateBuilderSettingsJson>
   <Version>2.2024.11.8</Version>
 </Config>

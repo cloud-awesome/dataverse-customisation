@@ -18,7 +18,7 @@ public static class QueryExtensions
     /// <param name="organizationService">IOrganization implementation</param>
     /// <exception cref="QueryBaseException">Throws if the query returns more than one record</exception>
     /// <returns>The single Entity record returned by the query</returns>
-    public static Entity RetrieveSingleRecord(this QueryBase query, IOrganizationService organizationService)
+    public static Entity? RetrieveSingleRecord(this QueryBase query, IOrganizationService organizationService)
     {
         return RetrieveRecordFromQuery(organizationService, query);
     }
@@ -42,7 +42,7 @@ public static class QueryExtensions
     /// <param name="throwExceptionOnMultipleResults">Defaults to true and throws an exception if more than one result is thrown. If false, the FirstOrDefault result will be returned</param>
     /// <exception cref="QueryBaseException">Throws if throwExceptionOnMultipleResults == true and the query returns more than one record</exception>
     /// <returns>The single Entity record returned by the query</returns>
-    public static Entity RetrieveRecordFromQuery<T>(IOrganizationService organizationService, T query,
+    public static Entity? RetrieveRecordFromQuery<T>(IOrganizationService organizationService, T query,
         bool throwExceptionOnMultipleResults = true) where T : QueryBase
     {
         var queryResults = RetrieveMultipleFromQuery(organizationService, query);
@@ -50,11 +50,11 @@ public static class QueryExtensions
 
         if (throwExceptionOnMultipleResults && entitiesReturned > 1)
         {
-            throw new Exception($"Query retrieved {entitiesReturned} records. " +
-                                $"Either tighten filter criteria or pass throwExceptionOnMultipleResults = false to return the FirstOrDefault record");
+            throw new QueryBaseException($"Query retrieved {entitiesReturned} records. " +
+                                         $"Either tighten filter criteria or pass throwExceptionOnMultipleResults = false to return the FirstOrDefault record");
         }
 
-        return queryResults.Entities.FirstOrDefault();
+        return queryResults.Entities.SingleOrDefault();
     }
 
     /// <summary>

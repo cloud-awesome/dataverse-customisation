@@ -195,6 +195,99 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 	}
 	
 	/// <summary>
+	/// The secret store where the secret is persisted.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum EnvironmentVariableDefinition_SecretStore
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AzureKeyVault = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MicrosoftDataverse = 1,
+	}
+	
+	/// <summary>
+	/// Status of the Environment Variable Definition
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum EnvironmentVariableDefinition_StateCode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Active = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Inactive = 1,
+	}
+	
+	/// <summary>
+	/// Reason for the status of the Environment Variable Definition
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum EnvironmentVariableDefinition_StatusCode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Active = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Inactive = 2,
+	}
+	
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum EnvironmentVariableDefinition_Type
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Boolean = 100000002,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataSource = 100000004,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Json = 100000003,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Number = 100000001,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Secret = 100000005,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		String = 100000000,
+	}
+	
+	/// <summary>
+	/// Status of the Environment Variable Value
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum EnvironmentVariableValue_StateCode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Active = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Inactive = 1,
+	}
+	
+	/// <summary>
+	/// Reason for the status of the Environment Variable Value
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum EnvironmentVariableValue_StatusCode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Active = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Inactive = 2,
+	}
+	
+	/// <summary>
 	/// Status of the Custom API Ruleset Configuration
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
@@ -867,6 +960,9 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SeleniumIde = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Test = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		WindowsRecorderV1 = 0,

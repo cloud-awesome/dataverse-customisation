@@ -22,6 +22,8 @@ public static class Program
 			config.AddBranch("customisations", settings =>
 			{
 				settings.AddCommand<PlaceholderCommand>("placeholder");
+				
+				settings.AddCommand<SetEnvironmentVariableCommand>("set-environment-variable");
 			});
 	
 			config.AddBranch("processes", settings =>
