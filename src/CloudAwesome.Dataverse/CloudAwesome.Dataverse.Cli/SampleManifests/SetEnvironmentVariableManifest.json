@@ -1,0 +1,16 @@
+﻿{
+  "variables": [
+    {
+      "key": "awe_environment",
+      "value": "awesome"
+    },
+    {
+      "key": "awe_something",
+      "value": "something2"
+    },
+    {
+      "key": "awe_date",
+      "value": "2025/03/15"
+    }
+  ]
+}

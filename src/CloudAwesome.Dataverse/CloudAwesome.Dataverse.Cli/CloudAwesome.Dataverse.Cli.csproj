@@ -9,7 +9,7 @@
         <PackAsTool>true</PackAsTool>
         <ToolCommandName>dvcli</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
-        <Version>0.0.0.2</Version>
+        <Version>0.0.0.3</Version>
         <Title>CloudAwesome.Dataverse.Cli</Title>
         <Authors>CloudAwesome</Authors>
         <Description>Automate common, time-consuming, error prone, or otherwise non-automatable tasks during customisation and configuration of Dataverse/Dynamics 365 CE</Description>
@@ -28,6 +28,10 @@
       <ProjectReference Include="..\CloudAwesome.Dataverse.Core\CloudAwesome.Dataverse.Core.csproj" />
       <ProjectReference Include="..\CloudAwesome.Dataverse.Customisation\CloudAwesome.Dataverse.Customisation.csproj" />
         <None Include="README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="SampleManifests\" />
     </ItemGroup>
 
 </Project>
