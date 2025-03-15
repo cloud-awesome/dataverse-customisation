@@ -1,0 +1,32 @@
+{
+  "teams": [
+    {
+      "name": "team1",
+      "id": "sdf987-weiru2-werj-weioru293847",
+      "roles": [
+        {
+          "name": "System Administrator",
+          "id": "sdf987-weiru2-werj-weioru293847"
+        },
+        {
+          "name": "Sales Manager",
+          "id": "sdf987-weiru2-werj-weioru293847"
+        }
+      ]
+    },
+    {
+      "name": "team2",
+      "id": "sdf987-weiru2-werj-weioru293847",
+      "roles": [
+        {
+          "name": "System Administrator",
+          "id": "sdf987-weiru2-werj-weioru293847"
+        },
+        {
+          "name": "Sales Manager",
+          "id": "sdf987-weiru2-werj-weioru293847"
+        }
+      ]
+    }
+  ]
+}
