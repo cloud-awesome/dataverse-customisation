@@ -34,6 +34,7 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 			public const string BusinessProcessTypeName = "businessprocesstypename";
 			public const string Category = "category";
 			public const string CategoryName = "categoryname";
+			public const string Claims = "claims";
 			public const string ClientData = "clientdata";
 			public const string ClientDataIsCompressed = "clientdataiscompressed";
 			public const string ClientDataIsCompressedName = "clientdataiscompressedname";
@@ -136,6 +137,7 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 			public const string SuspensionReasonDetails = "suspensionreasondetails";
 			public const string SyncWorkflowLogOnFailure = "syncworkflowlogonfailure";
 			public const string SyncWorkflowLogOnFailureName = "syncworkflowlogonfailurename";
+			public const string Team_Workflow = "team_workflow";
 			public const string ThrottlingBehavior = "throttlingbehavior";
 			public const string ThrottlingBehaviorName = "throttlingbehaviorname";
 			public const string TriggerOnCreate = "triggeroncreate";
@@ -377,6 +379,24 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 			set
 			{
 				this.FormattedValues["category"] = value;
+			}
+		}
+		
+		/// <summary>
+		/// Claims related to this workflow.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("claims")]
+		public string Claims
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("claims");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("claims", value);
 			}
 		}
 		
@@ -2750,6 +2770,25 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 			set
 			{
 				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow>("workflow_parent_workflow", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 team_workflow
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_workflow")]
+		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team Team_Workflow
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team>("team_workflow", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team>("team_workflow", null, value);
 			}
 		}
 		

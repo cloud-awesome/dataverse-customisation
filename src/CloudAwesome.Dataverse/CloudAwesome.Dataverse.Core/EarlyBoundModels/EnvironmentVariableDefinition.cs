@@ -83,6 +83,7 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 			public const string StatusCode = "statuscode";
 			public const string StatusCodename = "statuscodename";
 			public const string SupportingSolutionId = "supportingsolutionid";
+			public const string Team_EnvironmentVariableDefinition = "team_environmentvariabledefinition";
 			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
 			public const string Type = "type";
 			public const string TypeName = "typename";
@@ -1363,6 +1364,25 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 			set
 			{
 				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.EnvironmentVariableDefinition>("envdefinition_envdefinition", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 team_environmentvariabledefinition
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_environmentvariabledefinition")]
+		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team Team_EnvironmentVariableDefinition
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team>("team_environmentvariabledefinition", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team>("team_environmentvariabledefinition", null, value);
 			}
 		}
 		

@@ -39,6 +39,7 @@ pluginassembly|
 pluginpackage|
 plugintype|
 publisher|
+role|
 sdkmessage|
 sdkmessagefilter|
 sdkmessagepair|
@@ -50,6 +51,8 @@ sdkmessagerequestfield|
 sdkmessageresponse|
 sdkmessageresponsefield|
 serviceendpoint|
+team|
+teamroles|
 workflow</EntitiesWhitelist>
     <EntityAttributeSpecifiedNames />
     <EntityClassNameOverrides />

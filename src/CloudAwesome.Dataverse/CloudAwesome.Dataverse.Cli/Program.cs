@@ -21,8 +21,6 @@ public static class Program
 	
 			config.AddBranch("customisations", settings =>
 			{
-				settings.AddCommand<PlaceholderCommand>("placeholder");
-				
 				settings.AddCommand<SetEnvironmentVariableCommand>("set-environment-variable");
 			});
 	
@@ -39,7 +37,8 @@ public static class Program
 	
 			config.AddBranch("security", settings =>
 			{
-				settings.AddCommand<PlaceholderCommand>("placeholder");
+				settings.AddCommand<ExportSecurityRolesCommand>("export");
+				settings.AddCommand<ImportSecurityRolesCommand>("import");
 			});
 	
 			config.AddBranch("document", settings =>

@@ -21,5 +21,20 @@ namespace CloudAwesome.Dataverse.Core
                 return JsonSerializer.Deserialize<T>(fs, options);
             }
         }
+
+        public static void SerialiseJsonToFile<T>(string filepath, T data)
+        {
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                Converters =
+                {
+                    new JsonStringEnumConverter(JsonNamingPolicy.CamelCase)
+                }
+            };
+
+            using var fs = File.Create(filepath);
+            JsonSerializer.Serialize(fs, data, options);
+        }
     }
 }

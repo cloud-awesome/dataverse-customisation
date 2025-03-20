@@ -1,6 +1,9 @@
-﻿namespace CloudAwesome.Dataverse.Cli.CommandInterfaces;
+﻿using CloudAwesome.Dataverse.Core.Models;
+using Spectre.Console.Cli;
 
-public abstract class RequiresManifest
+namespace CloudAwesome.Dataverse.Cli.CommandInterfaces;
+
+public abstract class RequiresManifest: CommandSettings
 {
 	
 }

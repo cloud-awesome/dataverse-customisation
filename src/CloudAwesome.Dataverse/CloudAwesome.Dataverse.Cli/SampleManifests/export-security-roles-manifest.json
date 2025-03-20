@@ -1,6 +1,13 @@
 {
   "teams": [
-    "team1",
-    "team2"
-  ]
+    {
+      "name": "team1",
+      "id": "30910e99-9f05-f011-bae2-000d3a0afd30"
+    },
+    {
+      "name": "team2",
+      "id": "9f6a7706-a805-f011-bae2-000d3ad57048"
+    }
+  ],
+  "outputFilePath": "sample-export.json"
 }

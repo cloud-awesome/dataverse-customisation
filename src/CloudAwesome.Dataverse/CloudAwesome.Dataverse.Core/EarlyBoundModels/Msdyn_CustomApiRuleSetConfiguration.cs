@@ -78,6 +78,7 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 			public const string StatusCode = "statuscode";
 			public const string StatusCodename = "statuscodename";
 			public const string SupportingSolutionId = "supportingsolutionid";
+			public const string Team_Msdyn_CustomApiRuleSetConfiguration = "team_msdyn_customapirulesetconfiguration";
 			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
 			public const string UtcConversionTimeZoneCode = "utcconversiontimezonecode";
 			public const string VersionNumber = "versionnumber";
@@ -1229,6 +1230,25 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 			{
 				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.CustomApiResponseProperty>("msdyn_customapiresponseproperty_msdyn_customapirulesetconfiguration_CustomAPIResp" +
 						"onseProperty", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 team_msdyn_customapirulesetconfiguration
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_msdyn_customapirulesetconfiguration")]
+		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team Team_Msdyn_CustomApiRuleSetConfiguration
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team>("team_msdyn_customapirulesetconfiguration", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team>("team_msdyn_customapirulesetconfiguration", null, value);
 			}
 		}
 		

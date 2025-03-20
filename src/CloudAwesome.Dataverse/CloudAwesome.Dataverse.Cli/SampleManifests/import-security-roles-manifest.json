@@ -2,29 +2,37 @@
   "teams": [
     {
       "name": "team1",
-      "id": "sdf987-weiru2-werj-weioru293847",
+      "id": "30910e99-9f05-f011-bae2-000d3a0afd30",
       "roles": [
         {
-          "name": "System Administrator",
-          "id": "sdf987-weiru2-werj-weioru293847"
+          "name": "Activity Feeds",
+          "id": "cb269f84-e19d-e011-b66c-00155db528b6"
         },
         {
-          "name": "Sales Manager",
-          "id": "sdf987-weiru2-werj-weioru293847"
+          "name": "Approvals Administrator",
+          "id": "854af338-f3c5-e711-8122-000d3aa01c52"
+        },
+        {
+          "name": "Approvals User",
+          "id": "b9b08637-acf6-e711-a95a-000d3a11f5ee"
+        },
+        {
+          "name": "BusinessApplicationPlatformRole",
+          "id": "02123b67-66ae-4a69-8cdc-6473b94ad1a9"
         }
       ]
     },
     {
       "name": "team2",
-      "id": "sdf987-weiru2-werj-weioru293847",
+      "id": "9f6a7706-a805-f011-bae2-000d3ad57048",
       "roles": [
         {
-          "name": "System Administrator",
-          "id": "sdf987-weiru2-werj-weioru293847"
+          "name": "Schedule Manager",
+          "id": "b622f569-7b0b-4afb-9a22-c9b6b392f6dd"
         },
         {
-          "name": "Sales Manager",
-          "id": "sdf987-weiru2-werj-weioru293847"
+          "name": "Salesperson",
+          "id": "145cb4c0-07e5-4a20-b9ca-01a53833d148"
         }
       ]
     }

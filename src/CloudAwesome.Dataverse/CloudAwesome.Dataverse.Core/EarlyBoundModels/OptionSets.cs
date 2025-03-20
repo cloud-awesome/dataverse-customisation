@@ -288,6 +288,20 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 	}
 	
 	/// <summary>
+	/// The role is inherited
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum IsInherited
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DirectUserBasicAccessLevelAndTeamPrivileges = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TeamPrivilegesOnly = 0,
+	}
+	
+	/// <summary>
 	/// Status of the Custom API Ruleset Configuration
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
@@ -579,6 +593,20 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 	}
 	
 	/// <summary>
+	/// Value indicating whether security role is auto-assigned based on user license
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum SecurityRole_IsAutoAssigned
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		No = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Yes = 1,
+	}
+	
+	/// <summary>
 	/// Authentication type for Service Bus
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
@@ -742,6 +770,46 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Userinfo = 3,
+	}
+	
+	/// <summary>
+	/// Information about team membership type.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Team_MembershipType
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Guests = 3,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Members = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MembersAndGuests = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Owners = 2,
+	}
+	
+	/// <summary>
+	/// Information about team type.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Team_TeamType
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Access = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OfficeGroup = 3,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Owner = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SecurityGroup = 2,
 	}
 	
 	/// <summary>

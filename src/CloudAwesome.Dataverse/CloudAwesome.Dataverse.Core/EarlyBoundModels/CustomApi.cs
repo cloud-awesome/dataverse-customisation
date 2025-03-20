@@ -89,6 +89,7 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 			public const string StatusCode = "statuscode";
 			public const string StatusCodename = "statuscodename";
 			public const string SupportingSolutionId = "supportingsolutionid";
+			public const string Team_CustomApi = "team_customapi";
 			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
 			public const string UniqueName = "uniquename";
 			public const string UtcConversionTimeZoneCode = "utcconversiontimezonecode";
@@ -1498,6 +1499,25 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 			set
 			{
 				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessage>("sdkmessage_customapi", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 team_customapi
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_customapi")]
+		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team Team_CustomApi
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team>("team_customapi", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team>("team_customapi", null, value);
 			}
 		}
 		
