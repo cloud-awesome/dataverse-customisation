@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
+namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 {
 	
 	
@@ -1484,17 +1484,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// 1:N sdkmessageprocessingstepid_sdkmessageprocessingstepimage
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("sdkmessageprocessingstepid_sdkmessageprocessingstepimage")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageProcessingStepImage> SdkMessageProcessingStepId_SdkMessageProcessingStepImage
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageProcessingStepImage> SdkMessageProcessingStepId_SdkMessageProcessingStepImage
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageProcessingStepImage>("sdkmessageprocessingstepid_sdkmessageprocessingstepimage", null);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageProcessingStepImage>("sdkmessageprocessingstepid_sdkmessageprocessingstepimage", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageProcessingStepImage>("sdkmessageprocessingstepid_sdkmessageprocessingstepimage", null, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageProcessingStepImage>("sdkmessageprocessingstepid_sdkmessageprocessingstepimage", null, value);
 			}
 		}
 		
@@ -1503,17 +1503,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("eventhandler")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("plugintype_sdkmessageprocessingstep")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.PluginType PluginType_SdkMessageProcessingStep
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.PluginType PluginType_SdkMessageProcessingStep
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.PluginType>("plugintype_sdkmessageprocessingstep", null);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.PluginType>("plugintype_sdkmessageprocessingstep", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.PluginType>("plugintype_sdkmessageprocessingstep", null, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.PluginType>("plugintype_sdkmessageprocessingstep", null, value);
 			}
 		}
 		
@@ -1522,17 +1522,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("plugintypeid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("plugintypeid_sdkmessageprocessingstep")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.PluginType PluginTypeId_SdkMessageProcessingStep
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.PluginType PluginTypeId_SdkMessageProcessingStep
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.PluginType>("plugintypeid_sdkmessageprocessingstep", null);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.PluginType>("plugintypeid_sdkmessageprocessingstep", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.PluginType>("plugintypeid_sdkmessageprocessingstep", null, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.PluginType>("plugintypeid_sdkmessageprocessingstep", null, value);
 			}
 		}
 		
@@ -1541,17 +1541,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sdkmessagefilterid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("sdkmessagefilterid_sdkmessageprocessingstep")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageFilter SdkMessageFilterId_SdkMessageProcessingStep
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageFilter SdkMessageFilterId_SdkMessageProcessingStep
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageFilter>("sdkmessagefilterid_sdkmessageprocessingstep", null);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageFilter>("sdkmessagefilterid_sdkmessageprocessingstep", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageFilter>("sdkmessagefilterid_sdkmessageprocessingstep", null, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageFilter>("sdkmessagefilterid_sdkmessageprocessingstep", null, value);
 			}
 		}
 		
@@ -1560,17 +1560,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sdkmessageid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("sdkmessageid_sdkmessageprocessingstep")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessage SdkMessageId_SdkMessageProcessingStep
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessage SdkMessageId_SdkMessageProcessingStep
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessage>("sdkmessageid_sdkmessageprocessingstep", null);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessage>("sdkmessageid_sdkmessageprocessingstep", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessage>("sdkmessageid_sdkmessageprocessingstep", null, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessage>("sdkmessageid_sdkmessageprocessingstep", null, value);
 			}
 		}
 		
@@ -1579,17 +1579,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sdkmessageprocessingstepsecureconfigid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("sdkmessageprocessingstepsecureconfigid_sdkmessageprocessingstep")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageProcessingStepSecureConfig SdkMessageProcessingStepSecureConfigId_SdkMessageProcessingStep
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageProcessingStepSecureConfig SdkMessageProcessingStepSecureConfigId_SdkMessageProcessingStep
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageProcessingStepSecureConfig>("sdkmessageprocessingstepsecureconfigid_sdkmessageprocessingstep", null);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageProcessingStepSecureConfig>("sdkmessageprocessingstepsecureconfigid_sdkmessageprocessingstep", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageProcessingStepSecureConfig>("sdkmessageprocessingstepsecureconfigid_sdkmessageprocessingstep", null, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageProcessingStepSecureConfig>("sdkmessageprocessingstepsecureconfigid_sdkmessageprocessingstep", null, value);
 			}
 		}
 		
@@ -1598,17 +1598,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("eventhandler")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("serviceendpoint_sdkmessageprocessingstep")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.ServiceEndpoint ServiceEndpoint_SdkMessageProcessingStep
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.ServiceEndpoint ServiceEndpoint_SdkMessageProcessingStep
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.ServiceEndpoint>("serviceendpoint_sdkmessageprocessingstep", null);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.ServiceEndpoint>("serviceendpoint_sdkmessageprocessingstep", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.ServiceEndpoint>("serviceendpoint_sdkmessageprocessingstep", null, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.ServiceEndpoint>("serviceendpoint_sdkmessageprocessingstep", null, value);
 			}
 		}
 		

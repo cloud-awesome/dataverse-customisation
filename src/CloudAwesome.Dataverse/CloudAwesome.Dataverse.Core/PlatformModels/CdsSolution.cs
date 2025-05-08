@@ -8,5 +8,6 @@
         public bool AllWorkflows { get; set; }
         public bool AllCaseCreationRules { get; set; }
         public bool AllBusinessRules { get; set; }
+        public bool AllSlas { get; set; }
     }
 }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
+namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 {
 	
 	
@@ -74,8 +74,11 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 			public const string IsTransacted = "istransacted";
 			public const string IsTransactedName = "istransactedname";
 			public const string LanguageCode = "languagecode";
+			public const string Licensee = "licensee";
+			public const string LicenseeName = "licenseename";
 			public const string LicenseEntitledBy = "licenseentitledby";
 			public const string LicenseEntitledByName = "licenseentitledbyname";
+			public const string LicenseeYomiName = "licenseeyominame";
 			public const string Metadata = "metadata";
 			public const string Mode = "mode";
 			public const string ModeName = "modename";
@@ -89,6 +92,7 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 			public const string ModifiedOnBehalfByName = "modifiedonbehalfbyname";
 			public const string ModifiedOnBehalfByYomiName = "modifiedonbehalfbyyominame";
 			public const string ModifyMetadata = "modifymetadata";
+			public const string Msdyn_Workflow_SlaItem_CustomTimeCalculationWorkflowId = "Msdyn_Workflow_SlaItem_CustomTimeCalculationWorkflowId";
 			public const string Name = "name";
 			public const string OnDemand = "ondemand";
 			public const string OnDemandName = "ondemandname";
@@ -126,6 +130,8 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 			public const string Scope = "scope";
 			public const string ScopeName = "scopename";
 			public const string SdkMessageId = "sdkmessageid";
+			public const string SlaBase_WorkflowId = "SlaBase_WorkflowId";
+			public const string SlaItemBase_WorkflowId = "SlaItemBase_WorkflowId";
 			public const string SolutionId = "solutionid";
 			public const string StateCode = "statecode";
 			public const string StateCodename = "statecodename";
@@ -1133,6 +1139,46 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		}
 		
 		/// <summary>
+		/// The user object that should be used to establish the license the flow should operate under.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("licensee")]
+		public Microsoft.Xrm.Sdk.EntityReference Licensee
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("licensee");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("licensee", value);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("licenseename")]
+		public string LicenseeName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("licensee"))
+				{
+					return this.FormattedValues["licensee"];
+				}
+				else
+				{
+					return default(string);
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.FormattedValues["licensee"] = value;
+			}
+		}
+		
+		/// <summary>
 		/// The source of the license entitlements.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("licenseentitledby")]
@@ -1169,6 +1215,28 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 			set
 			{
 				this.FormattedValues["licenseentitledby"] = value;
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("licenseeyominame")]
+		public string LicenseeYomiName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("licensee"))
+				{
+					return this.FormattedValues["licensee"];
+				}
+				else
+				{
+					return default(string);
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.FormattedValues["licensee"] = value;
 			}
 		}
 		
@@ -2720,20 +2788,74 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		}
 		
 		/// <summary>
-		/// 1:N workflow_active_workflow
+		/// 1:N msdyn_workflow_slaitem_customtimecalculationworkflowid
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("workflow_active_workflow", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow> ReferencedWorkflow_Active_Workflow
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_workflow_slaitem_customtimecalculationworkflowid")]
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.SlaItem> Msdyn_Workflow_SlaItem_CustomTimeCalculationWorkflowId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow>("workflow_active_workflow", Microsoft.Xrm.Sdk.EntityRole.Referenced);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SlaItem>("msdyn_workflow_slaitem_customtimecalculationworkflowid", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow>("workflow_active_workflow", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SlaItem>("msdyn_workflow_slaitem_customtimecalculationworkflowid", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N slabase_workflowid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("slabase_workflowid")]
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.Sla> SlaBase_WorkflowId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Sla>("slabase_workflowid", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Sla>("slabase_workflowid", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N slaitembase_workflowid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("slaitembase_workflowid")]
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.SlaItem> SlaItemBase_WorkflowId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SlaItem>("slaitembase_workflowid", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SlaItem>("slaitembase_workflowid", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N workflow_active_workflow
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("workflow_active_workflow", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow> ReferencedWorkflow_Active_Workflow
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow>("workflow_active_workflow", Microsoft.Xrm.Sdk.EntityRole.Referenced);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow>("workflow_active_workflow", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
 			}
 		}
 		
@@ -2741,17 +2863,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// 1:N Workflow_licenseentitledby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Workflow_licenseentitledby", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow> ReferencedWorkflow_LicenseEntitledBy
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow> ReferencedWorkflow_LicenseEntitledBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow>("Workflow_licenseentitledby", Microsoft.Xrm.Sdk.EntityRole.Referenced);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow>("Workflow_licenseentitledby", Microsoft.Xrm.Sdk.EntityRole.Referenced);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow>("Workflow_licenseentitledby", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow>("Workflow_licenseentitledby", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
 			}
 		}
 		
@@ -2759,17 +2881,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// 1:N workflow_parent_workflow
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("workflow_parent_workflow", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow> ReferencedWorkflow_Parent_Workflow
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow> ReferencedWorkflow_Parent_Workflow
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow>("workflow_parent_workflow", Microsoft.Xrm.Sdk.EntityRole.Referenced);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow>("workflow_parent_workflow", Microsoft.Xrm.Sdk.EntityRole.Referenced);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow>("workflow_parent_workflow", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow>("workflow_parent_workflow", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
 			}
 		}
 		
@@ -2778,17 +2900,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_workflow")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team Team_Workflow
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.Team Team_Workflow
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team>("team_workflow", null);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Team>("team_workflow", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team>("team_workflow", null, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Team>("team_workflow", null, value);
 			}
 		}
 		
@@ -2797,17 +2919,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activeworkflowid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("workflow_active_workflow", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow ReferencingWorkflow_Active_Workflow
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow ReferencingWorkflow_Active_Workflow
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow>("workflow_active_workflow", Microsoft.Xrm.Sdk.EntityRole.Referencing);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow>("workflow_active_workflow", Microsoft.Xrm.Sdk.EntityRole.Referencing);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow>("workflow_active_workflow", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow>("workflow_active_workflow", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
 			}
 		}
 		
@@ -2816,17 +2938,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("licenseentitledby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Workflow_licenseentitledby", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow ReferencingWorkflow_LicenseEntitledBy
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow ReferencingWorkflow_LicenseEntitledBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow>("Workflow_licenseentitledby", Microsoft.Xrm.Sdk.EntityRole.Referencing);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow>("Workflow_licenseentitledby", Microsoft.Xrm.Sdk.EntityRole.Referencing);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow>("Workflow_licenseentitledby", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow>("Workflow_licenseentitledby", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
 			}
 		}
 		
@@ -2835,17 +2957,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentworkflowid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("workflow_parent_workflow", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow ReferencingWorkflow_Parent_Workflow
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow ReferencingWorkflow_Parent_Workflow
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow>("workflow_parent_workflow", Microsoft.Xrm.Sdk.EntityRole.Referencing);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow>("workflow_parent_workflow", Microsoft.Xrm.Sdk.EntityRole.Referencing);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow>("workflow_parent_workflow", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow>("workflow_parent_workflow", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
 			}
 		}
 		

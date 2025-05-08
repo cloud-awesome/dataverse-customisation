@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
+namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 {
 	
 	
@@ -49,6 +49,7 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 			public const string KeyVaultReferenceId = "keyvaultreferenceid";
 			public const string KeyVaultReferenceIdName = "keyvaultreferenceidname";
 			public const string ManagedIdentityId = "managedidentityid";
+			public const string ManagedIdentityIdName = "managedidentityidname";
 			public const string MessageCharSet = "messagecharset";
 			public const string MessageCharSetName = "messagecharsetname";
 			public const string MessageFormat = "messageformat";
@@ -572,6 +573,28 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 			set
 			{
 				this.SetAttributeValue("managedidentityid", value);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("managedidentityidname")]
+		public string ManagedIdentityIdName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("managedidentityid"))
+				{
+					return this.FormattedValues["managedidentityid"];
+				}
+				else
+				{
+					return default(string);
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.FormattedValues["managedidentityid"] = value;
 			}
 		}
 		
@@ -1210,17 +1233,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// 1:N serviceendpoint_sdkmessageprocessingstep
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("serviceendpoint_sdkmessageprocessingstep")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageProcessingStep> ServiceEndpoint_SdkMessageProcessingStep
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageProcessingStep> ServiceEndpoint_SdkMessageProcessingStep
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageProcessingStep>("serviceendpoint_sdkmessageprocessingstep", null);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageProcessingStep>("serviceendpoint_sdkmessageprocessingstep", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageProcessingStep>("serviceendpoint_sdkmessageprocessingstep", null, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageProcessingStep>("serviceendpoint_sdkmessageprocessingstep", null, value);
 			}
 		}
 		

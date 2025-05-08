@@ -8,9 +8,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
+namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 {
 	
+	
+	/// <summary>
+	/// The type of the canvas app.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum CanvasApp_CanvasAppType
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppComponentLibrary = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ClassicCanvasApp = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomCanvasPage = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UnifiedApp = 3,
+	}
 	
 	/// <summary>
 	/// The state of this component.
@@ -327,6 +347,34 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Inactive = 2,
+	}
+	
+	/// <summary>
+	/// Status of the SLAKPI
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Msdyn_SlaKpi_StateCode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Active = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Inactive = 0,
+	}
+	
+	/// <summary>
+	/// Reason for the status of the SLAKPI
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Msdyn_SlaKpi_StatusCode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Active = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Inactive = 1,
 	}
 	
 	/// <summary>
@@ -666,6 +714,9 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ContainerStorage = 11,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		EventGrid = 9,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -708,6 +759,9 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Utf8 = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Windows1252 = 2,
 	}
 	
 	/// <summary>
@@ -770,6 +824,7578 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Userinfo = 3,
+	}
+	
+	/// <summary>
+	/// Date Attributes of Case
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Sla_ApplicableFromPicklist
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		No = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Yes = 2,
+	}
+	
+	/// <summary>
+	/// The entity the SLA is applicable from.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Sla_ObjectTypeCode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AccountKpiItem = 11099,
+		
+		/// <summary>
+		/// description.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Accountleads = 16,
+		
+		/// <summary>
+		/// Customized messages for an entity that has been renamed.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Aciviewmapper = 8040,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AcsChannelInstance = 11291,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AcsChannelInstanceAccount = 11292,
+		
+		/// <summary>
+		/// The action approval model data attached to an action approval.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ActionApprovalModel = 11418,
+		
+		/// <summary>
+		/// Action card entity to show action cards.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ActionCard = 9962,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ActionCardRegarding = 10091,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ActionCardRoleSetting = 10092,
+		
+		/// <summary>
+		/// To provide master data for the card types list. For internal use only
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ActionCardType = 9983,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ActionCardUsage = 11280,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ActionCardUsageAggregation = 11281,
+		
+		/// <summary>
+		/// Stores user settings for action cards
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ActionCardUserSettings = 9973,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Actioncarduserstate = 9968,
+		
+		/// <summary>
+		/// Attributes of action input parameters
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ActionInputParameter = 10347,
+		
+		/// <summary>
+		/// Attributes of action output parameters
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ActionOutputParameter = 10348,
+		
+		/// <summary>
+		/// This notes the currently active description and examples for given entity (queue/agent etc.) as selected by the C1 administrator.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ActiveIcdExtension = 11317,
+		
+		/// <summary>
+		/// Task performed, or to be performed, by a user. An activity is any action for which an entry can be made on a calendar.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Activity = 4200,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ActivityAnalysisCleanupState = 11100,
+		
+		/// <summary>
+		/// Attachment entity with data stored in file type attribute
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ActivityFileAttachment = 10408,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ActivityMapping = 11528,
+		
+		/// <summary>
+		/// Entity that tracks ARC runtime information.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ActivityMonitor = 10310,
+		
+		/// <summary>
+		/// Person or group associated with an activity. An activity can have multiple activity parties.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ActivityParty = 135,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Ad = 10138,
+		
+		/// <summary>
+		/// Adaptive Card Configuration
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AdaptiveCardConfiguration = 10356,
+		
+		/// <summary>
+		/// Address and shipping information. Used to store additional addresses for an account or contact.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Address = 1071,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AddtocalendarStyle = 10490,
+		
+		/// <summary>
+		/// State for each user in Admin App
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Adminappstate = 10777,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AdminSettingsEntity = 10083,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AdPlacement_10139 = 10139,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AdPlacement_11215 = 11215,
+		
+		/// <summary>
+		/// A text match rule identifies similar records using keywords and key phrases determined with text analytics
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AdvancedSimilarityRule = 9949,
+		
+		/// <summary>
+		/// Agent Capacity Profile Units holds agent’s available capacity for each capacity profile associated.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AgentCapacityProfileUnit = 11136,
+		
+		/// <summary>
+		/// Agent capacity update history entity records any changes to agent capacity against a capacity profile
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AgentCapacityUpdateHistory = 10834,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AgentChannelState = 11265,
+		
+		/// <summary>
+		/// Captures unique Agent Groups
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AgentGroup = 11478,
+		
+		/// <summary>
+		/// Represents the association of user groups with language
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AgentGroupLanguage = 11509,
+		
+		/// <summary>
+		/// Contains matching criteria of the agent groups
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AgentGroupMatchingCriteria = 11547,
+		
+		/// <summary>
+		/// Captures Members of the Agent Groups
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AgentGroupMembership = 11479,
+		
+		/// <summary>
+		/// Represents the association of user groups with region
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AgentGroupRegion = 11510,
+		
+		/// <summary>
+		/// Represents the association of users with language 
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AgentLanguage = 11511,
+		
+		/// <summary>
+		/// Contains matching criteria for agents
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AgentMatchingCriteria = 11548,
+		
+		/// <summary>
+		/// Represents the association of users with region
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AgentRegion = 11512,
+		
+		/// <summary>
+		/// Agent Resource Forecasting
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AgentResourceForecasting = 10866,
+		
+		/// <summary>
+		/// Agent script v2
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AgentScript = 10344,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AgentScriptStep = 10345,
+		
+		/// <summary>
+		/// Agent Status holds agent’s status or presence details.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AgentStatus = 11137,
+		
+		/// <summary>
+		/// Agent status history entity records any changes to agent’s presence or available capacity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AgentStatusHistory = 10778,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiBuilderDataset = 10037,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiBuilderDatasetFile = 10038,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiBuilderDatasetRecord = 10039,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiBuilderDatasetsContainer = 10040,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiBuilderFeedbackLoop = 10687,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiBuilderFile = 10041,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiBuilderFileAttachedData = 10042,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiConfiguration = 402,
+		
+		/// <summary>
+		/// AI Copilot
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Aicopilot = 11359,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiEvaluationConfiguration = 11559,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiEvaluationRun = 11560,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiEvent = 11141,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiFormProcessingDocument = 10043,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiInsightCard = 11500,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiModel = 401,
+		
+		/// <summary>
+		/// This table contains records of AI Model Catalogs used for BYOM
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiModelCatalog = 11558,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiObjectDetectionBoundingBox = 10046,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiObjectDetectionImage = 10044,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiObjectDetectionImageMapping = 10047,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiObjectDetectionLabel = 10045,
+		
+		/// <summary>
+		/// AIPlugins component
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Aiplugin = 11282,
+		
+		/// <summary>
+		/// Entity to store AIPlugin Auth Information
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Aipluginauth = 11389,
+		
+		/// <summary>
+		/// Conversation Starters for AI Plugins.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiPluginConversationStarter = 11360,
+		
+		/// <summary>
+		/// AIPlugins component
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiPluginConversationStarterMapping = 11361,
+		
+		/// <summary>
+		/// AIPluginExternalSchemas component
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Aipluginexternalschema = 11283,
+		
+		/// <summary>
+		/// AIPluginExternalSchemaProperties component
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Aipluginexternalschemaproperty = 11284,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiPluginGovernance = 11362,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiPluginGovernanceExtended = 11363,
+		
+		/// <summary>
+		/// AI Plugin Instances Component
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Aiplugininstance = 11285,
+		
+		/// <summary>
+		/// AIPluginOperations component
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Aipluginoperation = 11286,
+		
+		/// <summary>
+		/// Parameter overrides for AI Operation
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Aipluginoperationparameter = 11287,
+		
+		/// <summary>
+		/// Content for the AI Plugin Operation Response Template
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Aipluginoperationresponsetemplate = 11364,
+		
+		/// <summary>
+		/// AIPlugin Title
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Aiplugintitle = 11365,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Aipluginusersetting = 11288,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiSkillConfig = 11480,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiTemplate = 400,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiTestCase = 11561,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiTestCaseDocument = 11562,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiTestCaseInput = 11563,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiTestRun = 11564,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AiTestRunBatch = 11565,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AlertSubscription = 10140,
+		
+		/// <summary>
+		/// Use for the costing of any relevant allowances
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Allowance = 10253,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AllowanceType = 10254,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AnalysisComponent = 10023,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AnalysisJob = 10024,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AnalysisOverride = 11181,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AnalysisResult = 10025,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AnalysisResultDetail = 10026,
+		
+		/// <summary>
+		/// Announcement associated with an organization.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Announcement = 132,
+		
+		/// <summary>
+		/// Year long fiscal calendar of an organization. A span of time during which the financial activities of an organization are calculated.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AnnualFiscalCalendar = 2000,
+		
+		/// <summary>
+		/// Contains Modern Command Information
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppAction = 10462,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppActionMigration = 10691,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppActionRule = 10692,
+		
+		/// <summary>
+		/// Contains the master list of all properties that can be customized for apps in Dynamics 365. For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppConfigMaster = 9011,
+		
+		/// <summary>
+		/// Contains a mapping between an app configuration instance and an app, which defines the properties that can be customized for the app. Optionally, also contains navigation setting for an app. For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppConfiguration = 9012,
+		
+		/// <summary>
+		/// Contains a property or a list of properties from the app configuration master list that can be customized for any app in Dynamics 365. For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppConfigurationInstance = 9013,
+		
+		/// <summary>
+		/// Metadata for App Insights Platform components
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppInsightsMetadata = 10748,
+		
+		/// <summary>
+		/// Application
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Application = 1204,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ApplicationExtension = 10327,
+		
+		/// <summary>
+		/// Files used by the application
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ApplicationFile = 4707,
+		
+		/// <summary>
+		/// Ribbon customizations for the application ribbon and entity ribbon templates.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ApplicationRibbons = 1120,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ApplicationTabTemplate = 10328,
+		
+		/// <summary>
+		/// An application tab template with various template parameters defined.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ApplicationTabTemplateDeprecated = 10939,
+		
+		/// <summary>
+		/// Define a UCI pagetype. For each pagetype, define the parameters that need to be a part of the template for this application type
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ApplicationTypeDeprecated = 10942,
+		
+		/// <summary>
+		/// Application User that has non-interactive access to the CDS system
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Applicationuser = 10034,
+		
+		/// <summary>
+		/// A component available in a business app such as entity, dashboard, form, view, chart, and business process.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppModuleComponent = 9007,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppmoduleMetadata = 8700,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppmoduleMetadataAsyncOperation = 8702,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppmoduleMetadataDependency = 8701,
+		
+		/// <summary>
+		/// Security roles that have access to a business app.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppModuleRoles = 9009,
+		
+		/// <summary>
+		/// Commitment representing a time interval with start/end times and duration.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Appointment = 4201,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppParameterDefinitionDeprecated = 10938,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppProfile = 10326,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppProfileCopilotConfiguration = 11254,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppProfileRoleMapping = 10936,
+		
+		/// <summary>
+		/// An approval.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Approval = 11419,
+		
+		/// <summary>
+		/// Approval Process for Multi-Stage Approvals
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ApprovalProcess = 11554,
+		
+		/// <summary>
+		/// An individual request for approval.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ApprovalRequest = 11420,
+		
+		/// <summary>
+		/// An individual response to an approval.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ApprovalResponse = 11421,
+		
+		/// <summary>
+		/// The approval stage in multi-stage approvals
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ApprovalStageApproval = 11555,
+		
+		/// <summary>
+		/// The condition in multi-stage approvals
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ApprovalStageCondition = 11556,
+		
+		/// <summary>
+		/// The order of the stages in multi-stage approvals.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ApprovalStageOrder = 11557,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ApprovalStep = 11422,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AppState = 11184,
+		
+		/// <summary>
+		/// This is Deprecated Entity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Archivecleanupinfo = 11116,
+		
+		/// <summary>
+		/// This is Deprecated Entity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Archivecleanupoperation = 11117,
+		
+		/// <summary>
+		/// Structured content that is part of the knowledge base.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Article = 127,
+		
+		/// <summary>
+		/// Comment on a knowledge base article.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ArticleComment = 1082,
+		
+		/// <summary>
+		/// Template for a knowledge base article that contains the standard attributes of an article.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ArticleTemplate = 1016,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AssetCategoryTemplateAssociation = 10316,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AssetTemplateAssociation = 10317,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AssignmentConfiguration = 10766,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AssignmentConfigurationStep = 10767,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AssignmentMap = 10601,
+		
+		/// <summary>
+		/// Defines criteria based on which Entities are routed to Users or Sales Team
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AssignmentRule = 10598,
+		
+		/// <summary>
+		/// MIME attachment for an activity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Attachment_1001 = 1001,
+		
+		/// <summary>
+		/// Attachment for an email activity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Attachment_1002 = 1002,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AttachSkill = 10517,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Attribute = 9808,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AttributeInfluenceStatistics = 10725,
+		
+		/// <summary>
+		/// Represents a mapping between attributes where the attribute values should be copied from a record into the form of a new related record.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AttributeMap = 4601,
+		
+		/// <summary>
+		/// Defines masking rule of attribute
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Attributemaskingrule = 9820,
+		
+		/// <summary>
+		/// Entity to store all audio files for Omnichannel
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AudioFile = 10821,
+		
+		/// <summary>
+		/// Track changes to records for analysis, record keeping, and compliance.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Auditing = 4567,
+		
+		/// <summary>
+		/// Stores the settings for user authentication
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AuthenticationSettings = 10514,
+		
+		/// <summary>
+		/// Authorization servers that trust this organization
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AuthorizationServer = 1094,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AuthSettingsEntry = 10779,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AutoBlockRule = 10788,
+		
+		/// <summary>
+		/// Auto Capture Rules
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AutoCaptureRule = 10096,
+		
+		/// <summary>
+		/// Auto Capture Settings
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AutoCaptureSettings = 10097,
+		
+		/// <summary>
+		/// The omnichannel automated action rules.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AutomatedActionRule = 11411,
+		
+		/// <summary>
+		/// The mapping of omnichannel automated action rules.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AutomatedActionRulesMapping = 11412,
+		
+		/// <summary>
+		/// Autonomous case creation and update rules
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AutonomousCaseCreationAndUpdateRules = 11403,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AvailableTimes = 10313,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AvailableTimesDataSource = 10311,
+		
+		/// <summary>
+		/// The await all action approval model data attached to an action approval.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AwaitAllActionApprovalModel = 11423,
+		
+		/// <summary>
+		/// The await all approval model data attached to an approval.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AwaitAllApprovalModel = 11424,
+		
+		/// <summary>
+		/// Stores connection information for an Azure service
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AzureServiceConnection = 9936,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BackgroundOperation = 10957,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Badge = 10673,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BadgeType = 10674,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Basestyle = 10518,
+		
+		/// <summary>
+		/// The basic approval model data attached to an approval.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BasicApprovalModelData = 11425,
+		
+		/// <summary>
+		/// Defines the form to render for a given entity type.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BasicForm_10185 = 10185,
+		
+		/// <summary>
+		/// Defines the form to render for a given entity type.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BasicForm_11219 = 11219,
+		
+		/// <summary>
+		/// Defines the additional behavior modification logic to augment or override the functionality of form components that is not possible with entity and form metadata.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BasicFormMetadata_10186 = 10186,
+		
+		/// <summary>
+		/// Defines the additional behavior modification logic to augment or override the functionality of form components that is not possible with Dynamics 365 entity and form metadata.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BasicFormMetadata_11220 = 11220,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BingMapLookup = 10644,
+		
+		/// <summary>
+		/// The root entity for a portal blog.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Blog = 10645,
+		
+		/// <summary>
+		/// A post belonging to a portal blog.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BlogPost = 10646,
+		
+		/// <summary>
+		/// Resource that has capacity which can be allocated to work.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BookableResource = 1150,
+		
+		/// <summary>
+		/// Represents the line details of a resource booking.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BookableResourceBooking = 1145,
+		
+		/// <summary>
+		/// Reservation entity representing the summary of the associated resource bookings.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BookableResourceBookingHeader = 1146,
+		
+		/// <summary>
+		/// The mapping used to keep track of the IDs for items synced between Dynamics 365 Bookable Resource Booking and Exchange.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BookableResourceBookingToExchangeIdMapping = 4421,
+		
+		/// <summary>
+		/// Bookable Resource Capacity Profile
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BookableResourceCapacityProfile = 10835,
+		
+		/// <summary>
+		/// Categorize resources that have capacity into categories such as roles.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BookableResourceCategory = 1147,
+		
+		/// <summary>
+		/// Association entity to model the categorization of resources.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BookableResourceCategoryAssn = 1149,
+		
+		/// <summary>
+		/// Associates resources with their characteristics and specifies the proficiency level of a resource for that characteristic.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BookableResourceCharacteristic = 1148,
+		
+		/// <summary>
+		/// Associates resources with resource groups that they are a member of.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BookableResourceGroup = 1151,
+		
+		/// <summary>
+		/// Allows creation of multiple sub statuses mapped to a booking status option.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BookingStatus = 1152,
+		
+		/// <summary>
+		/// Bot channel registration used for channel integration
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BotChannelRegistration = 10502,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BotChannelRegistrationSecret = 10511,
+		
+		/// <summary>
+		/// Stores Microsoft Power Virtual Agents chatbot information such as the unique consumer ID, schema name, configuration details in JSON format, and the association to the portals web site.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BotConsumer = 10479,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Botcontent = 10278,
+		
+		/// <summary>
+		/// Bot specific sessions 
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BotSession = 11094,
+		
+		/// <summary>
+		/// This is Deprecated Entity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Bulkarchiveconfig = 11118,
+		
+		/// <summary>
+		/// This is Deprecated Entity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Bulkarchivefailuredetail = 11119,
+		
+		/// <summary>
+		/// This is Deprecated Entity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Bulkarchiveoperation = 11120,
+		
+		/// <summary>
+		/// This is Deprecated Entity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Bulkarchiveoperationdetail = 11121,
+		
+		/// <summary>
+		/// Record that was not deleted during a bulk deletion job.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BulkDeleteFailure = 4425,
+		
+		/// <summary>
+		/// User-submitted bulk deletion job.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BulkDeleteOperation = 4424,
+		
+		/// <summary>
+		/// Log used to track bulk operation execution, successes, and failures.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BulkOperationLog = 4405,
+		
+		/// <summary>
+		/// Business Data Localized Label
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BusinessDataLocalizedLabel = 4232,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BusinessProcess = 11531,
+		
+		/// <summary>
+		/// Active path associated with every Business Process Flow instance
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BusinessProcessFlowInstance = 4725,
+		
+		/// <summary>
+		/// Business, division, or department in the Microsoft Dynamics 365 database.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BusinessUnit = 10,
+		
+		/// <summary>
+		/// Stores mapping attributes for business units.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BusinessUnitMap = 6,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ButtonStyle = 10498,
+		
+		/// <summary>
+		/// Calendar used by the scheduling system to define when an appointment or activity is to occur.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Calendar = 4003,
+		
+		/// <summary>
+		/// Defines free/busy times for a service and for resources or resource groups, such as working, non-working, vacation, and blocked.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CalendarRule = 4004,
+		
+		/// <summary>
+		/// Callback Registration that stores configuration.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CallbackRegistration = 301,
+		
+		/// <summary>
+		/// Container for campaign activities and responses, sales literature, products, and lists to create, plan, execute, and track the results of a specific marketing campaign through its life.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Campaign = 4400,
+		
+		/// <summary>
+		/// Task performed, or to be performed, by a user for planning or running a campaign.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CampaignActivity = 4402,
+		
+		/// <summary>
+		/// Work item of a campaign activity, such as a list or sales literature.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CampaignActivityItem = 4404,
+		
+		/// <summary>
+		/// Work item in a campaign, a list or sales literature.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CampaignItem = 4403,
+		
+		/// <summary>
+		/// Response from an existing or a potential new customer for a campaign.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CampaignResponse = 4401,
+		
+		/// <summary>
+		/// An application built through a canvas-based editing experience.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CanvasApp = 300,
+		
+		/// <summary>
+		/// Holds extended metadata values for canvas apps that are not solution aware
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CanvasappExtendedMetadata = 10268,
+		
+		/// <summary>
+		/// Capacity Profiles
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CapacityProfile = 10768,
+		
+		/// <summary>
+		/// Card
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Card = 10849,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CardStateItem = 11098,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Cascadegrantrevokeaccessrecordstracker = 10272,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Cascadegrantrevokeaccessversiontracker = 10273,
+		
+		/// <summary>
+		/// Service request case associated with a contract.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Case = 112,
+		
+		/// <summary>
+		/// Captures the number of Found My Answer clicks in the portal.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CaseDeflection = 10665,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CaseEnrichment = 10359,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CaseFollowUpAndClosureConfiguration = 11409,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CaseManagementAgentForCaseClosureActivity = 11515,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CaseManagementAgentForCaseClosureMonitoring = 11516,
+		
+		/// <summary>
+		/// Special type of activity that includes description of the resolution, billing status, and the duration of the case.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CaseResolution = 4206,
+		
+		/// <summary>
+		/// Case sentiment settings
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CaseSentimentSettings = 11532,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CaseSuggestion = 10360,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CaseSuggestionRequestPayload = 10361,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CaseSuggestionsDataSouce = 10362,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CaseTopic = 10371,
+		
+		/// <summary>
+		/// Cases mapping with the case topics
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CaseTopicIncidentMapping = 10374,
+		
+		/// <summary>
+		/// Case Topic Setting Entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CaseTopicSetting = 10372,
+		
+		/// <summary>
+		/// Case Topic Summary Entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CaseTopicSummary = 10373,
+		
+		/// <summary>
+		/// Entity for cataloging records to make it easier for your customers to find them on portals and through search.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Catalog = 10303,
+		
+		/// <summary>
+		/// Entity for assigning records to a specific catalog 
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CatalogAssignment = 10304,
+		
+		/// <summary>
+		/// Status configuration for events in a catalog.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Catalogeventstatusconfiguration = 10915,
+		
+		/// <summary>
+		/// Files associated with the package that will be used as part of the submission to the catalog system.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CatalogSubmissionFiles = 11161,
+		
+		/// <summary>
+		/// Entity for categorizing records to make it easier for your customers to find them on portals and through search.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Category = 9959,
+		
+		/// <summary>
+		/// Contains data to represent an Azure Active Directory Application used to connect to secure web-hosted resources.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Certificatecredential = 11453,
+		
+		/// <summary>
+		/// Base entity for process Change Password for Portals Contact
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChangePasswordForPortalsContact = 10183,
+		
+		/// <summary>
+		/// Information about permissions needed to access Dynamics 365 through external channels.For internal use only
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelAccessProfile = 3005,
+		
+		/// <summary>
+		/// Defines the rules for automatically associating channel access profiles to external party records.For internal use only
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelAccessProfileRule = 9400,
+		
+		/// <summary>
+		/// Defines the rule items of a profile rule set for the automated profile association.For internal use only
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelAccessProfileRuleItem = 9401,
+		
+		/// <summary>
+		/// OC channel api method mapping entity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelApiMethodMapping = 10791,
+		
+		/// <summary>
+		/// The capability that a channel can enable, such as co-browse, screen sharing.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelCapability = 10782,
+		
+		/// <summary>
+		/// Channel Configuration
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelConfiguration = 10774,
+		
+		/// <summary>
+		/// Stores details about a channel definition.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelDefinition = 10904,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelDefinitionConsent = 10905,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelDefinitionLocale = 10906,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelInstance = 10510,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelInstanceAccount = 10487,
+		
+		/// <summary>
+		/// Entity that holds the configuration data for a channel provider based on Channel Integration Framework v1.0
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelIntegrationFrameworkV10Provider = 10937,
+		
+		/// <summary>
+		/// Entity that holds the configuration data for a third-party voice channel provider based on Channel Integration Framework v2.0
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelIntegrationFrameworkV20Provider = 10338,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelMessageAttachment = 10978,
+		
+		/// <summary>
+		/// Context about channel message
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelMessageContextPart = 10979,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelMessagePart = 10907,
+		
+		/// <summary>
+		/// Instance of a channel property containing its name and corresponding data type.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelProperty = 1236,
+		
+		/// <summary>
+		/// Group or collection of channel properties provided by the external channel for a Microsoft Dynamics 365 activity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelPropertyGroup = 1234,
+		
+		/// <summary>
+		/// Channel State Configuration
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChannelStateConfiguration = 10775,
+		
+		/// <summary>
+		/// Skills, education and certifications of resources.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Characteristic = 1141,
+		
+		/// <summary>
+		/// Indicates the mapping of skills from training data to characteristics
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CharacteristicMapping = 10842,
+		
+		/// <summary>
+		/// Represents a Power Virtual Agents Chatbot. https://powerva.microsoft.com/
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Chatbot = 10280,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChatbotContentPack = 11343,
+		
+		/// <summary>
+		/// Provides audit and subgrid visibility of questions answered in a single list
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CheckYourAnswer = 10256,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChildIncidentCount = 113,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ChtAppProfileConfiguration = 11568,
+		
+		/// <summary>
+		/// Microsoft Dynamics 365 client for Outlook offline database update.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ClientUpdate = 36,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CloudFlowConsumer = 11435,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CodeStyle = 10495,
+		
+		/// <summary>
+		/// Base entity for process Collaborative selling
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CollaborativeSelling = 10289,
+		
+		/// <summary>
+		/// Collab Space Team Association
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CollabSpaceTeamAssociation = 10912,
+		
+		/// <summary>
+		/// Mapping for columns in a data map.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ColumnMapping = 4417,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ColumnPermission_10726 = 10726,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ColumnPermission_11216 = 11216,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ColumnPermissionProfile_10727 = 10727,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ColumnPermissionProfile_11217 = 11217,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ColumnStyle = 10519,
+		
+		/// <summary>
+		/// A collaborative comment on a maker artifact
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Comment_10533 = 10533,
+		
+		/// <summary>
+		/// A comment on a specific section in a transcript
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Comment_11188 = 11188,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Comment_11264 = 11264,
+		
+		/// <summary>
+		/// A comment on an activity feed post.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Comment_8005 = 8005,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Commitment = 4215,
+		
+		/// <summary>
+		/// Business competing for the sale represented by a lead or opportunity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Competitor = 123,
+		
+		/// <summary>
+		/// Additional addresses for a competitor. The first two addresses are stored in the competitor object.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CompetitorAddress = 1004,
+		
+		/// <summary>
+		/// Association between a competitor and a product offered by the competitor.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CompetitorProduct = 1006,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Competitorsalesliterature = 26,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ComponentLayer = 10005,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ComponentLayerDataSource = 10006,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ComponentVersion = 11310,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ComponentVersionDataSource = 11311,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ComponentVersionInternal = 11312,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Configuration = 10916,
+		
+		/// <summary>
+		/// Relationship between two entities.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Connection = 3234,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConnectionInstance = 373,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConnectionReference = 10021,
+		
+		/// <summary>
+		/// Role describing a relationship between a two records.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConnectionRole = 3231,
+		
+		/// <summary>
+		/// Specifies the entity type that can play specific role in a connection.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConnectionRoleObjectTypeCode = 3233,
+		
+		/// <summary>
+		/// Connector Entity to support Solutioning Integration
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Connector = 372,
+		
+		/// <summary>
+		/// Consuming Application that use Unified Channel
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConsumingApplication = 10908,
+		
+		/// <summary>
+		/// Person with whom a business unit has a relationship, such as customer, supplier, and colleague.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Contact = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ContactAddress = 10257,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Contactinvoices = 17,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ContactKpiItem = 11102,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Contactleads = 22,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Contactorders = 19,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Contactquotes = 18,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ContactSuggestionRule = 10623,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ContactSuggestionRuleset = 10624,
+		
+		/// <summary>
+		/// Base entity for process Contact to Order (B2C)
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ContactToOrderB2c = 10290,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ContentAccessLevel = 10666,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ContentBlock = 10509,
+		
+		/// <summary>
+		/// Policy for moderating the content on a portal.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ContentModerationPolicy = 11372,
+		
+		/// <summary>
+		/// Contains reasons that can be added while flagging a content.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ContentModerationPolicyAllowedReason = 11371,
+		
+		/// <summary>
+		/// Content snippets are inserted in page templates so that any label, text string or image in the template can be content-managed.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ContentSnippet_10124 = 10124,
+		
+		/// <summary>
+		/// Content snippets are inserted in page templates so that any label, text string or image in the template can be content-managed.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ContentSnippet_11218 = 11218,
+		
+		/// <summary>
+		/// Stores context item values for an engagement.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ContextItemValue = 10797,
+		
+		/// <summary>
+		/// Stores the context variables for a work stream.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ContextVariable = 10505,
+		
+		/// <summary>
+		/// Agreement to provide customer service during a specified amount of time or number of cases.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Contract = 1010,
+		
+		/// <summary>
+		/// Line item in a contract that specifies the type of service a customer is entitled to.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ContractLine = 1011,
+		
+		/// <summary>
+		/// Template for a contract containing the standard attributes of a contract.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ContractTemplate = 2011,
+		
+		/// <summary>
+		/// Tracks the interaction between the agents and customer
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Conversation = 10794,
+		
+		/// <summary>
+		/// The action that can be performed in the conversation.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationAction = 10525,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationActionItem = 11186,
+		
+		/// <summary>
+		/// Localization information associated with the Conversation action.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationActionLocale = 10783,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationAggregatedInsights = 11187,
+		
+		/// <summary>
+		/// Conversation Capacity profile
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationCapacityProfile = 10837,
+		
+		/// <summary>
+		/// Characteristic associated to Omnichannel conversation
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationCharacteristic = 10838,
+		
+		/// <summary>
+		/// Primary entity for a conversation
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationDataDeprecated = 10528,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationDispositionCodeMap = 11539,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Conversationinsight = 10870,
+		
+		/// <summary>
+		/// Contains matching criterias for conversations
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationMatchingCriteria = 11550,
+		
+		/// <summary>
+		/// A Message Block would constitute a block of messages up till an agent responds (including the messages sent by the agent). A follow up message, after an agent responds, will create another message block, this block again ends with the messages from the agent
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationMessageBlock = 10869,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationParticipantInsights = 11189,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationParticipantSentiment = 11190,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationQuestion = 11191,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationSegmentSentiment = 11192,
+		
+		/// <summary>
+		/// Stores the machine learning generated customer sentiment of the communication  between the user and the customer
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationSentiment_10488 = 10488,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationSentiment_11193 = 11193,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationSignal = 11194,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationSubject = 11195,
+		
+		/// <summary>
+		/// Conversation Suggestion Request Payload
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Conversationsuggestionrequestpayload = 11095,
+		
+		/// <summary>
+		/// Conversation Summary Interaction Entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationSummaryInteraction = 11321,
+		
+		/// <summary>
+		/// Conversation Summary Settings Entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationSummarySetting = 11322,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationSummarySuggestion = 11196,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationSystemTag = 11197,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationTag = 11198,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationTopic = 11323,
+		
+		/// <summary>
+		/// Conversation mapping with conversation topics
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationTopicConversationMapping = 11326,
+		
+		/// <summary>
+		/// Conversation Topic Setting Entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationTopicSetting = 11324,
+		
+		/// <summary>
+		/// Conversation Topic Summary Entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ConversationTopicSummary = 11325,
+		
+		/// <summary>
+		/// Contains the transcripts of conversations between participants such as customers, Virtual Agents or Human agents.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Conversationtranscript = 10279,
+		
+		/// <summary>
+		/// Case, Conversation, Email Copilot interaction analytics
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CopilotAnalytics = 11402,
+		
+		/// <summary>
+		/// Copilot assisted case form fill settings
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CopilotAssistedCaseFormFillSettings = 11494,
+		
+		/// <summary>
+		/// Holds key authoring components of a Copilot such a topics, entities, variables, etc.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CopilotComponent = 10281,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CopilotComponentCollection = 11354,
+		
+		/// <summary>
+		/// CopilotExampleQuestions Component
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Copilotexamplequestion = 11332,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CopilotForSalesCustomerList = 10900,
+		
+		/// <summary>
+		/// CopilotGlossaryTerm Component
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Copilotglossaryterm = 11352,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CopilotInteraction = 11154,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CopilotInteractionData = 11159,
+		
+		/// <summary>
+		/// Data table of previous copilot interactions.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CopilotInteractions = 11485,
+		
+		/// <summary>
+		/// Record of copilot using knowledge article
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CopilotKnowledgeInteraction = 11472,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CopilotSummarizationSetting = 11158,
+		
+		/// <summary>
+		/// CopilotSynonyms Component
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Copilotsynonyms = 11353,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CopilotTranscript = 11155,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CopilotTranscriptData = 11156,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Credential = 11297,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CrmConnection = 10749,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Csadminconfig = 10696,
+		
+		/// <summary>
+		/// Currency in which a financial transaction is carried out.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Currency = 9105,
+		
+		/// <summary>
+		/// Entity that defines a custom API
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomApi = 10306,
+		
+		/// <summary>
+		/// Entity that defines a request parameter for a custom API
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomApiRequestParameter = 10307,
+		
+		/// <summary>
+		/// Entity that defines a response property for a custom API 
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomApiResponseProperty = 10308,
+		
+		/// <summary>
+		/// Configuration table for setting up custom APIs for usage inside the Unified routing system
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomApiRulesetConfiguration = 10862,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomControl = 9753,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomControlDefaultConfig = 9755,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomControlExtendedSetting = 10732,
+		
+		/// <summary>
+		/// Custom Control Resource Id
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomControlResource = 9754,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomEmailHighlight = 11200,
+		
+		/// <summary>
+		/// Specify Customer Asset.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerAsset = 10053,
+		
+		/// <summary>
+		/// Attachments for Customer Asset
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerAssetAttachment = 10318,
+		
+		/// <summary>
+		/// The Category of Customer Asset.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerAssetCategory = 10054,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerEmailCommunication = 10723,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerFeedbackSurvey = 11455,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerFeedbackSurveyInvite = 11456,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerFeedbackSurveyResponse = 11457,
+		
+		/// <summary>
+		/// Relationship between a customer and a partner in which either can be an account or contact.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerRelationship = 4502,
+		
+		/// <summary>
+		/// Customer Service historical analytics
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerServiceHistoricalAnalytics = 10375,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerServiceKeyValueConfiguration = 11157,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerVoiceAlert = 10285,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerVoiceAlertRule = 10286,
+		
+		/// <summary>
+		/// Response to a file upload question.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerVoiceFileResponse = 10383,
+		
+		/// <summary>
+		/// Stores localized data for email templates.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerVoiceLocalizedSurveyEmailTemplate = 10111,
+		
+		/// <summary>
+		/// Set of surveys to collect feedback.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerVoiceProject = 10112,
+		
+		/// <summary>
+		/// Satisfaction metric defined for a project.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerVoiceSatisfactionMetric = 10115,
+		
+		/// <summary>
+		/// Set of questions to collect feedback.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerVoiceSurvey = 10116,
+		
+		/// <summary>
+		/// Template for an email message that contains the survey invitation link.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerVoiceSurveyEmailTemplate = 10110,
+		
+		/// <summary>
+		/// Activity that tracks a survey invitation sent to a person.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerVoiceSurveyInvite = 10117,
+		
+		/// <summary>
+		/// Question in a survey to collect feedback.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerVoiceSurveyQuestion = 10113,
+		
+		/// <summary>
+		/// Response to a question in a survey.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerVoiceSurveyQuestionResponse = 10114,
+		
+		/// <summary>
+		/// Email reminders for surveys created in Customer Voice.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerVoiceSurveyReminder = 10384,
+		
+		/// <summary>
+		/// Response to a survey.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerVoiceSurveyResponse = 10118,
+		
+		/// <summary>
+		/// Email address of an unsubscribed respondent.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomerVoiceUnsubscribedRecipient = 10119,
+		
+		/// <summary>
+		/// Highlight of relevant conversation section
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomHighlight = 11201,
+		
+		/// <summary>
+		/// The publisher of the conversation highlight
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CustomPublisher = 11202,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DailyKpisForAccount = 11103,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DailyKpisForContact = 11104,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DailyKpisForLead = 11105,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DailyKpisForOpportunity = 11106,
+		
+		/// <summary>
+		/// Data Analytics Admin Settings (Deprecated)
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataAnalyticsAdminSettingsDeprecated = 10073,
+		
+		/// <summary>
+		/// Data Analytics Power BI Datasets
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataAnalyticsDataset = 10863,
+		
+		/// <summary>
+		/// Data Analytics Reports
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataAnalyticsReport = 10074,
+		
+		/// <summary>
+		/// Data Analytics User Customized Report
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataAnalyticsUserCustomizedReport = 10719,
+		
+		/// <summary>
+		/// Data Analytics Power BI Workspaces
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataAnalyticsWorkspace = 10864,
+		
+		/// <summary>
+		/// Stores the latest database version for a solution, for internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DatabaseVersion = 10049,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Dataflow = 418,
+		
+		/// <summary>
+		/// Intersecting table between Dataflow and Connection Reference
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataflowConnectionReference = 11316,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataflowDatalakefolder = 11178,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Dataflowrefreshhistory = 10590,
+		
+		/// <summary>
+		/// An entity to store information about dataflow templates
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataflowTemplate = 11138,
+		
+		/// <summary>
+		/// Data Hygiene Setting Info
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataHygieneSettingInfo = 10854,
+		
+		/// <summary>
+		/// Status and ownership information for an import job.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataImport = 4410,
+		
+		/// <summary>
+		/// A folder is a place to store data in Azure Data Lake.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataLakeFolder = 10287,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataLakeFolderPermission = 10288,
+		
+		/// <summary>
+		/// A workspace is a place to store data in Azure Data Lake.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataLakeWorkspace = 10010,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataLakeWorkspacePermission = 10011,
+		
+		/// <summary>
+		/// Data map used in import.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataMap = 4411,
+		
+		/// <summary>
+		/// Table for Data Movement Service Requests
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataMovementServiceRequest = 11179,
+		
+		/// <summary>
+		/// Table for Data Movement Service Request Status
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataMovementServiceRequestStatus = 11180,
+		
+		/// <summary>
+		/// Data Performance Dashboard.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataPerformanceDashboard = 4450,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataProcessingConfiguration = 10678,
+		
+		/// <summary>
+		/// Events that are triggered by Data Processing.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataProcessingEvent = 11530,
+		
+		/// <summary>
+		/// Entity used to store data synchronization state
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataSyncState = 10625,
+		
+		/// <summary>
+		/// Table that stores Data workspace records.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DataWorkspace = 11520,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Dealmanageraccess = 10466,
+		
+		/// <summary>
+		/// Deal manager settings
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DealManagerSettings = 10467,
+		
+		/// <summary>
+		/// Stores information about contract that will be required for ruleset definition
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DecisionContract = 10697,
+		
+		/// <summary>
+		/// Contains list of rules to define demand and assignment behavior
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DecisionRuleSet = 10698,
+		
+		/// <summary>
+		/// Audit of previous versions of officer declarations
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DeclarationHistory = 10258,
+		
+		/// <summary>
+		/// Context for delegated authorization.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Delegatedauthorization = 11160,
+		
+		/// <summary>
+		/// Holds id of deleted conversation
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Deletedconversation = 10914,
+		
+		/// <summary>
+		/// Deleted Record Reference
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DeletedRecordReference = 11334,
+		
+		/// <summary>
+		/// Used to hold any necessary training
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DeleteMeTrainingRequirement = 10265,
+		
+		/// <summary>
+		/// Delve Action Hubs Description
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Delveactionhub = 9961,
+		
+		/// <summary>
+		/// A component dependency in CRM.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Dependency = 7105,
+		
+		/// <summary>
+		/// A dependency feature.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DependencyFeature = 7108,
+		
+		/// <summary>
+		/// The representation of a component dependency node in CRM.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DependencyNode = 7106,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DeploymentOrchestration = 11333,
+		
+		/// <summary>
+		/// [Deprecated] Controls access to Analytics Reporting Sitemap in Dynamics Customer Service App
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DeprecatedDynamicsCustomerServiceAnalytics = 10075,
+		
+		/// <summary>
+		/// List of categories for which a playbook can be created.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DeprecatedPlaybookCategory = 10079,
+		
+		/// <summary>
+		/// Playbook templates contains the definition of the Playbook that helps to standardize a set of best practices or next best actions.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DeprecatedPlaybookTemplate = 10081,
+		
+		/// <summary>
+		/// Stores entity routing configuration per workstream
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DeprecatedWorkstreamEntityConfiguration = 10486,
+		
+		/// <summary>
+		/// Derived insights related entities
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DerivedInsightsRelatedEntity = 11488,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DesktopFlowBinary = 10848,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DesktopFlowModule = 10911,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DevopsTest = 10491,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Digitalsellingactivetask = 10952,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Digitalsellingcompletedtask = 10953,
+		
+		/// <summary>
+		/// Price reduction made from the list price of a product or service based on the quantity purchased.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Discount = 1013,
+		
+		/// <summary>
+		/// Type of discount specified as either a percentage or an amount.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DiscountList = 1080,
+		
+		/// <summary>
+		/// Customized messages for an entity that has been renamed.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DisplayString = 4102,
+		
+		/// <summary>
+		/// Maps customized display strings to entities.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DisplayStringMap = 4101,
+		
+		/// <summary>
+		/// Distributed Locks
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DistributedLock = 10737,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DividerStyle = 10484,
+		
+		/// <summary>
+		/// An entity to save DMS sync requests.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DmsSyncRequest = 11336,
+		
+		/// <summary>
+		/// An entity to save DMS sync statuses.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DmsSyncStatus = 11337,
+		
+		/// <summary>
+		/// Document libraries or folders on a SharePoint server from where documents can be managed in Microsoft Dynamics 365.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DocumentLocation = 9508,
+		
+		/// <summary>
+		/// Document Suggestions
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DocumentSuggestions = 1189,
+		
+		/// <summary>
+		/// Used to store Document Templates in database in binary format.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DocumentTemplate = 9940,
+		
+		/// <summary>
+		/// Duplicate Detection Plugin Run used to track successful and failure state of the Duplicate Detection Plugin
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DuplicateDetectionPluginRun = 10675,
+		
+		/// <summary>
+		/// Rule used to identify potential duplicates.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DuplicateDetectionRule = 4414,
+		
+		/// <summary>
+		/// This enity is used to connect base lead to duplicate leads
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DuplicateLeadMapping = 10676,
+		
+		/// <summary>
+		/// Potential duplicate record.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DuplicateRecord = 4415,
+		
+		/// <summary>
+		/// Condition of a duplicate detection rule.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DuplicateRuleCondition = 4416,
+		
+		/// <summary>
+		/// DVFileSearches Component
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Dvfilesearch = 11273,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Dvfilesearchattribute = 11274,
+		
+		/// <summary>
+		/// DVFileSearchEntities component.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Dvfilesearchentity = 11275,
+		
+		/// <summary>
+		/// DVTableSearches component
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Dvtablesearch = 11276,
+		
+		/// <summary>
+		/// DVTableSearchAttribute component
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Dvtablesearchattribute = 11277,
+		
+		/// <summary>
+		/// DVTableSearchEntities component
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Dvtablesearchentity = 11278,
+		
+		/// <summary>
+		/// Entity to persist effort model prediction results
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EffortEstimate = 10845,
+		
+		/// <summary>
+		/// Indicates the OmniChannel Model for the corresponding AI model
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EffortEstimationModel = 10846,
+		
+		/// <summary>
+		/// Indicates model's training details
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EffortModelTrainingDetails = 10847,
+		
+		/// <summary>
+		/// Elastic File Attachment
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Elasticfileattachment = 7755,
+		
+		/// <summary>
+		/// Activity that is delivered using email protocols.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Email = 4202,
+		
+		/// <summary>
+		/// Entity which stores configuration metadata for Email Address type fields
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EmailAddressConfiguration = 11566,
+		
+		/// <summary>
+		/// Email analytics
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EmailAnalytics = 11497,
+		
+		/// <summary>
+		/// Email activity hashes used for correlation purposes.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EmailHash = 4023,
+		
+		/// <summary>
+		/// Base entity for process Email Sales Campaign
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EmailSalesCampaign = 10291,
+		
+		/// <summary>
+		/// Email Address Search Table.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EmailSearch = 4299,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EmailSentiment = 11498,
+		
+		/// <summary>
+		/// Holds the Email Server Profiles of an organization
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EmailServerProfile = 9605,
+		
+		/// <summary>
+		/// Signature for email message
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EmailSignature = 9997,
+		
+		/// <summary>
+		/// Template for an email message that contains the standard attributes of an email message.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EmailTemplate = 2010,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Enablearchivalrequest = 11122,
+		
+		/// <summary>
+		/// Defines the amount and type of support a customer should receive.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Entitlement = 9700,
+		
+		/// <summary>
+		/// Defines the amount and type of support for a channel.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntitlementChannel = 9701,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntitlementContact = 7272,
+		
+		/// <summary>
+		/// Mapping to define which Allocation Types are available for Entity Type to be used on Entitlement
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntitlementEntityAllocationTypeMapping = 9704,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntitlementProduct = 6363,
+		
+		/// <summary>
+		/// Contains predefined customer support terms that can be used to created entitlements for customers.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntitlementTemplate = 9702,
+		
+		/// <summary>
+		/// Contains predefined support terms for a channel to create entitlements for customers.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntitlementTemplateChannel = 9703,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntitlementTemplateProduct = 4545,
+		
+		/// <summary>
+		/// Entity Routing Configuration
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Entity_10523 = 10523,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Entity_9800 = 9800,
+		
+		/// <summary>
+		/// This entity contains information about which entities are enabled for Azure Data Lake Services integration
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntityAnalyticsConfig = 430,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntityAttachment = 11135,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntityAttributePredictionRule = 11487,
+		
+		/// <summary>
+		/// Holds Entity Cluster configuration for entities
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntityClusterConfiguration = 11524,
+		
+		/// <summary>
+		/// Entity Delta Changes
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntityDeltaChange = 10738,
+		
+		/// <summary>
+		/// Entity derived insights
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntityDerivedInsights = 11489,
+		
+		/// <summary>
+		/// Store image configuration for each entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntityImageConfiguration = 432,
+		
+		/// <summary>
+		/// Metadata describing index of an entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntityIndex = 9815,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntityKey = 9810,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntityLinkChatConfiguration = 10539,
+		
+		/// <summary>
+		/// Represents a mapping between two related entities so that data from one record can be copied into the form of a new related record.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntityMap = 4600,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Entityrankingrule = 10093,
+		
+		/// <summary>
+		/// RecordFilter Object Type Codes
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Entityrecordfilter = 73,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Entityrefreshhistory = 10591,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntityRelationship = 9811,
+		
+		/// <summary>
+		/// Entity Routing Contexts
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntityRoutingContext = 10781,
+		
+		/// <summary>
+		/// This notes the entity (queue, agent etc.) mapped to the workstreams.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntityWorkstreamMap = 11318,
+		
+		/// <summary>
+		/// SCI environment level settings
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Environmentsettings = 11203,
+		
+		/// <summary>
+		/// Contains information about the settable variable: its type, default value, and etc.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EnvironmentVariableDefinition = 380,
+		
+		/// <summary>
+		/// Holds the value for the associated EnvironmentVariableDefinition entity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EnvironmentVariableValue = 381,
+		
+		/// <summary>
+		/// Table to store breadcrumb records of Event Expander pipeline.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EventExpanderBreadcrumb = 5006,
+		
+		/// <summary>
+		/// Metadata for Cxp Event Parameters
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Eventparametermetadata = 10919,
+		
+		/// <summary>
+		/// The mapping used to keep track of the IDs for items synced between CRM and Exchange.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ExchangeSyncIdMapping = 4120,
+		
+		/// <summary>
+		/// For internal use only. An event that will be expanded into jobs whose executions can proceed in the background.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ExpanderEvent = 4711,
+		
+		/// <summary>
+		/// Expired Process Business Process Flow
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ExpiredProcess = 955,
+		
+		/// <summary>
+		/// A Place holder entity to save excel file for each exportretaineddata custom api requests.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ExportedExcel = 10956,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Exportsolutionupload = 10270,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ExtendedUserSetting = 10604,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ExternalContext = 10508,
+		
+		/// <summary>
+		/// External CRM - Copilot for Sales
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ExternalCrm = 11413,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ExternalIdentity = 10184,
+		
+		/// <summary>
+		/// Information about external parties that need to access Dynamics 365 from external channels.For internal use only
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ExternalParty = 3008,
+		
+		/// <summary>
+		/// Information about external party items that need to access Dynamics 365 from external channels.For internal use only
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ExternalPartyItem = 9987,
+		
+		/// <summary>
+		/// External Record - Copilot for Sales
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ExternalRecord = 11414,
+		
+		/// <summary>
+		/// AISkills published from Fabric.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FabricAiskill = 11373,
+		
+		/// <summary>
+		/// Resource that can be scheduled.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FacilityEquipment = 4000,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FamilyMember = 10259,
+		
+		/// <summary>
+		/// Entity for favorite knowledge articles
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FavoriteKnowledgeArticle = 10955,
+		
+		/// <summary>
+		/// Activity that tracks call outcome and number of pages for a fax and optionally stores an electronic copy of the document.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Fax = 4204,
+		
+		/// <summary>
+		/// Landing area for Appointment (Bid Grid) uploads. These are then validated and converted to Contact (Officer) records.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FcoAppointment = 10255,
+		
+		/// <summary>
+		/// featurecontrolsetting
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Featurecontrolsetting = 10455,
+		
+		/// <summary>
+		/// FederatedKnowledgeConfigurations component
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Federatedknowledgeconfiguration = 11404,
+		
+		/// <summary>
+		/// FederatedKnowledgeEntityConfigurations component
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Federatedknowledgeentityconfiguration = 11405,
+		
+		/// <summary>
+		/// Records the Federated Knowledge MetadataRefresh job status
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Federatedknowledgemetadatarefresh = 11552,
+		
+		/// <summary>
+		/// Feedback and rating.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Feedback = 9958,
+		
+		/// <summary>
+		/// Group of privileges used to categorize users to provide appropriate access to secured columns.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FieldPermission = 1201,
+		
+		/// <summary>
+		/// Profile which defines access level for secured attributes
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FieldSecurityProfile = 1200,
+		
+		/// <summary>
+		/// Defines CRM security principals (users and teams) access rights to secured field for an entity instance.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FieldSharing = 44,
+		
+		/// <summary>
+		/// File Attachment
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Fileattachment = 55,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FileUpload = 11140,
+		
+		/// <summary>
+		/// File Upload Status Tracker
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FileUploadStatusTracker = 10739,
+		
+		/// <summary>
+		/// Contains user personalization information regarding which of the administrator’s selected views to display on a user’s personal wall.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Filter = 10109,
+		
+		/// <summary>
+		/// Template for a filter.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FilterTemplate = 30,
+		
+		/// <summary>
+		/// Container for Travel and Finance
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FinancialApplication = 10266,
+		
+		/// <summary>
+		/// Fixed monthly fiscal calendar of an organization. A span of time during which the financial activities of an organization are calculated.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FixedMonthlyFiscalCalendar = 2004,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FlaggedSpam = 10792,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FlowAggregation = 11527,
+		
+		/// <summary>
+		/// Microsoft Flow data attached to an approval.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FlowApproval = 11426,
+		
+		/// <summary>
+		/// Capacity assignment for usage in Power Automate
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FlowCapacityAssignment = 11320,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Flowcardtype = 10094,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FlowCredentialApplication = 11346,
+		
+		/// <summary>
+		/// Entity to store the events that happen during usage of Power Automate.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FlowEvent = 11208,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FlowLog = 11349,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FlowMachine = 10409,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FlowMachineGroup = 10410,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FlowMachineImage = 10729,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FlowMachineImageVersion = 10730,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FlowMachineNetwork = 10856,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FlowRun = 11299,
+		
+		/// <summary>
+		/// Entity to store the information that is generated when a Power Automate Desktop flow runs.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FlowSession = 4720,
+		
+		/// <summary>
+		/// Represents a user following the activity feed of an object.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Follow = 8003,
+		
+		/// <summary>
+		/// Stores sales predictions for your team or organization. For internal use.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Forecast_10086 = 10086,
+		
+		/// <summary>
+		/// Case, Conversation Volume Forecast analytics
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Forecast_10720 = 10720,
+		
+		/// <summary>
+		/// Forecast
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Forecast_10740 = 10740,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ForecastConfiguration = 10084,
+		
+		/// <summary>
+		/// Defines the parameters used for forecasting.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ForecastDefinition = 10085,
+		
+		/// <summary>
+		/// Forecasting Cache
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ForecastingCache = 10741,
+		
+		/// <summary>
+		/// Forecast Insights
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ForecastInsights = 10742,
+		
+		/// <summary>
+		/// Forecast Manual Adjustment History
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ForecastManualAdjustmentHistory = 10736,
+		
+		/// <summary>
+		/// Forecast Prediction Data
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ForecastPredictionData = 10743,
+		
+		/// <summary>
+		/// Forecast Prediction Status
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ForecastPredictionStatus = 10744,
+		
+		/// <summary>
+		/// Stores recalculation information for each recurrence of the forecast hierarchy. For internal use.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ForecastRecurrence_10087 = 10087,
+		
+		/// <summary>
+		/// Forecast Recurrence
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ForecastRecurrence_10746 = 10746,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ForecastSummaryAndSetting = 10721,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FormMapping = 11406,
+		
+		/// <summary>
+		/// Defines the flow logic of the form's user experience such as steps and conditional branching.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FormStep_10191 = 10191,
+		
+		/// <summary>
+		/// Defines the flow logic of the form's user experience such as steps and conditional branching.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FormStep_11235 = 11235,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Forum = 10649,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ForumAccessPermission = 10650,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ForumAlert = 10651,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ForumAnnouncement = 10652,
+		
+		/// <summary>
+		/// Command pattern entity that gets created by a plug-in upon creation of the adx_communityforumpost entity. The creation of this entity triggers a workflow that sends an email.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ForumNotification = 10655,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ForumPost = 10653,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ForumThread = 10654,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ForumThreadType = 10656,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Function = 11481,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FunctionalLocation = 10319,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FunctionalLocationType = 11379,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FunctionalLocationTypeTemplateAssociation = 11381,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Fxexpression = 11164,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Gdprdata = 10416,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		GeneralStyles = 10493,
+		
+		/// <summary>
+		/// Geo Location Providers
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		GeoLocationProvider = 10527,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		GitBranch = 11443,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		GitConfigurationRetrievalDataSource = 11444,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		GitOrganization = 11445,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		GitProject = 11446,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		GitRepository = 11447,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		GlobalSearchConfiguration = 54,
+		
+		/// <summary>
+		/// Target objective for a user or a team for a specified time period.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Goal = 9600,
+		
+		/// <summary>
+		/// Type of measurement for a goal, such as money amount or count.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		GoalMetric = 9603,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		GovernanceConfiguration = 11452,
+		
+		/// <summary>
+		/// Base entity for process Guided Service Case
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		GuidedServiceCase = 10292,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		HelpPage = 10022,
+		
+		/// <summary>
+		/// Organization-owned entity customizations including mapping Quick view form with Relationship Id
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		HierarchyRule = 8840,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		HierarchySecurityConfiguration = 9919,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Holidaywrapper = 9996,
+		
+		/// <summary>
+		/// Contains ICD related fields that will be generated and kept.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IcdExtension = 11319,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Icebreakersconfig = 10104,
+		
+		/// <summary>
+		/// An idea belonging to a portal Idea Forum.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Idea = 10661,
+		
+		/// <summary>
+		/// The root entity for portal Ideas.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IdeaForum = 10662,
+		
+		/// <summary>
+		/// Store configuration for each image attribute
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ImageAttributeConfiguration = 431,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ImageDescriptor = 1007,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Imagestyle = 10503,
+		
+		/// <summary>
+		/// Unprocessed data from imported files.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ImportData = 4413,
+		
+		/// <summary>
+		/// Mapping for entities in a data map.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ImportEntityMapping = 4428,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ImportJob = 9107,
+		
+		/// <summary>
+		/// Failure reason and other detailed information for a record that failed to import.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ImportLog = 4423,
+		
+		/// <summary>
+		/// File name of file used for import.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ImportSourceFile = 4412,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		InboxCardConfiguration = 11339,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		InboxConfiguration = 10702,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		InboxEntityConfiguration = 11340,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		InboxPersonalizedConfiguration = 11534,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IncidentKnowledgebaserecord = 9931,
+		
+		/// <summary>
+		/// Stores index attributes
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IndexAttribute = 9816,
+		
+		/// <summary>
+		/// Article indexed for search purposes.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IndexedArticle = 126,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Indexedtrait = 11567,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		InfobipChannelInstance = 10934,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		InfobipChannelInstanceAccount = 10478,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Insight = 10640,
+		
+		/// <summary>
+		/// Analytics and insights feature entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Insights = 10370,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		InsightsStoreDataSource = 10713,
+		
+		/// <summary>
+		/// Insights Store Virtual Entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		InsightsStoreVirtualEntity = 10714,
+		
+		/// <summary>
+		/// Base entity for process In store Excellence
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		InStoreExcellence = 10293,
+		
+		/// <summary>
+		/// Ingest and search files, documents, or articles from data sources outside of your current Dynamics 365 organization with a unified ranking.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IntegratedSearchProvider = 10482,
+		
+		/// <summary>
+		/// Contains integration status information.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IntegrationStatus = 3000,
+		
+		/// <summary>
+		/// Captures the unique natural language intent
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Intent = 11459,
+		
+		/// <summary>
+		/// Captures all possible attributes across all intents
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Intentattribute = 11460,
+		
+		/// <summary>
+		/// Associates the value of an intent attribute identified for a given case or conversation.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IntentattributeEntity = 11462,
+		
+		/// <summary>
+		/// Captures the attributes required to complete a given intent
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Intentattributeset = 11461,
+		
+		/// <summary>
+		/// Configuration that captures the fields needed for intent determination
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IntentConfig = 11463,
+		
+		/// <summary>
+		/// Associates an intent to any entity such as case, conversation to capture evolving intent.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Intententity = 11464,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IntentGroupCondition = 11467,
+		
+		/// <summary>
+		/// Captures Solutions for Intent Groups
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IntentSolutionMap = 11470,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		InteractionForEmail = 9986,
+		
+		/// <summary>
+		/// Storage of addresses for a user, business unit, or site.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		InternalAddress = 1003,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		InternalCatalogAssignment = 10305,
+		
+		/// <summary>
+		/// Inter Process Locks.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		InterProcessLock = 4011,
+		
+		/// <summary>
+		/// An invalid dependency in the CRM system.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		InvalidDependency = 7107,
+		
+		/// <summary>
+		/// Send invitations to existing contacts or email addresses and assign them to web roles upon redemption.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Invitation = 10142,
+		
+		/// <summary>
+		/// Holds information about the redemption of an invite.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		InviteRedemption = 10143,
+		
+		/// <summary>
+		/// Order that has been billed.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Invoice = 1090,
+		
+		/// <summary>
+		/// Line item in an invoice containing detailed billing information for a product.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		InvoiceProduct = 1091,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IotAlert = 10055,
+		
+		/// <summary>
+		/// Base entity for process IoT to Case Process
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IotAlertToCaseProcess = 10071,
+		
+		/// <summary>
+		/// Represents a connected device that can be registered with an IoT provider.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IotDevice = 10056,
+		
+		/// <summary>
+		/// Used to categorize IoT devices.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IotDeviceCategory = 10057,
+		
+		/// <summary>
+		/// Represents an outgoing message to a device connected to an IoT provider.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IotDeviceCommand = 10058,
+		
+		/// <summary>
+		/// Metadata for commands that a device or a device category supports.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IotDeviceCommandDefinition = 10059,
+		
+		/// <summary>
+		/// The name of the entity that holds the device data every time a device data pull occurs between Dynamics 365 and an IoT provider
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IotDeviceDataHistory = 10060,
+		
+		/// <summary>
+		/// Link entity between IoT Device Category and IoT Property Definition. This is used to model properties and tags for devices.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IotDeviceProperty = 10061,
+		
+		/// <summary>
+		/// Tracks registration activities on an IoT device.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IotDeviceRegistrationHistory = 10062,
+		
+		/// <summary>
+		/// IoT Device Visualization Configuration
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IotDeviceVisualizationConfiguration = 10069,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IotFieldMapping = 10070,
+		
+		/// <summary>
+		/// Defines a device property or a parameter that can be used for one or more command definitions.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IotPropertyDefinition = 10063,
+		
+		/// <summary>
+		/// The IoT Provider where a device is registered and through which all interactions with the device take place
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IotProvider = 10064,
+		
+		/// <summary>
+		/// An instance of an IoT Provider.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IotProviderInstance = 10065,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IotSettings = 10066,
+		
+		/// <summary>
+		/// An XML document used to configure client extension controls.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IsvConfig = 4705,
+		
+		/// <summary>
+		/// Use to link all child entities together for reporting purposes
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Journey = 10260,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KbEnrichment = 10363,
+		
+		/// <summary>
+		/// Contains data that refers to an Azure Key Vault containing credentials used to connect to secure web-hosted resources.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KeyVaultReference = 10403,
+		
+		/// <summary>
+		/// Keywords Description Suggestion settings entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KeywordsDescriptionSuggestionSetting = 10592,
+		
+		/// <summary>
+		/// Knowledge analytics
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeAnalytics = 10376,
+		
+		/// <summary>
+		/// Organizational knowledge for internal and external use.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeArticle = 9953,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeArticleAttachment = 10473,
+		
+		/// <summary>
+		/// Category for a Knowledge Article.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeArticleCategory = 9960,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeArticleImage = 10032,
+		
+		/// <summary>
+		/// Association between an knowledge article and incident.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeArticleIncident = 9954,
+		
+		/// <summary>
+		/// Allows you to select default language for knowledge authoring.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeArticleLanguageSetting = 10412,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeArticleSuggestion = 10364,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeArticleSuggestionDataSource = 10365,
+		
+		/// <summary>
+		/// Organizational Knowledge Article Template for Internal and external creation of Knowledge Articles.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeArticleTemplate = 10033,
+		
+		/// <summary>
+		/// No of times an article is viewed per day
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgearticleViews = 9955,
+		
+		/// <summary>
+		/// Knowledge asset configurations for data sources configured in knowledge hub.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeAssetConfiguration = 11374,
+		
+		/// <summary>
+		/// Metadata of knowledge base (KB) articles associated with Microsoft Dynamics 365 entities.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeBaseRecord = 9930,
+		
+		/// <summary>
+		/// Represents the possible settings used in Knowledge management
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeConfiguration = 10954,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeFederatedArticle = 10377,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeFederatedArticleIncident = 10378,
+		
+		/// <summary>
+		/// Tracking entity record used to trigger the harvesting process for knowledge articles
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeHarvestJobRecord = 11477,
+		
+		/// <summary>
+		/// Knowledge Interaction Insight
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeInteractionInsight = 10276,
+		
+		/// <summary>
+		/// Setup knowledge management for your organization.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeManagementSetting = 10637,
+		
+		/// <summary>
+		/// Allows users to personalize their knowledge search filters and knowledge authoring language.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgePersonalization = 10411,
+		
+		/// <summary>
+		/// Allows you to configure and manage filter settings.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeSearchFilter = 10414,
+		
+		/// <summary>
+		/// Knowledge Search Insight
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeSearchInsight = 10277,
+		
+		/// <summary>
+		/// Configuration for automatic suggestion of knowledge articles using text analytics and search
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeSearchModel = 9947,
+		
+		/// <summary>
+		/// Allows you to configure and manage personal filter settings.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KnowledgeSearchPersonalFilterConfig = 10413,
+		
+		/// <summary>
+		/// Primary entity for a kpi event
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KpiEventData = 10529,
+		
+		/// <summary>
+		/// Primary entity for defining a KPI event
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		KpiEventDefinition = 10530,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Language_10793 = 10793,
+		
+		/// <summary>
+		/// Language
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Language_9957 = 9957,
+		
+		/// <summary>
+		/// This entity is used to identify the language preference of end customers. Users and user groups are decorated with language, and matched with conversations to route them. Users and user groups decoration also supports hierarchy
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LanguageHierarchy = 11513,
+		
+		/// <summary>
+		/// Container for language provisioning checkpoint states
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LanguageProvisioningState = 9875,
+		
+		/// <summary>
+		/// Last Agent Table, table used to store the mapping between the system user and contact/account
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LastAgent = 11546,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LayoutStyle = 10499,
+		
+		/// <summary>
+		/// Prospect or potential sales opportunity. Leads are converted into accounts, contacts, or opportunities when they are qualified. Otherwise, they are deleted or archived.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Lead = 4,
+		
+		/// <summary>
+		/// Address information for a lead.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LeadAddress = 1017,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Leadcompetitors = 24,
+		
+		/// <summary>
+		/// Lead Hygiene Setting
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LeadHygieneSetting = 10677,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LeadIntelligenceInsight = 11522,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LeadIntelligenceInsightEntityLink = 11523,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LeadKpiItem = 11107,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Leadmodelconfig = 10632,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Leadproduct = 27,
+		
+		/// <summary>
+		/// Lead To Opportunity Sales Process Business Process Flow 
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LeadToOpportunitySalesProcess = 954,
+		
+		/// <summary>
+		/// Activity that tracks the delivery of a letter. The activity can contain the electronic copy of the letter.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Letter = 4207,
+		
+		/// <summary>
+		/// Stores information about a Microsoft CRM license.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		License = 2027,
+		
+		/// <summary>
+		/// A like on an activity feed post.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Like = 8006,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LineOfBusiness = 11465,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LinkedEntityAttributeValidity = 10855,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LinkMobilityChannelInstance = 10922,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LinkMobilityChannelInstanceAccount = 10515,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		List_10187 = 10187,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		List_11221 = 11221,
+		
+		/// <summary>
+		/// System operation used to perform lengthy and asynchronous list operations on large data sets, such as adding members to a list.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ListOperation = 10309,
+		
+		/// <summary>
+		/// In a data map, maps list values from the source file to Microsoft Dynamics 365.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ListValueMapping = 4418,
+		
+		/// <summary>
+		/// Live Conversation Counter Condition
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LiveConversationCounterCondition = 11569,
+		
+		/// <summary>
+		/// This entity captures all events corresponding to a live work item.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LiveWorkItemEvent = 10785,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LiveWorkItemParticipantDeprecated = 10492,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LobBackfillStatus = 11504,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Localconfigstore = 9201,
+		
+		/// <summary>
+		/// Entity used for data localization on CRM org.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Localization = 10798,
+		
+		/// <summary>
+		/// Captures the relationship between a Property Template, which in turns captures a set of Properties, and a Functional Location.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LocationTemplateAssociation = 11380,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LockStatus = 11388,
+		
+		/// <summary>
+		/// In a data map, maps a lookup attribute in a source file to Microsoft Dynamics 365.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LookupMapping = 4419,
+		
+		/// <summary>
+		/// Attributes for macro action template
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MacroActionTemplate = 10349,
+		
+		/// <summary>
+		/// Attributes for macro connectors
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MacroConnector = 10351,
+		
+		/// <summary>
+		/// Stores history of macro runs
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MacroRunHistory = 10352,
+		
+		/// <summary>
+		/// Macro solution related configurations
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MacroSolutionConfiguration = 10350,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Mailbox = 9606,
+		
+		/// <summary>
+		/// Stores data about what folders for a mailbox are auto tracked
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MailboxAutoTrackingFolder = 9608,
+		
+		/// <summary>
+		/// Stores data regarding Mailbox processing cycles
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MailboxStatistics = 9607,
+		
+		/// <summary>
+		/// Stores data about what categories for a mailbox are tracked
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MailboxTrackingCategory = 9609,
+		
+		/// <summary>
+		/// Template for a mail merge document that contains the standard attributes of that document.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MailMergeTemplate = 9106,
+		
+		/// <summary>
+		/// This fewshot entity will only be updated during solution installation.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Mainfewshot = 11289,
+		
+		/// <summary>
+		/// This fewshot is updated by maker for testing the queries and by the NL2SQ with the results
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Makerfewshot = 11290,
+		
+		/// <summary>
+		/// Contains data to represent an Azure Active Directory Application used to connect to secure web-hosted resources.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ManagedIdentity = 10404,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ManagedProperty = 9812,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MarketingFeatureConfiguration = 10921,
+		
+		/// <summary>
+		/// Setting to allow customized form for In-app Marketing Form
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MarketingFormDisplayAttributes = 10445,
+		
+		/// <summary>
+		/// Group of existing or potential customers created for a marketing campaign or other sales purposes.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MarketingList = 4300,
+		
+		/// <summary>
+		/// Base entity for process Marketing List Builder
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MarketingListBuilder = 10294,
+		
+		/// <summary>
+		/// Item in a marketing list.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MarketingListMember = 4301,
+		
+		/// <summary>
+		/// Masking Rules to apply to chat messages.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MaskingRule_10787 = 10787,
+		
+		/// <summary>
+		/// Masking Rules to apply to fields.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MaskingRule_74 = 74,
+		
+		/// <summary>
+		/// Defines master routing details for the entity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MasterEntityRoutingConfiguration = 10764,
+		
+		/// <summary>
+		/// This entity stores custom matching criteria master values
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MatchingCriteria = 11549,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MedicalRequirement = 10261,
+		
+		/// <summary>
+		/// Stores the system messages sent to the message receiver for various events.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Message = 10807,
+		
+		/// <summary>
+		/// Metadata Difference
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MetadataDifference = 4231,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MetadataEntityRelationship = 10926,
+		
+		/// <summary>
+		/// Holds  metadata values of tables for retention
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Metadataforarchival = 11123,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MetadataItem = 10927,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MetadataStoreState = 10928,
+		
+		/// <summary>
+		/// Virtual entity that represents Microsoft Entra ID
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MicrosoftEntraId = 10636,
+		
+		/// <summary>
+		/// For internal use only. Entity which stores association data of account with contacts present in the orgchart hierarchy of the account
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MicrosoftOrgchartNodeEntity = 11147,
+		
+		/// <summary>
+		/// For internal use only. Entity which stores association data of Dynamics 365 records with Microsoft Teams chat
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MicrosoftTeamsChatAssociationEntity = 10464,
+		
+		/// <summary>
+		/// For internal use only
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MicrosoftTeamsChatSuggestion = 10465,
+		
+		/// <summary>
+		/// Entity which stores collaboration data of Dynamics 365 with Microsoft Teams
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MicrosoftTeamsCollaborationEntity = 10123,
+		
+		/// <summary>
+		/// Entity which stores collaboration data of Dynamics 365 with Microsoft Teams
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MicrosoftTeamsGraphResourceEntity = 10120,
+		
+		/// <summary>
+		/// Entity that tracks the migration process of legacy to modern SLA/ARC items
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MigrationTracker = 10315,
+		
+		/// <summary>
+		/// Mobile App
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MobileApp = 11144,
+		
+		/// <summary>
+		/// Information to administer and manage the data available to mobile devices in offline mode.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MobileOfflineProfile = 9866,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Mobileofflineprofileextension = 10913,
+		
+		/// <summary>
+		/// Information on entity availability to mobile devices in offline mode for a mobile offline profile item.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MobileOfflineProfileItem = 9867,
+		
+		/// <summary>
+		/// Information on relationships to be used to follow related entity's records for mobile offline profile item.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MobileOfflineProfileItemAssociation = 9868,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Mobileofflineprofileitemfilter = 10690,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MocksmsproviderChannelInstance = 11090,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MocksmsproviderChannelInstanceAccount = 11091,
+		
+		/// <summary>
+		/// Model Customization analytics
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ModelCustomizationAnalytics = 11473,
+		
+		/// <summary>
+		/// A role-based, modular business app that provides task-based functionality for a particular area of work.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ModelDrivenApp = 9006,
+		
+		/// <summary>
+		/// Contains Model-Driven App Component Node Information
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ModelDrivenAppComponentNode = 10015,
+		
+		/// <summary>
+		/// Contains Model-Driven App Component Node's Edge Information.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ModelDrivenAppComponentNodeSEdge = 10014,
+		
+		/// <summary>
+		/// Associates a model-driven app with its components.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ModelDrivenAppElement = 10013,
+		
+		/// <summary>
+		/// Holds the value for the associated App Setting Definition.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ModelDrivenAppSetting = 10016,
+		
+		/// <summary>
+		/// Holds the value for the associated App User Setting Definition.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ModelDrivenAppUserSetting = 10398,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Modelpreviewstatus = 10633,
+		
+		/// <summary>
+		/// Indicates model's training details
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ModelTrainingDetails = 10840,
+		
+		/// <summary>
+		/// Result of execution of a MEF model
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ModuleRunDetail = 11296,
+		
+		/// <summary>
+		/// Monthly fiscal calendar of an organization. A span of time during which the financial activities of an organization are calculated.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MonthlyFiscalCalendar = 2003,
+		
+		/// <summary>
+		/// Most Contacted
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MostContacted = 11108,
+		
+		/// <summary>
+		/// Most Contacted By
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MostContactedBy = 11109,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynDefextendedchannelinstance = 10909,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynDefextendedchannelinstanceaccount = 10910,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynHistoricalcaseharvestbatch = 11475,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynHistoricalcaseharvestrun = 11476,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynIntentfamilyHarvestingconfiguration = 11492,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynIntentfeatureConfiguration = 11466,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynIntentharvestingBatchjobstatus = 11468,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynIntentharvestingBatchjobstatusdetail = 11493,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynIntentharvestingProvisioningStatus = 11469,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynIntentsolutionMappingconfiguration = 11471,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynmktExperimentv2 = 11092,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynMsteamssetting = 10121,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynMsteamssettingsv2 = 10122,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynRawinsight = 11490,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynRawinsightentitylink = 11491,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynRelationshipinsightsunifiedconfig = 10088,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynSurveyconfig = 11458,
+		
+		/// <summary>
+		/// Entity level settings for Copilot for Sales
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynVivaentitysetting = 10901,
+		
+		/// <summary>
+		/// Org level extension credential for Viva apps
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynVivaorgextensioncred = 11258,
+		
+		/// <summary>
+		/// Org level settings for Copilot for Sales app
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynVivaorgsetting = 10902,
+		
+		/// <summary>
+		/// User level settings for Copilot for Sales
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsdynVivausersetting = 10903,
+		
+		/// <summary>
+		/// For internal use only. The mapping between Ms Graph Resources and Subscriptions.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MsGraphResourceToSubscription = 10752,
+		
+		/// <summary>
+		/// Base entity for process Multichannel Sales Campaign
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MultichannelSalesCampaign = 10295,
+		
+		/// <summary>
+		/// Multi Entity Search.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Multientitysearch = 9910,
+		
+		/// <summary>
+		/// Multi Select Option Value
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MultiSelectOptionValue = 9912,
+		
+		/// <summary>
+		/// Defines the necessary properties and relationships to the other key entities in order to control the initialization of the form within a web portal.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MultistepForm_10188 = 10188,
+		
+		/// <summary>
+		/// Defines the necessary properties and relationships to the other key entities in order to control the initialization of the form within a web portal.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MultistepForm_11233 = 11233,
+		
+		/// <summary>
+		/// Defines the additional behavior modification logic to augment or override the functionality of form fields that is not possible with Dynamics 365 entity and form metadata.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MultistepFormMetadata_10189 = 10189,
+		
+		/// <summary>
+		/// Defines the additional behavior modification logic to augment or override the functionality of form fields that is not possible with Dynamics 365 entity and form metadata.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MultistepFormMetadata_11234 = 11234,
+		
+		/// <summary>
+		/// Navigation Setting: A setting page or group of pages available for configuration within an app. A record representing a group of pages is regarded as the parent navigation setting of one or more other records. For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		NavigationSetting = 9900,
+		
+		/// <summary>
+		/// New Process Business Process Flow
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		NewProcess = 950,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		NextAction = 11410,
+		
+		/// <summary>
+		/// Org registration status, AllowedEntity list, and registration error message.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Nl2sqRegistrationInformation = 5004,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		NonrelationalDataSource = 10036,
+		
+		/// <summary>
+		/// Note that is attached to one or more objects, including other notes.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Note = 5,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		NotesAnalysisConfig = 10103,
+		
+		/// <summary>
+		/// Notification to be provided to a user.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Notification_10463 = 10463,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Notification_4110 = 4110,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		NotificationField = 10329,
+		
+		/// <summary>
+		/// Defines a field (key, templateValue) that needs to be populated in the notification body.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		NotificationFieldDeprecated = 10483,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		NotificationTemplate = 10330,
+		
+		/// <summary>
+		/// Template for a notification
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		NotificationTemplateDeprecated = 10506,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OcDispositionCode = 11540,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OcPaymentProfile = 10799,
+		
+		/// <summary>
+		/// Data sources used by the OData v4 data provider to access data from an external web service.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OdataV4DataSource = 10018,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Odosfeaturemetadata = 11256,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Odosmetadata = 11257,
+		
+		/// <summary>
+		/// Used to store Office Documents in database in binary format.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OfficeDocument = 4490,
+		
+		/// <summary>
+		/// Office Graph Documents Description
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OfficeGraphDocument = 9950,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OfflineCommandDefinition = 9870,
+		
+		/// <summary>
+		/// Entity for creating privilege for agent assignment private custom apis. The privileges for this entity will be used to restrict custom api access only for FPA app user.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OmnichannelAgentAssignmentCustomApiPrivilege = 11348,
+		
+		/// <summary>
+		/// Entity for creating privilege for custom apis. The privileges for this entity will be used to restrict custom api access.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OmnichannelChannelApiConversationPrivilege = 10789,
+		
+		/// <summary>
+		/// Entity for creating privilege for custom apis. The privileges for this entity will be used to restrict custom api access.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OmnichannelChannelApiMessagePrivilege = 10790,
+		
+		/// <summary>
+		/// Configuration for Omnichannel
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OmnichannelConfiguration = 10809,
+		
+		/// <summary>
+		/// Omnichannel historical analytics
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OmnichannelHistoricalAnalytics = 11327,
+		
+		/// <summary>
+		/// Stores personalization information of Omnichannel Agent/Supervisor dashboards
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OmnichannelPersonalization = 10501,
+		
+		/// <summary>
+		/// Stores omni-channel work items of a specific issue type or a specific team
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OmnichannelQueueDeprecated = 10810,
+		
+		/// <summary>
+		/// Omnichannel Realtime analytics
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OmnichannelRealtimeAnalytics = 11329,
+		
+		/// <summary>
+		/// Entity to store Requests across Omnichannel.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OmnichannelRequest = 10524,
+		
+		/// <summary>
+		/// Config for entities to be synced to Omnichannel
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OmnichannelSyncConfig = 10811,
+		
+		/// <summary>
+		/// Omnichannel voice historical analytics (preview) (Deprecated)
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OmnichannelVoiceHistoricalAnalyticsPreviewDeprecated = 11328,
+		
+		/// <summary>
+		/// Tracks the interactions between the agents and customer
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OngoingConversationDeprecated = 10784,
+		
+		/// <summary>
+		/// Stores all the operating hours that are configured for an organization.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OperatingHour = 10512,
+		
+		/// <summary>
+		/// Potential revenue-generating event, or sale to an account, which needs to be tracked through a sales process to completion.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Opportunity = 3,
+		
+		/// <summary>
+		/// Activity that is created automatically when an opportunity is closed, containing information such as the description of the closing and actual revenue.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OpportunityClose = 4208,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Opportunitycompetitors = 25,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OpportunityKpiItem = 11110,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Opportunitymodelconfig = 10631,
+		
+		/// <summary>
+		/// Association between an opportunity and a product.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OpportunityProduct = 1083,
+		
+		/// <summary>
+		/// Relationship between an account or contact and an opportunity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OpportunityRelationship = 4503,
+		
+		/// <summary>
+		/// Opportunity Sales Process Business Process Flow 
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OpportunitySalesProcess = 953,
+		
+		/// <summary>
+		/// Base entity for process Opportunity to Invoice (B2B)
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OpportunityToInvoiceB2b = 10296,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Optionset = 9809,
+		
+		/// <summary>
+		/// Option Set Value
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OptionSetValue = 9817,
+		
+		/// <summary>
+		/// Quote that has been accepted.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Order = 1088,
+		
+		/// <summary>
+		/// Activity generated automatically when an order is closed.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OrderClose = 4209,
+		
+		/// <summary>
+		/// Line item in a sales order.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OrderProduct = 1089,
+		
+		/// <summary>
+		/// Business that represents a customer or potential customer. The company that is billed in business transactions.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Organisation = 1,
+		
+		/// <summary>
+		/// Top level of the Microsoft Dynamics 365 business hierarchy. The organization can be a specific business, holding company, or corporation.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Organization = 1019,
+		
+		/// <summary>
+		/// Information regarding data synchronization state
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Organizationdatasyncfnostate = 11097,
+		
+		/// <summary>
+		/// Information regarding data synchronization state
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Organizationdatasyncstate = 10689,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Organizationdatasyncsubscription = 10396,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Organizationdatasyncsubscriptionentity = 10397,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Organizationdatasyncsubscriptionfnotable = 11096,
+		
+		/// <summary>
+		/// Stores data regarding organization insights metric
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OrganizationInsightsMetric = 9699,
+		
+		/// <summary>
+		/// Stores data regarding organization insights notification
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OrganizationInsightsNotification = 9690,
+		
+		/// <summary>
+		/// Holds the value for the associated Organization Setting Definition.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OrganizationSetting = 10395,
+		
+		/// <summary>
+		/// Statistics measuring the organization's usage of the Microsoft Dynamics 365 system over the past 24 hours.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OrganizationStatistic = 4708,
+		
+		/// <summary>
+		/// Entity customizations including form layout and icons. Includes current and past versions.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OrganizationUi = 1021,
+		
+		/// <summary>
+		/// Org level settings for Sales Copilot apps
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OrgLevelSettingsForSalesCopilotApps = 11205,
+		
+		/// <summary>
+		/// This entity maps entities created by ARC to the queue that was being procesed at that time
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OriginatingQueueMapping = 11295,
+		
+		/// <summary>
+		/// Overflow action configurations.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OverflowActionConfig = 10769,
+		
+		/// <summary>
+		/// Group of undeleted system users and undeleted teams. Owners can be used to control access to specific objects.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Owner = 7,
+		
+		/// <summary>
+		/// In a data map, maps ownership data from the source file to Microsoft Dynamics 365.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OwnerMapping = 4420,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Package = 10274,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PackageHistory = 11338,
+		
+		/// <summary>
+		/// Manages submissions to the Catalog and provisioning
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PackageSubmissionStore = 11162,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PageAlert = 10144,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PageNotification = 10145,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PageTag = 10146,
+		
+		/// <summary>
+		/// URL of the .aspx page used to create new webpages.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PageTemplate_10125 = 10125,
+		
+		/// <summary>
+		/// URL of the .aspx page used to create new webpages.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PageTemplate_11223 = 11223,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PaneTabConfiguration = 10341,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PaneToolConfiguration = 10342,
+		
+		/// <summary>
+		/// Macro parameter definitions
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ParameterDefinition = 10353,
+		
+		/// <summary>
+		/// Template parameter values for a given application template
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ParameterDeprecated = 10940,
+		
+		/// <summary>
+		/// Partner applications registered for this organization
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PartnerApplication = 1095,
+		
+		/// <summary>
+		/// Used to link all passport applications
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PassportProcess = 10262,
+		
+		/// <summary>
+		/// PDF Settings to save enabled pdf entities
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PdfSetting = 10269,
+		
+		/// <summary>
+		/// Used to store Personal Document Templates in database in binary format.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PersonalDocumentTemplate = 9941,
+		
+		/// <summary>
+		/// Omnichannel agents's personal quick replies
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PersonalQuickReply = 10812,
+		
+		/// <summary>
+		/// Entity to store personalized sound records for the users.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PersonalSoundSetting = 10813,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PersonaSecurityRoleMapping = 10814,
+		
+		/// <summary>
+		/// Activity to track a telephone call.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PhoneCall = 4210,
+		
+		/// <summary>
+		/// Base entity for process Phone Sales Campaign
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PhoneSalesCampaign = 10297,
+		
+		/// <summary>
+		/// Phone To Case Process Business Process Flow
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PhoneToCaseProcess = 952,
+		
+		/// <summary>
+		/// Table that stores plan records.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Plan = 11505,
+		
+		/// <summary>
+		/// Table that stores the artifact records for a plan.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PlanArtifact = 11506,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PlanAttachment = 11507,
+		
+		/// <summary>
+		/// For internal use only. The Business Scenario record to be created in Planner.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PlannerBusinessScenario = 11350,
+		
+		/// <summary>
+		/// The Planner Sync Action to be executed.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PlannerSyncAction = 11351,
+		
+		/// <summary>
+		/// Actual instance of a playbook template once it is launched.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Playbook = 10080,
+		
+		/// <summary>
+		/// Stores the details of the activities to be created when a playbook is launched.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PlaybookActivity = 10077,
+		
+		/// <summary>
+		/// Stores attribute names and values of the playbook activity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PlaybookActivityAttribute = 10078,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PlaybookCallableContext = 10076,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PlugIn = 11454,
+		
+		/// <summary>
+		/// Assembly that contains one or more plug-in types.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PlugInAssembly = 4605,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PluginPackage = 10456,
+		
+		/// <summary>
+		/// Trace and exception information generated by plug-ins and custom workflow activities.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PlugInTraceLog = 4619,
+		
+		/// <summary>
+		/// Type that inherits from the IPlugin interface and is contained within a plug-in assembly.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PlugInType = 4602,
+		
+		/// <summary>
+		/// Plug-in type statistic.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PlugInTypeStatistic = 4603,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PmAnalysisHistory = 10709,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PmBusinessRuleAutomationConfig = 11207,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PmCalendar = 10857,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PmCalendarVersion = 10858,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PmInferredTask = 10458,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PmProcessExtendedMetadataVersion = 10859,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PmProcessTemplate = 10935,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PmProcessUserSettings = 10751,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PmProcessVersion = 10860,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PmRecording = 10459,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PmSimulation = 11370,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PmTemplate = 10710,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PmView = 10861,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Poll = 10147,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PollOption = 10148,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PollPlacement_10149 = 10149,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PollPlacement_11224 = 11224,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PollSubmission = 10150,
+		
+		/// <summary>
+		/// An activity which is used to share information between the user and the customer on the portal.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PortalComment = 10192,
+		
+		/// <summary>
+		/// Lists the languages supported by the Portal
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PortalLanguage = 10151,
+		
+		/// <summary>
+		/// Position of a user in the hierarchy
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Position = 50,
+		
+		/// <summary>
+		/// Used for the move of posessions
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PossessionsMove = 10263,
+		
+		/// <summary>
+		/// An activity feed post.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Post = 8000,
+		
+		/// <summary>
+		/// Enable or disable entities for Activity Feeds and Yammer collaboration.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PostConfiguration = 10106,
+		
+		/// <summary>
+		/// Represents which object an activity feed post is regarding. For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PostRegarding = 8002,
+		
+		/// <summary>
+		/// Represents the objects with which an activity feed post is associated. For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PostRole = 8001,
+		
+		/// <summary>
+		/// Enable or disable system post rules for an entity for Activity Feeds and Yammer.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PostRuleConfiguration = 10107,
+		
+		/// <summary>
+		/// Stores the Power BI configurations for supervisor experience
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PowerBiConfiguration = 10521,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PowerBiDataset = 10892,
+		
+		/// <summary>
+		/// PowerBI Dataset appendix entity - for unmanaged technical attributes
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Powerbidatasetapdx = 11182,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PowerBiMashupParameter = 10893,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PowerBiReport = 10894,
+		
+		/// <summary>
+		/// PowerBI Report appendix entity for unmanaged technical attributes
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Powerbireportapdx = 11183,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Powerfxrule = 10867,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PowerPagesCoreEntityDs = 11225,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PowerPagesLog = 11369,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Powerpagesmanagedidentity = 11441,
+		
+		/// <summary>
+		/// Power Pages Scan Report
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PowerPagesScanReport = 11368,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PowerPagesSiteAiFeedback = 11442,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PowerPagesSitePublished = 11212,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PredefinedPlaceholder = 10925,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PredictionComputationOperation = 11148,
+		
+		/// <summary>
+		/// Stores metadata about predictive models
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PredictionModelStatus = 11149,
+		
+		/// <summary>
+		/// Contains meta-data about the scheduled operations.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PredictionScheduledOperation = 11150,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PredictiveModelScore = 10629,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PredictiveScore = 10630,
+		
+		/// <summary>
+		/// Internal entity used to store sync status for predictive scoring core entities.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PredictiveScoringSyncStatus = 11300,
+		
+		/// <summary>
+		/// Preferred Agent Table, table used to store the mapping between the system user and contact/account
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PreferredAgent = 10507,
+		
+		/// <summary>
+		/// Used for storing the table used to identify customer and the corresponding associated table
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PreferredAgentCustomerIdentity = 10770,
+		
+		/// <summary>
+		/// Preferred Agent Routed table used to store information for routed table name and customer identifying column on the table
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PreferredAgentRoutedEntity = 10771,
+		
+		/// <summary>
+		/// Stores presence status information
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Presence = 10815,
+		
+		/// <summary>
+		/// Entity that defines pricing levels.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PriceList = 1022,
+		
+		/// <summary>
+		/// Information about how to price a product in the specified price level, including pricing method, rounding option, and discount type based on a specified product unit.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PriceListItem = 1026,
+		
+		/// <summary>
+		/// Internal authorization table to track user authorization changes
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Principalentitybusinessunitmap = 10461,
+		
+		/// <summary>
+		/// Maps security principals (users and teams) to sync attribute mappings.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PrincipalSyncAttributeMap = 1404,
+		
+		/// <summary>
+		/// Permission to perform an action in Microsoft CRM. The platform checks for the privilege and rejects the attempt if the user does not hold the privilege.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Privilege = 1023,
+		
+		/// <summary>
+		/// Holds information about privilege checks for the user who started (created) a privilege checker tool run (Privilege Checker Run's child entity)
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PrivilegeCheckerLog = 76,
+		
+		/// <summary>
+		/// Entity to keep track of privilege checker tool runs. Parent entity of privilege checker log.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PrivilegeCheckerRun = 75,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PrivilegeObjectTypeCode = 31,
+		
+		/// <summary>
+		/// Privileges Removal Setting
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PrivilegesRemovalSetting = 103,
+		
+		/// <summary>
+		/// Set of logical rules that define the steps necessary to automate a specific business process, task, or set of actions to be performed.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Process = 4703,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ProcessConfiguration = 9650,
+		
+		/// <summary>
+		/// Dependencies for a process.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ProcessDependency = 4704,
+		
+		/// <summary>
+		/// Log used to track process execution.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ProcessLog = 4706,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ProcessorRegistration = 11501,
+		
+		/// <summary>
+		/// Information that is generated when a dialog is run. Every time that you run a dialog, a dialog session is created.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ProcessSession = 4710,
+		
+		/// <summary>
+		/// Stage associated with a process.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ProcessStage = 4724,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Processstageparameter = 10019,
+		
+		/// <summary>
+		/// Trigger that invoke a rule.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ProcessTrigger = 4712,
+		
+		/// <summary>
+		/// Information about products and their pricing information.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Product = 1024,
+		
+		/// <summary>
+		/// Instance of a product added to a bundle or kit.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ProductAssociation = 1025,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ProductivityPaneConfiguration = 10340,
+		
+		/// <summary>
+		/// Product map between other entities and product
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ProductMap = 11553,
+		
+		/// <summary>
+		/// Information about the selling relationship between two products, including the relationship type, such as up-sell, cross-sell, substitute, or accessory.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ProductRelationship = 1028,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Productsalesliterature = 21,
+		
+		/// <summary>
+		/// Contains user profile images that are stored as attachments and displayed in posts.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ProfileAlbum = 10105,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ProjectWizard = 11392,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ProjectWizardMaterial = 11393,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ProjectWizardResource = 11399,
+		
+		/// <summary>
+		/// Information about a product property.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Property = 1048,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PropertyAssetAssociation = 10321,
+		
+		/// <summary>
+		/// Association of a property definition with another entity in the system.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PropertyAssociation = 1235,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PropertyDefinition = 10320,
+		
+		/// <summary>
+		/// Instance of a property with its value.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PropertyInstance = 1333,
+		
+		/// <summary>
+		/// Captures the relationship between a Property and a Functional Location.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PropertyLocationAssociation = 11382,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PropertyLog = 10322,
+		
+		/// <summary>
+		/// Item with a name and value in a property option set type.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PropertyOptionSetItem = 1049,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PropertyTemplateAssociation = 10323,
+		
+		/// <summary>
+		/// A list of third-party providers that bring capabilities into the application. 
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Provider = 10816,
+		
+		/// <summary>
+		/// Provisioning state
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ProvisioningState = 10776,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Provisionlanguageforuser = 10301,
+		
+		/// <summary>
+		/// A publisher of a CRM solution.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Publisher = 7101,
+		
+		/// <summary>
+		/// Address and shipping information. Used to store additional addresses for a publisher.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PublisherAddress = 7102,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PublishingState_10152 = 10152,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PublishingState_11226 = 11226,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PublishingStateTransitionRule_10153 = 10153,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PublishingStateTransitionRule_11227 = 11227,
+		
+		/// <summary>
+		/// Question and Answers entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Qna = 11508,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		QrCodeStyle = 10494,
+		
+		/// <summary>
+		/// Quarterly fiscal calendar of an organization. A span of time during which the financial activities of an organization are calculated.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		QuarterlyFiscalCalendar = 2002,
+		
+		/// <summary>
+		/// A list of records that require action, such as accounts, activities, and cases.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Queue = 2020,
+		
+		/// <summary>
+		/// A specific item in a queue, such as a case record or an activity record.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		QueueItem = 2029,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Queueitemcount = 2023,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Queuemembercount = 2024,
+		
+		/// <summary>
+		/// System operation used to perform lengthy and asynchronous operations on large data sets, such as distributing a campaign activity or quick campaign.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		QuickCampaign = 4406,
+		
+		/// <summary>
+		/// Stores the quick replies that agents can use in the conversation control while interacting with the customers
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		QuickReply = 10780,
+		
+		/// <summary>
+		/// Formal offer for products and/or services, proposed at specific prices and related payment terms, which is sent to a prospective customer.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Quote = 1084,
+		
+		/// <summary>
+		/// Activity generated when a quote is closed.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		QuoteClose = 4211,
+		
+		/// <summary>
+		/// Product line item in a quote. The details include such information as product ID, description, quantity, and cost.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		QuoteProduct = 1085,
+		
+		/// <summary>
+		/// Represents a model to evaluate skills or other related entities.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RatingModel = 1144,
+		
+		/// <summary>
+		/// A unique value associated with a rating model that allows providing a user friendly rating value.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RatingValue = 1142,
+		
+		/// <summary>
+		/// Keeps track of the records read by an user in the system
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ReadTracker = 11132,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ReadTrackingEnabledInformation = 11133,
+		
+		/// <summary>
+		/// Real-time analytics for record routing
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RealTimeAnalyticsForRecordRouting = 11474,
+		
+		/// <summary>
+		/// Stores meta data information for real time scoring.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RealTimeScoring = 10481,
+		
+		/// <summary>
+		/// Stores metadata for real time scoring job.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RealTimeScoringOperation = 11151,
+		
+		/// <summary>
+		/// Most recently used data table.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RecentlyUsed = 5000,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RecomputeTracker = 10745,
+		
+		/// <summary>
+		/// Table level details of the data lake reconciliation process. For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Reconciliationentityinfo = 11124,
+		
+		/// <summary>
+		/// Step level details of the data lake reconciliation process. For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Reconciliationentitystepinfo = 11261,
+		
+		/// <summary>
+		/// Information about data lake reconciliation operation. For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Reconciliationinfo = 11125,
+		
+		/// <summary>
+		/// Defines the settings for automatic record creation.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RecordCreationAndUpdateRule = 9300,
+		
+		/// <summary>
+		/// Defines the individual conditions required for creating records automatically.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RecordCreationAndUpdateRuleItem = 9301,
+		
+		/// <summary>
+		/// Record Access Filter
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RecordFilter = 72,
+		
+		/// <summary>
+		/// Records the audio/video session
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Recording = 10800,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RecordingDeprecated = 10628,
+		
+		/// <summary>
+		/// Recurrence Rule represents the pattern of incidence of recurring entities.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RecurrenceRule = 4250,
+		
+		/// <summary>
+		/// The Master appointment of a recurring appointment series.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RecurringAppointment = 4251,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RecurringSalesAction = 10733,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RecurringSalesActionV2 = 11330,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Redirect_10154 = 10154,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Redirect_11228 = 11228,
+		
+		/// <summary>
+		/// This entity is used to identify the region of end customers. Users and user groups are decorated with region, and matched with conversations to route them. Users and user groups decoration also supports hierarchy. 
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Region = 11514,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RelationshipAnalyticsConfig = 11101,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RelationshipAnalyticsMetadata = 11185,
+		
+		/// <summary>
+		/// Stores relationship attributes mapping for Multi-predicate relationship
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RelationshipAttribute = 9814,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RelationshipEntity = 9813,
+		
+		/// <summary>
+		/// Relationship between an account or contact and an opportunity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RelationshipRole = 4500,
+		
+		/// <summary>
+		/// Mapping of the primary associated objects between which the relationship role is valid.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RelationshipRoleMap = 4501,
+		
+		/// <summary>
+		/// Entity to hold replication backlog tasks. For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ReplicationBacklog = 1140,
+		
+		/// <summary>
+		/// Data summary in an easy-to-read layout.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Report = 9100,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ReportBookmark = 10865,
+		
+		/// <summary>
+		/// Links and dependencies between reports. A report may drill through to another report, or it may have another report as a sub-report.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ReportLink = 9104,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ReportParameter = 11407,
+		
+		/// <summary>
+		/// Categories related to a report. A report can be related to multiple categories.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ReportRelatedCategory = 9102,
+		
+		/// <summary>
+		/// Entities related to a report. A report can be related to multiple entities.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ReportRelatedEntity = 9101,
+		
+		/// <summary>
+		/// Area in which to show a report. A report can be shown in multiple areas.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ReportVisibility = 9103,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RepresentativeCopilotSetting = 11134,
+		
+		/// <summary>
+		/// User or facility/equipment that can be scheduled for a service.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Resource = 4002,
+		
+		/// <summary>
+		/// Resource Expansions.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ResourceExpansion = 4010,
+		
+		/// <summary>
+		/// Group or collection of people, equipment, and/or facilities that can be scheduled.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ResourceGroup = 4007,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ResourceGroupDataSource = 10312,
+		
+		/// <summary>
+		/// Selection rule that allows the scheduling engine to select a number of resources from a pool of resources. The rules can be associated with a service.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ResourceSpecification = 4006,
+		
+		/// <summary>
+		/// Holds Restore Deleted Records configuration for entities
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RestoreDeletedRecordsConfiguration = 11335,
+		
+		/// <summary>
+		/// A Place holder entity to save excel file for each exportretaineddata custom api requests.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RetaineddataExcel = 11163,
+		
+		/// <summary>
+		/// Holds watermark information about retention cleanup operations. For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Retentioncleanupinfo = 11126,
+		
+		/// <summary>
+		/// Holds data of cleanup operations such as reconcile and purge.  For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Retentioncleanupoperation = 11127,
+		
+		/// <summary>
+		/// Holds retention policies for a table.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Retentionconfig = 11128,
+		
+		/// <summary>
+		/// Retention failure details.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Retentionfailuredetail = 11129,
+		
+		/// <summary>
+		/// Retention policy execution details.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Retentionoperation = 11130,
+		
+		/// <summary>
+		/// Table level details of retention execution.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Retentionoperationdetail = 11131,
+		
+		/// <summary>
+		/// Retention Success details.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Retentionsuccessdetail = 11417,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Revokeinheritedaccessrecordstracker = 10385,
+		
+		/// <summary>
+		/// A ribbon client metadata.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RibbonClientMetadata = 4579,
+		
+		/// <summary>
+		/// Ribbon Commands - the command definition, rules, etc.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RibbonCommand = 1116,
+		
+		/// <summary>
+		/// Groupings of contextual tabs.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RibbonContextGroup = 1115,
+		
+		/// <summary>
+		/// All layout customizations to be applied to the ribbons, which contain only the differences from the base ribbon.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RibbonDifference = 1130,
+		
+		/// <summary>
+		/// Container for Ribbon Metadata To Process
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RibbonMetadataToProcess = 9880,
+		
+		/// <summary>
+		/// Ribbon rule definitions, used to enable and disable, show and hide ribbon elements.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RibbonRule = 1117,
+		
+		/// <summary>
+		/// A mapping between Tab Ids, and the Commands within those tabs.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RibbonTabToCommandMapping = 1113,
+		
+		/// <summary>
+		/// Rich messages for Omnichannel integration
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RichMessage = 10801,
+		
+		/// <summary>
+		/// Rich messages map for Omnichannel integration
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RichMessageMap = 10802,
+		
+		/// <summary>
+		/// Image or file attached to a rich text field
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RichTextAttachment = 10271,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Roleeditorlayout = 10897,
+		
+		/// <summary>
+		/// Template for a role. Defines initial attributes that will be used when creating a new role.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RoleTemplate = 1037,
+		
+		/// <summary>
+		/// Field to be rolled up to calculate the actual and in-progress values against the goal.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RollupField = 9604,
+		
+		/// <summary>
+		/// Stores rollup jobs.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RollupJob = 9511,
+		
+		/// <summary>
+		/// Stores properties related to rollup fields.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RollupProperties = 9510,
+		
+		/// <summary>
+		/// Query that is used to filter the results of the goal rollup.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RollupQuery = 9602,
+		
+		/// <summary>
+		/// Defines routing details for the workstream
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RoutingConfiguration = 10772,
+		
+		/// <summary>
+		/// Links the routing configuration with ruleset
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RoutingConfigurationStep = 10773,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RoutingDiagnostic = 10701,
+		
+		/// <summary>
+		/// The entity used to store unified routing diagnostic data.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RoutingDiagnosticItem = 10700,
+		
+		/// <summary>
+		/// Routing request definition entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Routingrequest = 10477,
+		
+		/// <summary>
+		/// Define Routing Rule to route cases to right people at the right time
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RoutingRuleSet = 8181,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RoutingRuleSetSetting = 10765,
+		
+		/// <summary>
+		/// Stores the condition and destination including Omnichannel queues or agents
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RuleItem_10803 = 10803,
+		
+		/// <summary>
+		/// Please provide the description for entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RuleItem_8199 = 8199,
+		
+		/// <summary>
+		/// For internal use only entity used to store an implicit mapping between a ruleset and polymorphic entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Rulesetentitymapping = 10699,
+		
+		/// <summary>
+		/// Form Level dependencies in CRM.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Runtimedependency = 7200,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Sabackupdiagnostic = 10850,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Sabatchruninstance = 10734,
+		
+		/// <summary>
+		/// Sales acceleration insights
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesAccelerationInsights = 10724,
+		
+		/// <summary>
+		/// Sales acceleration reports
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesAccelerationReports = 11309,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesAccelerationSettings = 10605,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesAssignmentSetting = 10602,
+		
+		/// <summary>
+		/// Item in the sales literature collection.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesAttachment = 1070,
+		
+		/// <summary>
+		/// Entity used to keep the actions derived from email
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesCopilotEmailInsight = 11495,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesCopilotInsight = 11259,
+		
+		/// <summary>
+		/// This entity used to store actions performed by users on the entity like snooze/dismiss.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesCopilotInsightCardState = 11496,
+		
+		/// <summary>
+		/// Sales Copilot Job Status
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesCopilotJobStatus = 11544,
+		
+		/// <summary>
+		/// Entity used to store extracted question from emails and its corresponding answer retrieved from various sources
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesCopilotKnowledgeBase = 11529,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesCopilotUserSetting = 11347,
+		
+		/// <summary>
+		/// Entity that represents the Salesforce Structured Object.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesforceStructuredObject = 11375,
+		
+		/// <summary>
+		/// Entity that represents the Salesforce Structured QnA Config.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesforceStructuredQnaConfig = 11376,
+		
+		/// <summary>
+		/// Storing settings for studio feature
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Salesinsightssettings = 10095,
+		
+		/// <summary>
+		/// Storage of sales literature, which may contain one or more documents.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesLiterature = 1038,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesomnichannelMessage = 10932,
+		
+		/// <summary>
+		/// Instance of a sales process.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesProcessInstance = 32,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesProvisioningRequest = 10513,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Salesroutingdiagnostic = 10851,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesRoutingRun = 10621,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesTag = 10626,
+		
+		/// <summary>
+		/// Sales usage reporting
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesUsageReporting = 10722,
+		
+		/// <summary>
+		/// Sales usage telemetry reports
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SalesUsageTelemetryReports = 10686,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Saruninstance = 10735,
+		
+		/// <summary>
+		/// Saved configuration for the organization insights
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SavedOrganizationInsightsConfiguration = 1309,
+		
+		/// <summary>
+		/// Saved database query that is owned by a user.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SavedView = 4230,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SavingRule = 11551,
+		
+		/// <summary>
+		/// Generic refresh schedule
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Schedule = 11177,
+		
+		/// <summary>
+		/// Resource group or team whose members can be scheduled for a service.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SchedulingGroup = 4005,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SciConversation = 11199,
+		
+		/// <summary>
+		/// Message that is supported by the SDK.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SdkMessage = 4606,
+		
+		/// <summary>
+		/// Filter that defines which SDK messages are valid for each type of entity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SdkMessageFilter = 4607,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SdkMessagePair = 4613,
+		
+		/// <summary>
+		/// Stage in the execution pipeline that a plug-in is to execute.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SdkMessageProcessingStep = 4608,
+		
+		/// <summary>
+		/// Copy of an entity's attributes before or after the core system operation.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SdkMessageProcessingStepImage = 4615,
+		
+		/// <summary>
+		/// Non-public custom configuration that is passed to a plug-in's constructor.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SdkMessageProcessingStepSecureConfiguration = 4616,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SdkMessageRequest = 4609,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SdkMessageRequestField = 4614,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SdkMessageResponse = 4610,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SdkMessageResponseField = 4611,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Searchattributesettings = 11165,
+		
+		/// <summary>
+		/// Configuration entity for agent search screen
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SearchConfiguration = 10817,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Searchcustomanalyzer = 11166,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SearchProvider = 10379,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Searchrelationshipsettings = 10898,
+		
+		/// <summary>
+		/// Cache search results internally
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Searchresultscache = 11345,
+		
+		/// <summary>
+		/// Entity to log telemetry that used to improve search quality
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SearchTelemetry = 10380,
+		
+		/// <summary>
+		/// Grouping of security privileges. Users are assigned roles that authorize their access to the Microsoft CRM system.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SecurityRole = 1036,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Segment = 10596,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SegmentProperty = 10853,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Segmentsetting = 10852,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Segmentsutil = 10597,
+		
+		/// <summary>
+		/// Stores each customer action as a record. The actions tracked are before an interaction is initiated. Agents will see the actions for an interaction in the Self Service section of the Customer Summary page, when enabled.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SelfService = 10827,
+		
+		/// <summary>
+		/// Sales Attribute
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SellerAttribute = 10599,
+		
+		/// <summary>
+		/// Attribute Value of sales person or sales team
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SellerAttributeValue = 10600,
+		
+		/// <summary>
+		/// Calendar representing the semi-annual span of time during which the financial activities of an organization are calculated.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SemiannualFiscalCalendar = 2001,
+		
+		/// <summary>
+		/// Virtual entity that represents Sensitivity Labels
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SensitivityLabel = 11545,
+		
+		/// <summary>
+		/// Sentiment analysis configuration
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SentimentAnalysis = 10818,
+		
+		/// <summary>
+		/// 1. store properties regarding each topic cluster
+		///2. used for dashboard visualization (like topic example) and calculation for topic mapping
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SentimentDailyTopic = 10497,
+		
+		/// <summary>
+		/// 1. Store the keyword and frequency for topic clusters
+		///2. Used for word cloud in the dashboard
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SentimentDailyTopicKeyword = 10500,
+		
+		/// <summary>
+		/// 1. Store the day to day topic mapping information
+		///2. Used for dashboard visualization
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SentimentDailyTopicTrending = 10520,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Sequence = 10593,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SequenceStat = 10620,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SequenceTarget = 10594,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SequenceTargetStep = 10595,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SequenceTemplate = 10684,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Service_10610 = 10610,
+		
+		/// <summary>
+		/// Activity that represents work done to satisfy a customer's need.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Service_4001 = 4001,
+		
+		/// <summary>
+		/// Activity offered by the organization to satisfy its customer's needs. Each service activity includes date, time, duration, and required resources.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ServiceActivity = 4214,
+		
+		/// <summary>
+		/// Base entity for process Service Appointment Scheduling
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ServiceAppointmentScheduling = 10298,
+		
+		/// <summary>
+		/// Base entity for process Service Case Upsell
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ServiceCaseUpsell = 10299,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ServiceConfiguration = 10030,
+		
+		/// <summary>
+		/// Item in a Service contract.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ServiceContractContact = 20,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ServiceCopilotPlugin = 11341,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ServiceCopilotPluginAction = 11416,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ServiceCopilotPluginRole = 11342,
+		
+		/// <summary>
+		/// Service endpoint that can be contacted.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ServiceEndpoint = 4618,
+		
+		/// <summary>
+		/// Service Plan
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ServicePlan = 101,
+		
+		/// <summary>
+		/// Service Plan Custom Controls
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ServicePlanCustomControl = 11255,
+		
+		/// <summary>
+		/// Service Plan Mapping
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ServicePlanMapping = 10460,
+		
+		/// <summary>
+		/// Session for interacting with a customer
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Session = 10804,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SessionAnalytics = 11533,
+		
+		/// <summary>
+		/// Characteristic associated to Omnichannel session
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SessionCharacteristic = 10839,
+		
+		/// <summary>
+		/// Primary entity for session data
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SessionDataDeprecated = 10531,
+		
+		/// <summary>
+		/// Stores the session events for a session
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SessionEvent = 10819,
+		
+		/// <summary>
+		/// Users in a session interacting with the customer
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SessionParticipant = 10820,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SessionParticipantDataDeprecated = 10532,
+		
+		/// <summary>
+		/// Session participant events
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SessionParticipantEvent = 10805,
+		
+		/// <summary>
+		/// Stores the session level sentiment for customer interactions calculated using AI.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SessionSentiment = 10806,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SessionTemplate = 10331,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SessionTemplatesDeprecated = 10526,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Setting = 10155,
+		
+		/// <summary>
+		/// Contains Setting Definitions
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SettingDefinition = 10017,
+		
+		/// <summary>
+		/// ShareAs Configuration
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ShareasConfiguration = 10747,
+		
+		/// <summary>
+		/// Shared Link Setting
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SharedLinkSetting = 10688,
+		
+		/// <summary>
+		/// A record that is being shared in a real time collaboration session.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SharedObject = 10711,
+		
+		/// <summary>
+		/// References a container that stores real-time collaboration data.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SharedWorkspace = 10712,
+		
+		/// <summary>
+		/// Contains information about the shared workspace access tokens.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SharedWorkspaceAccessToken = 11415,
+		
+		/// <summary>
+		/// Contains metadata about a container used to store real-time collaboration data. Once claimed, a sharedworkspace record would be created with copied metadata.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SharedWorkspacePool = 11143,
+		
+		/// <summary>
+		/// SharePoint's Data Corresponding to a user , Record , Location and Page
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SharepointData = 9509,
+		
+		/// <summary>
+		/// Document libraries or folders on a SharePoint server from where documents can be managed in Microsoft Dynamics 365.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SharepointDocument = 9507,
+		
+		/// <summary>
+		/// Entity representing a managed identity for SharePoint, used for authentication and authorization purposes.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SharepointManagedIdentity = 11499,
+		
+		/// <summary>
+		/// SharePoint site from where documents can be managed in Microsoft Dynamics 365.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SharepointSite = 9502,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Shortcut_10156 = 10156,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Shortcut_11229 = 11229,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Siconfig = 10089,
+		
+		/// <summary>
+		/// Sideloaded AIPlugins metadata.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Sideloadedaiplugin = 11366,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Signal = 11483,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SignalRegistration = 11502,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SiKeyValueConfig = 10090,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SimilarEntitiesFeatureImportance = 11111,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SimilarityRule = 9951,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Site_11210 = 11210,
+		
+		/// <summary>
+		/// Location or branch office where an organization does business. An organization can have multiple sites.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Site_4009 = 4009,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SiteComponent = 11209,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SiteLanguage = 11211,
+		
+		/// <summary>
+		/// XML data used to control the application navigation pane.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SiteMap = 4709,
+		
+		/// <summary>
+		/// Used by web page templates to locate a specific page of content.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SiteMarker_10126 = 10126,
+		
+		/// <summary>
+		/// Used by web page templates to locate a specific page of content.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SiteMarker_11230 = 11230,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SiteMigrationChunk = 11437,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SiteMigrationRun = 11438,
+		
+		/// <summary>
+		/// Site specific settings or variables refferenced by the web site code files.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SiteSetting_10127 = 10127,
+		
+		/// <summary>
+		/// Site specific settings or variables refferenced by the web site code files.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SiteSetting_11231 = 11231,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SkillAttachmentRule = 10489,
+		
+		/// <summary>
+		/// Indicates the OmniChannel Model for the corresponding AI model
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SkillFinderModel = 10844,
+		
+		/// <summary>
+		/// Contains information about the tracked service-level KPIs for cases that belong to different customers.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Sla = 9750,
+		
+		/// <summary>
+		/// Contains information about a tracked support KPI for a specific customer.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SlaItem = 9751,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SlaKpi = 10031,
+		
+		/// <summary>
+		/// Service level agreement (SLA) key performance indicator (KPI) instance that is tracked for an individual case
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SlaKpiInstance = 9752,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Slot = 10387,
+		
+		/// <summary>
+		/// Stores Smartassist configurations
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SmartassistConfiguration = 10357,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SocialActivity = 4216,
+		
+		/// <summary>
+		/// Configuration for the social insights.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Socialinsightsconfiguration = 1300,
+		
+		/// <summary>
+		/// This entity is used to store social profile information of its associated account and contacts on different social channels.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SocialProfile = 99,
+		
+		/// <summary>
+		/// A solution which contains CRM customizations.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Solution = 7100,
+		
+		/// <summary>
+		/// A component of a CRM solution.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SolutionComponent = 7103,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SolutionComponentAttributeConfiguration = 10002,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SolutionComponentBatchConfiguration = 10457,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SolutionComponentConfiguration = 10003,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SolutionComponentCountDataSource = 10476,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SolutionComponentCountSummary = 10475,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SolutionComponentDataSource = 10009,
+		
+		/// <summary>
+		/// Contains all the information required to process a solution aware entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SolutionComponentDefinition = 7104,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SolutionComponentRelationshipConfiguration = 10004,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SolutionComponentSummary = 10008,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SolutionHealthRule = 10027,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SolutionHealthRuleArgument = 10028,
+		
+		/// <summary>
+		/// Represents a set that owns a number of solution health rules.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SolutionHealthRuleSet = 10029,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SolutionHistory = 10000,
+		
+		/// <summary>
+		/// solution history data
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Solutionhistorydata = 9890,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SolutionHistoryDataSource = 10001,
+		
+		/// <summary>
+		/// Entity to store the sound notification setting records for channels and other scenarios. 
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SoundNotificationSetting = 10822,
+		
+		/// <summary>
+		/// Stores the source control branch configuration associated with the organization or solution
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SourceControlBranchConfiguration = 11448,
+		
+		/// <summary>
+		/// Stores the Source Control Components associated with the organization or solution
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SourceControlComponent = 11449,
+		
+		/// <summary>
+		/// Stores the Source Control Component Payloads associated with components.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SourceControlComponentPayload = 11450,
+		
+		/// <summary>
+		/// Stores the git configuration associated with the environment 
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SourceControlConfiguration = 11451,
+		
+		/// <summary>
+		/// Stores staged attribute metadata to be processed in async.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		StagedAttribute = 11115,
+		
+		/// <summary>
+		/// Stores staged entity metadata to be processed before fully created.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		StagedEntity = 10951,
+		
+		/// <summary>
+		/// Stores staged entity attribute metadata to be processed in async.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		StagedEntityAttribute = 11142,
+		
+		/// <summary>
+		/// Stores staged entity metadata to be processed before fully created.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		StagedMetadataAsyncOperation = 11266,
+		
+		/// <summary>
+		/// Stores the source control components that needs to be processed
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		StagedSourceControlComponent = 11482,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Stagesolutionupload = 10007,
+		
+		/// <summary>
+		/// Mapping between statuses.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		StatusMap = 1075,
+		
+		/// <summary>
+		/// Mapping between strings.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		StringMap = 1043,
+		
+		/// <summary>
+		/// Information regarding subjects available in the system.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Subject = 129,
+		
+		/// <summary>
+		/// Stores metadata about submodels
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SubmodelDefinition = 11152,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Subscription = 29,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SubscriptionClients = 1072,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SubscriptionManuallyTrackedObject = 37,
+		
+		/// <summary>
+		/// Subscription Statistic Offline
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SubscriptionStatisticOffline = 45,
+		
+		/// <summary>
+		/// Subscription Statistic Outlook
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SubscriptionStatisticOutlook = 46,
+		
+		/// <summary>
+		/// Used for offline sync, internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SubscriptionSyncEntryOffline = 47,
+		
+		/// <summary>
+		/// Used for outlook sync, internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SubscriptionSyncEntryOutlook = 48,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SubscriptionSynchronizationInformation = 33,
+		
+		/// <summary>
+		/// Activity suggestions
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SuggestedActivity = 10099,
+		
+		/// <summary>
+		/// Suggested Activity Data Sources
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SuggestedActivityDataSource = 10100,
+		
+		/// <summary>
+		/// Contact suggestions
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SuggestedContact = 10101,
+		
+		/// <summary>
+		/// Suggested contacts data sources
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SuggestedContactsDataSource = 10102,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SuggestionAssignmentRule = 10929,
+		
+		/// <summary>
+		/// Templates for Suggestion Card in Grid
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Suggestioncardtemplate = 1190,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SuggestionInteraction = 10366,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SuggestionPrincipalObjectAccess = 10930,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SuggestionRequestPayload = 10367,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SuggestionSellerPriority = 10931,
+		
+		/// <summary>
+		/// Suggestions Model Summary entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SuggestionsModelSummary = 10368,
+		
+		/// <summary>
+		/// Suggestions settings entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SuggestionsSetting = 10369,
+		
+		/// <summary>
+		/// Copy of Officer Audit details
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SummaryAudit = 10264,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Supportusertable = 10891,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Survey = 10614,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SurveySetting = 11401,
+		
+		/// <summary>
+		/// Tracks the list of swarms created by agents to resolve the customer issues
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Swarm = 10703,
+		
+		/// <summary>
+		/// Stores the participants information of swarm
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SwarmParticipant = 10704,
+		
+		/// <summary>
+		/// Rules to fetch participants based on their role
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SwarmParticipantRule = 10705,
+		
+		/// <summary>
+		/// Stores the different participant roles and associated role type defined
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SwarmRole = 10706,
+		
+		/// <summary>
+		/// Stores the skills required for the swarm
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SwarmSkill = 10707,
+		
+		/// <summary>
+		/// Entity which stores different templates for the swarm
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SwarmTemplate = 10708,
+		
+		/// <summary>
+		/// This entity represents an external Synapse database and its associated datalake folder link.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SynapseDatabase = 10638,
+		
+		/// <summary>
+		/// Synapse Link external table states
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SynapseLinkExternalTableState = 10679,
+		
+		/// <summary>
+		/// Synapse Link Profile
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SynapseLinkProfile = 10680,
+		
+		/// <summary>
+		/// Entities associated with the Synapse Link profile
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SynapseLinkProfileEntity = 10681,
+		
+		/// <summary>
+		/// Runtime state of the Synapse Link entity
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SynapseLinkProfileEntityState = 10682,
+		
+		/// <summary>
+		/// Synapse link schedules
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SynapseLinkSchedule = 10683,
+		
+		/// <summary>
+		/// Group of Sync-Attribute Mappings used to provide Attribute mappings during sync for a particular user
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SyncAttributeMapping = 1401,
+		
+		/// <summary>
+		/// Profile which defines sync attribute mapping
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SyncAttributeMappingProfile = 1400,
+		
+		/// <summary>
+		/// Failure reason and other detailed information for a record that failed to sync.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SyncError = 9869,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SystemApplicationMetadata = 7000,
+		
+		/// <summary>
+		/// System chart attached to an entity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SystemChart = 1111,
+		
+		/// <summary>
+		/// Organization-owned entity customizations including form layout and dashboards.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SystemForm = 1030,
+		
+		/// <summary>
+		/// Process whose execution can proceed independently or in the background.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SystemJob = 4700,
+		
+		/// <summary>
+		/// Internal authorization table to track user authorization changes
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Systemuserauthorizationchangetracker = 60,
+		
+		/// <summary>
+		/// Stores mapping attributes for business units.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SystemuserBusinessunitEntityMap = 42,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SystemUserManagerMap = 51,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SystemUserPrincipal = 14,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TablePermission_10141 = 10141,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TablePermission_11222 = 11222,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Tag_10157 = 10157,
+		
+		/// <summary>
+		/// Tags for quick categorization
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Tag_10808 = 10808,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Tag_11541 = 11541,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TaggedFlowSession = 11542,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TaggedProcess = 11543,
+		
+		/// <summary>
+		/// Tagged Record - Copilot for Sales
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TaggedRecord = 10750,
+		
+		/// <summary>
+		/// Generic activity representing work needed to be done.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Task = 4212,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Tdsmetadata = 10899,
+		
+		/// <summary>
+		/// Collection of system users that routinely collaborate. Teams can be used to simplify record sharing and provide team members with common access to organization data when team members belong to different Business Units.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Team = 9,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Teammobileofflineprofilemembership = 10399,
+		
+		/// <summary>
+		/// Team Profiles
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TeamProfiles = 1203,
+		
+		/// <summary>
+		/// For internal use only. Entity which stores association data of Dynamics 365 records with Microsoft Teams chat
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TeamsChat = 10685,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TeamsContactSuggestionByAi = 10622,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TeamsDialerAdminSettings = 10402,
+		
+		/// <summary>
+		/// Team Sync-Attribute Mapping Profiles
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TeamSyncAttributeMappingProfiles = 1403,
+		
+		/// <summary>
+		/// Team template for an entity enabled for automatically created access teams.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TeamTemplate = 92,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TelesignChannelInstance = 10923,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TelesignChannelInstanceAccount = 10516,
+		
+		/// <summary>
+		/// Used to create Context Variables that can be used in Template rule set entity. Makes Context variables available on Global level and gives option to make Templates Channel Agnostic.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TemplateContextVariable = 11517,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TemplateForProperties = 10324,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TemplateParameter = 10332,
+		
+		/// <summary>
+		/// Contains template rulesets that can be applied to custom assignment method in a queue
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TemplateRuleSet = 11486,
+		
+		/// <summary>
+		/// Tags associated with templates. Templates are discovered via tags
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TemplateTagDeprecated = 10941,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TemplateUsage = 10763,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TemplateVariableBatchOperation = 11518,
+		
+		/// <summary>
+		/// Territory represents sales regions.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Territory = 2013,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TextAnalyticsEntityMapping = 9945,
+		
+		/// <summary>
+		/// Text Analytics Topics
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TextAnalyticsTopic = 9948,
+		
+		/// <summary>
+		/// Stores information about unstructured / text data records indexing status
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Textdatarecordsindexingstatus = 11521,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TextMessageTemplate = 10933,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TextStyle = 10522,
+		
+		/// <summary>
+		/// Information that's used to set custom visual theme options for client applications.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Theme = 2015,
+		
+		/// <summary>
+		/// Timeline Pin Record
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TimelinePin = 11206,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TimeSpentInBpf = 10695,
+		
+		/// <summary>
+		/// For internal use only.`
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TimeStampDateMapping = 9932,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TimeTracker = 11408,
+		
+		/// <summary>
+		/// Time zone definition, including name and time zone code.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TimeZoneDefinition = 4810,
+		
+		/// <summary>
+		/// Localized name of the time zone.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TimeZoneLocalizedName = 4812,
+		
+		/// <summary>
+		/// Definition for time conversion between local time and Coordinated Universal Time (UTC) for a particular time zone at a particular time period.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TimeZoneRule = 4811,
+		
+		/// <summary>
+		/// Entity for Topic History
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TopicHistory = 9946,
+		
+		/// <summary>
+		/// The model for automatic identification of topics using text analytics.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TopicModel = 9944,
+		
+		/// <summary>
+		/// Configuration settings for identification of topics using text analytics.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TopicModelConfiguration = 9942,
+		
+		/// <summary>
+		/// Entity for Topic Model Execution History
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TopicModelExecutionHistory = 9943,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Tour = 10422,
+		
+		/// <summary>
+		/// A trace log.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Trace = 8050,
+		
+		/// <summary>
+		/// Represents the objects with which a trace record is associated. For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TraceAssociation = 8051,
+		
+		/// <summary>
+		/// Represents which object a trace record is regarding. For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TraceRegarding = 8052,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Trackingcontext = 10920,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TrackingInformationForDeletedEntities = 35,
+		
+		/// <summary>
+		/// Indicates the training data import configuration
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TrainingDataImportConfiguration = 10841,
+		
+		/// <summary>
+		/// Indicates individual training record to be used for model training
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TrainingRecord = 10843,
+		
+		/// <summary>
+		/// Stores Training results for the model
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TrainingResult = 11153,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Trait = 11484,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TraitRegistration = 11503,
+		
+		/// <summary>
+		/// Stores the transcript of the communication  between the user and the customer
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Transcript = 10823,
+		
+		/// <summary>
+		/// In a data map, maps the transformation of source attributes to Microsoft Dynamics 365 attributes.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TransformationMapping = 4426,
+		
+		/// <summary>
+		/// In a data map, defines parameters for a transformation.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TransformationParameterMapping = 4427,
+		
+		/// <summary>
+		/// Translation Process Business Process Flow
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TranslationProcess = 951,
+		
+		/// <summary>
+		/// Metadata for Cxp Events
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Trigger = 10917,
+		
+		/// <summary>
+		/// Mapping between CJO Marketing Triggers and Sdk Message Processing Steps
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TriggersToSdkMessageProcessingSteps = 10918,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TwilioChannelInstance = 10924,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TwilioChannelInstanceAccount = 10485,
+		
+		/// <summary>
+		/// Unified Routing Setup Trackers
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UnifiedRoutingSetupTracker = 10415,
+		
+		/// <summary>
+		/// Unit of measure.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Unit = 1055,
+		
+		/// <summary>
+		/// Grouping of units.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UnitGroup = 1056,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UnresolvedAddress = 2012,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Unstructuredfilesearchentity = 11570,
+		
+		/// <summary>
+		/// UnstructuredFileSearchRecord
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Unstructuredfilesearchrecord = 11571,
+		
+		/// <summary>
+		/// UntrackedAppointments
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Untrackedappointment = 10098,
+		
+		/// <summary>
+		/// Activity that is delivered using UntrackedEmail protocols.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Untrackedemail = 4220,
+		
+		/// <summary>
+		/// Contains logging information about a run of a Package Deployer package that upgrades a solution
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UpgradeRun = 10050,
+		
+		/// <summary>
+		/// One step during an upgrade, such as a single method or stored procedure.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UpgradeStep = 10051,
+		
+		/// <summary>
+		/// Information about upgrading from one release to the next release
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UpgradeVersion = 10052,
+		
+		/// <summary>
+		/// Base entity for process Upsell after service interaction
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UpsellAfterServiceInteraction = 10300,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UrlHistory = 10158,
+		
+		/// <summary>
+		/// The entity stores all the templates used for UR notification.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UrNotificationTemplate = 10824,
+		
+		/// <summary>
+		/// This entity stores the mapping for notification template and workstream.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UrNotificationTemplateMapping = 10825,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UsageMetric = 10639,
+		
+		/// <summary>
+		/// Person with access to the Microsoft CRM system and who owns objects in the Microsoft CRM database.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		User = 8,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UserApplicationMetadata = 7001,
+		
+		/// <summary>
+		/// Chart attached to an entity.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UserChart = 1112,
+		
+		/// <summary>
+		/// User-owned dashboards.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UserDashboard = 1031,
+		
+		/// <summary>
+		/// Per User item instance data
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UserEntityInstanceData = 2501,
+		
+		/// <summary>
+		/// Stores user settings for entity views.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UserEntityUiSettings = 2500,
+		
+		/// <summary>
+		/// Custom fiscal calendar used for tracking sales quotas.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UserFiscalCalendar = 1086,
+		
+		/// <summary>
+		/// User Mapping
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UserMapping = 2016,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Usermobileofflineprofilemembership = 10400,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UserPreferenceForCopilot = 11260,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UserRating = 10731,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UserSearchFacet = 52,
+		
+		/// <summary>
+		/// SCI user level settings
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Usersettings = 11204,
+		
+		/// <summary>
+		/// Parent entity for Omnichannel personalizations
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UserSettings_10826 = 10826,
+		
+		/// <summary>
+		/// User's preferred settings.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UserSettings_150 = 150,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		VibesChannelInstance = 11293,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		VibesChannelInstanceAccount = 11294,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		VideoStyle = 10504,
+		
+		/// <summary>
+		/// Saved query against the database.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		View = 1039,
+		
+		/// <summary>
+		/// This fewshot is converted by view
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Viewasexamplequestion = 11390,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		VirtualConnectorDataSource = 10896,
+		
+		/// <summary>
+		/// Developers can register plug-ins on a data provider to enable data access for virtual entities in the system.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		VirtualEntityDataProvider = 78,
+		
+		/// <summary>
+		/// Internal entity that stores data source information for all installed providers.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		VirtualEntityDataSource = 85,
+		
+		/// <summary>
+		/// Holds  metadata values for virtual entities
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		VirtualEntityMetadata = 10423,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		VirtualResourceGroupResource = 10314,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		VirtualTableColumnCandidate = 10480,
+		
+		/// <summary>
+		/// Container for Visa applications
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		VisaApplication = 10267,
+		
+		/// <summary>
+		/// Contains information regarding which views are available for users to display on their personal walls. Only an administrator can specify the views that users can choose from to display on their personal walls.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WallView = 10108,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Warranty = 11383,
+		
+		/// <summary>
+		/// Storage of files used in the web Portals.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebFile_10128 = 10128,
+		
+		/// <summary>
+		/// Storage of files used in the web Portals.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebFile_11232 = 11232,
+		
+		/// <summary>
+		/// A record of the download of a web file
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebFileLog = 10159,
+		
+		/// <summary>
+		/// Serves as a mechanism to log the occurrence of an incomplete web form entry for a given user so they can return and complete it later.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebFormSession = 10190,
+		
+		/// <summary>
+		/// A textual or imaged based link to an interal or external URL.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebLink_10129 = 10129,
+		
+		/// <summary>
+		/// A textual or imaged based link to an interal or external URL.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebLink_11236 = 11236,
+		
+		/// <summary>
+		/// A grouping of web links.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebLinkSet_10130 = 10130,
+		
+		/// <summary>
+		/// A grouping of web links.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebLinkSet_11237 = 11237,
+		
+		/// <summary>
+		/// Web Notifications will be sent out for the entities in these records.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebNotificationEntity = 10182,
+		
+		/// <summary>
+		/// Used by the Adxstudio.Xrm.Plugins.WebNotificationPlugin to send push notifications triggerd by some action.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebNotificationUrl = 10131,
+		
+		/// <summary>
+		/// Web Page
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebPage_10132 = 10132,
+		
+		/// <summary>
+		/// Web Page
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebPage_11238 = 11238,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebPageAccessControlRule_10160 = 10160,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebPageAccessControlRule_11239 = 11239,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebPageHistory = 10161,
+		
+		/// <summary>
+		/// A record of a user viewing a Web Page
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebPageLog = 10162,
+		
+		/// <summary>
+		/// Data equivalent to files used in Web development. Web resources provide client-side components that are used to provide custom user interface elements.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebResource = 9333,
+		
+		/// <summary>
+		/// Sets the user's role for the Portal.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebRole_10133 = 10133,
+		
+		/// <summary>
+		/// Sets the user's role for the Portal.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebRole_11240 = 11240,
+		
+		/// <summary>
+		/// Web Portal
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Website_10134 = 10134,
+		
+		/// <summary>
+		/// Web Portal
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Website_11241 = 11241,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebsiteAccess_10163 = 10163,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebsiteAccess_11242 = 11242,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebsiteBinding = 10164,
+		
+		/// <summary>
+		/// Languages supported and publishing status for the portal
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebsiteLanguage_10165 = 10165,
+		
+		/// <summary>
+		/// Languages supported and publishing status for the portal
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebsiteLanguage_11243 = 11243,
+		
+		/// <summary>
+		/// Holds information helpful for website's migration 
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebsiteMigrationTracker = 11439,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebTemplate_10166 = 10166,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebTemplate_11244 = 11244,
+		
+		/// <summary>
+		/// Definition for a Web-based wizard.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebWizard = 4800,
+		
+		/// <summary>
+		/// Privilege needed to access a Web-based wizard.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebWizardAccessPrivilege = 4803,
+		
+		/// <summary>
+		/// Page in a Web-based wizard.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WizardPage = 4802,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Wkwcolleaguesforcompany = 11112,
+		
+		/// <summary>
+		/// Entity for storing contact introducer
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Wkwcolleaguesforcontact = 11113,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Wkwconfig = 11114,
+		
+		/// <summary>
+		/// PA Workflows action processing status
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WorkflowActionStatus = 10868,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WorkflowBinary = 10020,
+		
+		/// <summary>
+		/// Metadata associated with workflows
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WorkflowMetadata = 11525,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WorkflowWaitSubscription = 4702,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WorkListSuggestion = 10641,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WorkListSuggestionSource = 10642,
+		
+		/// <summary>
+		/// Entity created to store work list user setting
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WorkListUserSetting = 10608,
+		
+		/// <summary>
+		/// Entity to store work list view configurations on filter, icons, sort etc
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WorkListViewConfiguration = 10643,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WorkQueue = 11145,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WorkQueueItem = 11146,
+		
+		/// <summary>
+		/// Entity created to store WorkQueue Data Model Records
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WorkQueueRecord = 10606,
+		
+		/// <summary>
+		/// Entity created to store WorkQueue Records state
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WorkQueueRecordState = 10607,
+		
+		/// <summary>
+		/// Stores information about the properties of work items that are generated by a unique channel endpoint
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WorkStream = 10786,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WorkStreamBotMapping = 11538,
+		
+		/// <summary>
+		/// Work stream capacity profile
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WorkStreamCapacityProfile = 10836,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Wqdatasource = 10609,
+	}
+	
+	/// <summary>
+	/// Tells whether whether SLA KPI Instances will be used for saving SLA status and failure time.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Sla_SlatyPe
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Enhanced = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Standard = 0,
+	}
+	
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Sla_SlaVersion
+	{
+		
+		/// <summary>
+		/// SLA getting created from UCI
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		VersionUc = 100000001,
+		
+		/// <summary>
+		/// SLA getting created from WC
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		VersionWc = 100000000,
+	}
+	
+	/// <summary>
+	/// State of the SLA.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Sla_StateCode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Active = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Draft = 0,
+	}
+	
+	/// <summary>
+	/// Reason for the status of the contract.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Sla_StatusCode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Active = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Draft = 1,
+	}
+	
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum SlaKpiInstance_Msdyn_ActionExecutionStatus
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		None = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Success = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Warning = 1,
+	}
+	
+	/// <summary>
+	/// Information that specifies the type of SLA KPI Instance.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum SlaKpiInstance_Status
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Canceled = 5,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		InProgress = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		NearingNoncompliance = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Noncompliant = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Paused = 3,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Succeeded = 4,
+	}
+	
+	/// <summary>
+	/// Information that specifies whether the case is decrementing.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum SlaKpiInstance_WarningTimeReached
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		No = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Yes = 1,
 	}
 	
 	/// <summary>
@@ -988,6 +8614,9 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum Workflow_ThrottlingBehavior
 	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Copilotstudio = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		None = 0,

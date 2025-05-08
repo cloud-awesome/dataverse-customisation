@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
+namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 {
 	
 	
@@ -624,17 +624,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// 1:N messagepair_sdkmessagerequest
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("messagepair_sdkmessagerequest")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageRequest> MessagePair_SdkMessageRequest
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageRequest> MessagePair_SdkMessageRequest
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageRequest>("messagepair_sdkmessagerequest", null);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageRequest>("messagepair_sdkmessagerequest", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageRequest>("messagepair_sdkmessagerequest", null, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageRequest>("messagepair_sdkmessagerequest", null, value);
 			}
 		}
 		
@@ -643,17 +643,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sdkmessageid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("message_sdkmessagepair")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessage Message_SdkMessagePair
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessage Message_SdkMessagePair
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessage>("message_sdkmessagepair", null);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessage>("message_sdkmessagepair", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessage>("message_sdkmessagepair", null, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessage>("message_sdkmessagepair", null, value);
 			}
 		}
 		

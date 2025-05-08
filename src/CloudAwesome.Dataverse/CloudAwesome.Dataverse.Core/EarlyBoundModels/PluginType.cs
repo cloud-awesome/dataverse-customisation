@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
+namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 {
 	
 	
@@ -890,17 +890,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// 1:N plugintype_customapi
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("plugintype_customapi")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.CustomApi> PluginType_CustomApi
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApi> PluginType_CustomApi
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.CustomApi>("plugintype_customapi", null);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApi>("plugintype_customapi", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.CustomApi>("plugintype_customapi", null, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApi>("plugintype_customapi", null, value);
 			}
 		}
 		
@@ -908,17 +908,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// 1:N plugintype_sdkmessageprocessingstep
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("plugintype_sdkmessageprocessingstep")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageProcessingStep> PluginType_SdkMessageProcessingStep
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageProcessingStep> PluginType_SdkMessageProcessingStep
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageProcessingStep>("plugintype_sdkmessageprocessingstep", null);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageProcessingStep>("plugintype_sdkmessageprocessingstep", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageProcessingStep>("plugintype_sdkmessageprocessingstep", null, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageProcessingStep>("plugintype_sdkmessageprocessingstep", null, value);
 			}
 		}
 		
@@ -926,17 +926,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// 1:N plugintypeid_sdkmessageprocessingstep
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("plugintypeid_sdkmessageprocessingstep")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageProcessingStep> PluginTypeId_SdkMessageProcessingStep
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageProcessingStep> PluginTypeId_SdkMessageProcessingStep
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageProcessingStep>("plugintypeid_sdkmessageprocessingstep", null);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageProcessingStep>("plugintypeid_sdkmessageprocessingstep", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageProcessingStep>("plugintypeid_sdkmessageprocessingstep", null, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageProcessingStep>("plugintypeid_sdkmessageprocessingstep", null, value);
 			}
 		}
 		
@@ -945,17 +945,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("pluginassemblyid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("pluginassembly_plugintype")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.PluginAssembly PluginAssembly_PluginType
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.PluginAssembly PluginAssembly_PluginType
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.PluginAssembly>("pluginassembly_plugintype", null);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.PluginAssembly>("pluginassembly_plugintype", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.PluginAssembly>("pluginassembly_plugintype", null, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.PluginAssembly>("pluginassembly_plugintype", null, value);
 			}
 		}
 		

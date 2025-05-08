@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
+namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 {
 	
 	
@@ -1316,17 +1316,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// 1:N envdefinition_envdefinition
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("envdefinition_envdefinition", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.EnvironmentVariableDefinition> ReferenceDeNvDefinition_ENvDefinition
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.EnvironmentVariableDefinition> ReferenceDeNvDefinition_ENvDefinition
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.EnvironmentVariableDefinition>("envdefinition_envdefinition", Microsoft.Xrm.Sdk.EntityRole.Referenced);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.EnvironmentVariableDefinition>("envdefinition_envdefinition", Microsoft.Xrm.Sdk.EntityRole.Referenced);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.EnvironmentVariableDefinition>("envdefinition_envdefinition", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.EnvironmentVariableDefinition>("envdefinition_envdefinition", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
 			}
 		}
 		
@@ -1334,17 +1334,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// 1:N environmentvariabledefinition_environmentvariablevalue
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("environmentvariabledefinition_environmentvariablevalue")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.EnvironmentVariableValue> EnvironmentVariableDefinition_EnvironmentVariableValue
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.EnvironmentVariableValue> EnvironmentVariableDefinition_EnvironmentVariableValue
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.EnvironmentVariableValue>("environmentvariabledefinition_environmentvariablevalue", null);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.EnvironmentVariableValue>("environmentvariabledefinition_environmentvariablevalue", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.EnvironmentVariableValue>("environmentvariabledefinition_environmentvariablevalue", null, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.EnvironmentVariableValue>("environmentvariabledefinition_environmentvariablevalue", null, value);
 			}
 		}
 		
@@ -1353,17 +1353,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentdefinitionid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("envdefinition_envdefinition", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.EnvironmentVariableDefinition ReferencingENvDefinition_ENvDefinition
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.EnvironmentVariableDefinition ReferencingENvDefinition_ENvDefinition
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.EnvironmentVariableDefinition>("envdefinition_envdefinition", Microsoft.Xrm.Sdk.EntityRole.Referencing);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.EnvironmentVariableDefinition>("envdefinition_envdefinition", Microsoft.Xrm.Sdk.EntityRole.Referencing);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.EnvironmentVariableDefinition>("envdefinition_envdefinition", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.EnvironmentVariableDefinition>("envdefinition_envdefinition", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
 			}
 		}
 		
@@ -1372,17 +1372,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_environmentvariabledefinition")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team Team_EnvironmentVariableDefinition
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.Team Team_EnvironmentVariableDefinition
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team>("team_environmentvariabledefinition", null);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Team>("team_environmentvariabledefinition", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team>("team_environmentvariabledefinition", null, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Team>("team_environmentvariabledefinition", null, value);
 			}
 		}
 		

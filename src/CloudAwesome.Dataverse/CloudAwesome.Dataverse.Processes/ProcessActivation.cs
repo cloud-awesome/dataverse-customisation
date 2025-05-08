@@ -1,5 +1,5 @@
 ﻿using CloudAwesome.Dataverse.Core;
-using CloudAwesome.Dataverse.Core.EarlyBoundEntities;
+using CloudAwesome.Dataverse.Core.EarlyBoundModels;
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
 
@@ -34,6 +34,15 @@ public class ProcessActivation
 				var pluginState = TargetPluginStepState(activate);
 				
 				ProcessPluginSteps(plugins, pluginState, pluginStatus, client, t);
+			}
+
+			if (solution.AllSlas)
+			{
+				var slas = GetSlasFromSolution(client, solution.Name);
+				var slaStatus = TargetSlaStatus(activate);
+				var slaState = TargetFlowState(activate);
+				
+				ProcessSlas(slas, slaState, slaStatus, client, t);
 			}
 		}
 		
@@ -102,6 +111,37 @@ public class ProcessActivation
 		}
 	}
 
+	private void ProcessSlas(EntityCollection slas, OptionSetValue slaState, OptionSetValue slaStatus, 
+		IOrganizationService client, TracingHelper t)
+	{
+		var i = 0;
+		
+		foreach (var sla in slas.Entities)
+		{
+			var slaRecord = (new Sla(Guid.Parse(sla["objectid"].ToString() ?? throw new InvalidOperationException()))
+				.Retrieve(client));
+			i++;
+
+			try
+			{
+				var setState = new SetStateRequest
+				{
+					EntityMoniker = new EntityReference(slaRecord.LogicalName, slaRecord.Id),
+					State = slaState,
+					Status = slaStatus
+				};
+
+				client.Execute(setState);
+				
+				t.Info($"{i}/{slas.Entities.Count}. '{slaRecord["name"]}' updated");
+			}
+			catch (Exception e)
+			{
+				t.Error($"*** Failed to set: {i}/{slas.Entities.Count}. {slaRecord["name"]}, ({e.Message})");
+			}
+		}
+	}
+	
 	private EntityCollection GetCloudFlowsFromSolution(IOrganizationService client, string solutionName)
 	{
 		return SolutionWrapper.RetrieveSolutionComponents(client, solutionName, ComponentType.Workflow);
@@ -110,6 +150,11 @@ public class ProcessActivation
 	private EntityCollection GetPluginStepsFromSolution(IOrganizationService client, string solutionName)
 	{
 		return SolutionWrapper.RetrieveSolutionComponents(client, solutionName, ComponentType.SdkMessageProcessingStep);
+	}
+	
+	private EntityCollection GetSlasFromSolution(IOrganizationService client, string solutionName)
+	{
+		return SolutionWrapper.RetrieveSolutionComponents(client, solutionName, ComponentType.Sla);
 	}
 
 	private OptionSetValue TargetFlowState(bool activate)
@@ -138,5 +183,19 @@ public class ProcessActivation
 		return activate
 			? new OptionSetValue((int)SdkMessageProcessingStep_StatusCode.Enabled)
 			: new OptionSetValue((int)SdkMessageProcessingStep_StatusCode.Disabled);
+	}
+	
+	private OptionSetValue TargetSlasState(bool activate)
+	{
+		return activate
+			? new OptionSetValue((int)Sla_StateCode.Active)
+			: new OptionSetValue((int)Sla_StateCode.Draft);
+	}
+	
+	private OptionSetValue TargetSlaStatus(bool activate)
+	{
+		return activate
+			? new OptionSetValue((int)Sla_StatusCode.Active)
+			: new OptionSetValue((int)Sla_StatusCode.Draft);
 	}
 }

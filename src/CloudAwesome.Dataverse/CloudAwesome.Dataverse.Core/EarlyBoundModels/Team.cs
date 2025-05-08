@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
+namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 {
 	
 	
@@ -73,6 +73,8 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 			public const string Team_CustomApi = "Team_CustomApi";
 			public const string Team_EnvironmentVariableDefinition = "Team_EnvironmentVariableDefinition";
 			public const string Team_Msdyn_CustomApiRuleSetConfiguration = "Team_Msdyn_CustomApiRuleSetConfiguration";
+			public const string Team_Msdyn_SlaKpi = "Team_Msdyn_SlaKpi";
+			public const string Team_SlaBase = "Team_SlaBase";
 			public const string Team_Workflow = "Team_Workflow";
 			public const string TeamId = "teamid";
 			public const string Id = "teamid";
@@ -1201,17 +1203,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// 1:N team_customapi
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_customapi")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.CustomApi> Team_CustomApi
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApi> Team_CustomApi
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.CustomApi>("team_customapi", null);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApi>("team_customapi", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.CustomApi>("team_customapi", null, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApi>("team_customapi", null, value);
 			}
 		}
 		
@@ -1219,17 +1221,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// 1:N team_environmentvariabledefinition
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_environmentvariabledefinition")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.EnvironmentVariableDefinition> Team_EnvironmentVariableDefinition
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.EnvironmentVariableDefinition> Team_EnvironmentVariableDefinition
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.EnvironmentVariableDefinition>("team_environmentvariabledefinition", null);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.EnvironmentVariableDefinition>("team_environmentvariabledefinition", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.EnvironmentVariableDefinition>("team_environmentvariabledefinition", null, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.EnvironmentVariableDefinition>("team_environmentvariabledefinition", null, value);
 			}
 		}
 		
@@ -1237,17 +1239,53 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// 1:N team_msdyn_customapirulesetconfiguration
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_msdyn_customapirulesetconfiguration")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Msdyn_CustomApiRuleSetConfiguration> Team_Msdyn_CustomApiRuleSetConfiguration
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.Msdyn_CustomApiRuleSetConfiguration> Team_Msdyn_CustomApiRuleSetConfiguration
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Msdyn_CustomApiRuleSetConfiguration>("team_msdyn_customapirulesetconfiguration", null);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Msdyn_CustomApiRuleSetConfiguration>("team_msdyn_customapirulesetconfiguration", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Msdyn_CustomApiRuleSetConfiguration>("team_msdyn_customapirulesetconfiguration", null, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Msdyn_CustomApiRuleSetConfiguration>("team_msdyn_customapirulesetconfiguration", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N team_msdyn_slakpi
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_msdyn_slakpi")]
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.Msdyn_SlaKpi> Team_Msdyn_SlaKpi
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Msdyn_SlaKpi>("team_msdyn_slakpi", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Msdyn_SlaKpi>("team_msdyn_slakpi", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N team_slaBase
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_slaBase")]
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.Sla> Team_SlaBase
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Sla>("team_slaBase", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Sla>("team_slaBase", null, value);
 			}
 		}
 		
@@ -1255,17 +1293,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// 1:N team_workflow
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_workflow")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow> Team_Workflow
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow> Team_Workflow
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow>("team_workflow", null);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow>("team_workflow", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Workflow>("team_workflow", null, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow>("team_workflow", null, value);
 			}
 		}
 		
@@ -1273,17 +1311,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// N:N teamroles_association
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("teamroles_association")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Role> TeamRoles_Association
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.Role> TeamRoles_Association
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Role>("teamroles_association", null);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Role>("teamroles_association", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Role>("teamroles_association", null, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Role>("teamroles_association", null, value);
 			}
 		}
 		

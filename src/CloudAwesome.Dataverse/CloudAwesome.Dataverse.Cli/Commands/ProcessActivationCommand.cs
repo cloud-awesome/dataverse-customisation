@@ -36,7 +36,8 @@ public class ProcessActivationCommand: Command<ProcessActivationSettings>
 					{
 						Name = settings.SolutionName,
 						AllFlows = settings.AllFlows,
-						AllPluginSteps = settings.AllPluginSteps
+						AllPluginSteps = settings.AllPluginSteps,
+						AllSlas = settings.AllSlas
 					}
 				],
 				Status = activate
@@ -67,4 +68,7 @@ public class ProcessActivationSettings : SupportsDataverseConnection
 	
 	[CommandOption("--all-plugins")]
 	public bool AllPluginSteps { get; set; }
+	
+	[CommandOption("--all-slas")]
+	public bool AllSlas { get; set; }
 }

@@ -1,5 +1,5 @@
 ﻿using CloudAwesome.Dataverse.Core;
-using CloudAwesome.Dataverse.Core.EarlyBoundEntities;
+using CloudAwesome.Dataverse.Core.EarlyBoundModels;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 

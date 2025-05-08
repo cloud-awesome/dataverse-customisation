@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
+namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 {
 	
 	
@@ -1414,17 +1414,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// 1:N customapi_customapirequestparameter
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("customapi_customapirequestparameter")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.CustomApiRequestParameter> CustomApi_CustomApiRequestParameter
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiRequestParameter> CustomApi_CustomApiRequestParameter
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.CustomApiRequestParameter>("customapi_customapirequestparameter", null);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiRequestParameter>("customapi_customapirequestparameter", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.CustomApiRequestParameter>("customapi_customapirequestparameter", null, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiRequestParameter>("customapi_customapirequestparameter", null, value);
 			}
 		}
 		
@@ -1432,17 +1432,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// 1:N customapi_customapiresponseproperty
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("customapi_customapiresponseproperty")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.CustomApiResponseProperty> CustomApi_CustomApiResponseProperty
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiResponseProperty> CustomApi_CustomApiResponseProperty
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.CustomApiResponseProperty>("customapi_customapiresponseproperty", null);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiResponseProperty>("customapi_customapiresponseproperty", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.CustomApiResponseProperty>("customapi_customapiresponseproperty", null, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiResponseProperty>("customapi_customapiresponseproperty", null, value);
 			}
 		}
 		
@@ -1450,17 +1450,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// 1:N msdyn_customapi_msdyn_customapirulesetconfiguration_CustomAPI
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_customapi_msdyn_customapirulesetconfiguration_CustomAPI")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Msdyn_CustomApiRuleSetConfiguration> Msdyn_CustomApi_Msdyn_CustomApiRuleSetConfiguration_CustomApi
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.Msdyn_CustomApiRuleSetConfiguration> Msdyn_CustomApi_Msdyn_CustomApiRuleSetConfiguration_CustomApi
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Msdyn_CustomApiRuleSetConfiguration>("msdyn_customapi_msdyn_customapirulesetconfiguration_CustomAPI", null);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Msdyn_CustomApiRuleSetConfiguration>("msdyn_customapi_msdyn_customapirulesetconfiguration_CustomAPI", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Msdyn_CustomApiRuleSetConfiguration>("msdyn_customapi_msdyn_customapirulesetconfiguration_CustomAPI", null, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.Msdyn_CustomApiRuleSetConfiguration>("msdyn_customapi_msdyn_customapirulesetconfiguration_CustomAPI", null, value);
 			}
 		}
 		
@@ -1469,17 +1469,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("plugintypeid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("plugintype_customapi")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.PluginType PluginType_CustomApi
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.PluginType PluginType_CustomApi
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.PluginType>("plugintype_customapi", null);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.PluginType>("plugintype_customapi", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.PluginType>("plugintype_customapi", null, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.PluginType>("plugintype_customapi", null, value);
 			}
 		}
 		
@@ -1488,17 +1488,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sdkmessageid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("sdkmessage_customapi")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessage SdkMessage_CustomApi
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessage SdkMessage_CustomApi
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessage>("sdkmessage_customapi", null);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessage>("sdkmessage_customapi", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessage>("sdkmessage_customapi", null, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessage>("sdkmessage_customapi", null, value);
 			}
 		}
 		
@@ -1507,17 +1507,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_customapi")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team Team_CustomApi
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.Team Team_CustomApi
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team>("team_customapi", null);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Team>("team_customapi", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.Team>("team_customapi", null, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Team>("team_customapi", null, value);
 			}
 		}
 		

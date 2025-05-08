@@ -13,21 +13,27 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 	
 	
 	/// <summary>
-	/// Configuration table for setting up custom APIs for usage inside the Unified routing system
+	/// Contains information about the tracked service-level KPIs for cases that belong to different customers.
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_customapirulesetconfiguration")]
-	public partial class Msdyn_CustomApiRuleSetConfiguration : Microsoft.Xrm.Sdk.Entity
+	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sla")]
+	public partial class Sla : Microsoft.Xrm.Sdk.Entity
 	{
 		
 		/// <summary>
-		/// Available fields, a the time of codegen, for the msdyn_customapirulesetconfiguration entity
+		/// Available fields, a the time of codegen, for the sla entity
 		/// </summary>
 		public partial class Fields
 		{
-			public const string ComponentIdUnique = "componentidunique";
+			public const string AllowPauseResume = "allowpauseresume";
+			public const string AllowPauseResumeName = "allowpauseresumename";
+			public const string ApplicableFrom = "applicablefrom";
+			public const string ApplicableFromName = "applicablefromname";
+			public const string ApplicableFromPicklist = "applicablefrompicklist";
+			public const string BusinessHoursId = "businesshoursid";
+			public const string BusinessHoursIdName = "businesshoursidname";
+			public const string ChangedAttributeList = "changedattributelist";
 			public const string ComponentState = "componentstate";
-			public const string ComponentStateName = "componentstatename";
 			public const string CreatedBy = "createdby";
 			public const string CreatedByName = "createdbyname";
 			public const string CreatedByYomiName = "createdbyyominame";
@@ -35,10 +41,11 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 			public const string CreatedOnBehalfBy = "createdonbehalfby";
 			public const string CreatedOnBehalfByName = "createdonbehalfbyname";
 			public const string CreatedOnBehalfByYomiName = "createdonbehalfbyyominame";
-			public const string ImportSequenceNumber = "importsequencenumber";
-			public const string IsCustomizable = "iscustomizable";
+			public const string Description = "description";
+			public const string ExchangerAte = "exchangerate";
+			public const string IsDefault = "isdefault";
+			public const string IsDefaultName = "isdefaultname";
 			public const string IsManaged = "ismanaged";
-			public const string IsManagedName = "ismanagedname";
 			public const string ModifiedBy = "modifiedby";
 			public const string ModifiedByName = "modifiedbyname";
 			public const string ModifiedByYomiName = "modifiedbyyominame";
@@ -46,24 +53,9 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
 			public const string ModifiedOnBehalfByName = "modifiedonbehalfbyname";
 			public const string ModifiedOnBehalfByYomiName = "modifiedonbehalfbyyominame";
-			public const string Msdyn_CustomApi = "msdyn_customapi";
-			public const string Msdyn_CustomApi_Msdyn_CustomApiRuleSetConfiguration_CustomApi = "msdyn_customapi_msdyn_customapirulesetconfiguration_CustomAPI";
-			public const string Msdyn_CustomApiName = "msdyn_customapiname";
-			public const string Msdyn_CustomApiRequestParameter = "msdyn_customapirequestparameter";
-			public const string Msdyn_CustomApiRequestParameter_Msdyn_CustomApiRuleSetConfiguration_CustomApiRequestParameter = "msdyn_customapirequestparameter_msdyn_customapirulesetconfiguration_CustomAPIRequestParameter";
-			public const string Msdyn_CustomApiRequestParameterName = "msdyn_customapirequestparametername";
-			public const string Msdyn_CustomApiResponseProperty = "msdyn_customapiresponseproperty";
-			public const string Msdyn_CustomApiResponseProperty_Msdyn_CustomApiRuleSetConfiguration_CustomApiResponseProperty = "msdyn_customapiresponseproperty_msdyn_customapirulesetconfiguration_CustomAPIResponseProperty";
-			public const string Msdyn_CustomApiResponsePropertyName = "msdyn_customapiresponsepropertyname";
-			public const string Msdyn_CustomApiRuleSetConfigurationId = "msdyn_customapirulesetconfigurationid";
-			public const string Id = "msdyn_customapirulesetconfigurationid";
-			public const string Msdyn_Name = "msdyn_name";
-			public const string Msdyn_PersistOutputData = "msdyn_persistoutputdata";
-			public const string Msdyn_PersistOutputDataName = "msdyn_persistoutputdataname";
-			public const string Msdyn_RefreshInputData = "msdyn_refreshinputdata";
-			public const string Msdyn_RefreshInputDataName = "msdyn_refreshinputdataname";
-			public const string Msdyn_UniqueName = "msdyn_uniquename";
-			public const string OverriddenCreatedOn = "overriddencreatedon";
+			public const string Name = "name";
+			public const string ObjectTypeCode = "objecttypecode";
+			public const string ObjectTypeCodename = "objecttypecodename";
 			public const string OverwriteTime = "overwritetime";
 			public const string OwnerId = "ownerid";
 			public const string OwnerIdName = "owneridname";
@@ -72,74 +64,222 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 			public const string OwningBusinessUnitName = "owningbusinessunitname";
 			public const string OwningTeam = "owningteam";
 			public const string OwningUser = "owninguser";
+			public const string PrimaryEntItYoTC = "primaryentityotc";
+			public const string Sla_SlaItem_SlaId = "Sla_SlaItem_SlaId";
+			public const string SlaBase_WorkflowId = "slabase_workflowid";
+			public const string SlaId = "slaid";
+			public const string Id = "slaid";
+			public const string SlaIdUnique = "slaidunique";
+			public const string SlatyPe = "slatype";
+			public const string SlaTypeName = "slatypename";
+			public const string SlaVersion = "slaversion";
+			public const string SlaVersionName = "slaversionname";
 			public const string SolutionId = "solutionid";
 			public const string StateCode = "statecode";
 			public const string StateCodename = "statecodename";
 			public const string StatusCode = "statuscode";
 			public const string StatusCodename = "statuscodename";
 			public const string SupportingSolutionId = "supportingsolutionid";
-			public const string Team_Msdyn_CustomApiRuleSetConfiguration = "team_msdyn_customapirulesetconfiguration";
-			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
-			public const string UtcConversionTimeZoneCode = "utcconversiontimezonecode";
+			public const string Team_SlaBase = "team_slaBase";
+			public const string TransactionCurrencyId = "transactioncurrencyid";
+			public const string TransactionCurrencyIdName = "transactioncurrencyidname";
 			public const string VersionNumber = "versionnumber";
+			public const string WorkflowId = "workflowid";
+			public const string WorkflowIdName = "workflowidname";
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public Msdyn_CustomApiRuleSetConfiguration(System.Guid id) : 
+		public Sla(System.Guid id) : 
 				base(EntityLogicalName, id)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public Msdyn_CustomApiRuleSetConfiguration(string keyName, object keyValue) : 
+		public Sla(string keyName, object keyValue) : 
 				base(EntityLogicalName, keyName, keyValue)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public Msdyn_CustomApiRuleSetConfiguration(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
+		public Sla(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
 				base(EntityLogicalName, keyAttributes)
 		{
 		}
-		
-		public const string AlternateKeys = "componentstate,msdyn_uniquename,overwritetime";
 		
 		/// <summary>
 		/// Default Constructor.
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public Msdyn_CustomApiRuleSetConfiguration() : 
+		public Sla() : 
 				base(EntityLogicalName)
 		{
 		}
 		
-		public const string PrimaryIdAttribute = "msdyn_customapirulesetconfigurationid";
+		public const string PrimaryIdAttribute = "slaid";
 		
-		public const string PrimaryNameAttribute = "msdyn_name";
+		public const string PrimaryNameAttribute = "name";
 		
-		public const string EntitySchemaName = "msdyn_customapirulesetconfiguration";
+		public const string EntitySchemaName = "SLA";
 		
-		public const string EntityLogicalName = "msdyn_customapirulesetconfiguration";
+		public const string EntityLogicalName = "sla";
 		
-		public const string EntityLogicalCollectionName = "msdyn_customapirulesetconfigurations";
+		public const string EntityLogicalCollectionName = "slas";
 		
-		public const string EntitySetName = "msdyn_customapirulesetconfigurations";
+		public const string EntitySetName = "slas";
 		
 		/// <summary>
-		/// For internal use only.
+		/// Select whether this SLA will allow pausing and resuming during the time calculation.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentidunique")]
-		public System.Nullable<System.Guid> ComponentIdUnique
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowpauseresume")]
+		public System.Nullable<bool> AllowPauseResume
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("componentidunique");
+				return this.GetAttributeValue<System.Nullable<bool>>("allowpauseresume");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("componentidunique", value);
+				this.SetAttributeValue("allowpauseresume", value);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowpauseresumename")]
+		public string AllowPauseResumeName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("allowpauseresume"))
+				{
+					return this.FormattedValues["allowpauseresume"];
+				}
+				else
+				{
+					return default(string);
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.FormattedValues["allowpauseresume"] = value;
+			}
+		}
+		
+		/// <summary>
+		/// Select the field that specifies the date and time from which the SLA items will be calculated for the case record. For example, if you select the Case Created On field, SLA calculation will begin from the time the case is created. 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("applicablefrom")]
+		public string ApplicableFrom
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("applicablefrom");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("applicablefrom", value);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("applicablefromname")]
+		public string ApplicableFromName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("applicablefrompicklist"))
+				{
+					return this.FormattedValues["applicablefrompicklist"];
+				}
+				else
+				{
+					return default(string);
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.FormattedValues["applicablefrompicklist"] = value;
+			}
+		}
+		
+		/// <summary>
+		/// Select the field that specifies the date and time from which the SLA items will be calculated. For example, if you select the Case Created On field, SLA calculation will begin from the time the case is created.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("applicablefrompicklist")]
+		public virtual Sla_ApplicableFromPicklist? ApplicableFromPicklist
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((Sla_ApplicableFromPicklist?)(EntityOptionSetEnum.GetEnum(this, "applicablefrompicklist")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("applicablefrompicklist", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+			}
+		}
+		
+		/// <summary>
+		/// Choose the business hours for calculating SLA item timelines.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businesshoursid")]
+		public Microsoft.Xrm.Sdk.EntityReference BusinessHoursId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("businesshoursid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("businesshoursid", value);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businesshoursidname")]
+		public string BusinessHoursIdName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("businesshoursid"))
+				{
+					return this.FormattedValues["businesshoursid"];
+				}
+				else
+				{
+					return default(string);
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.FormattedValues["businesshoursid"] = value;
+			}
+		}
+		
+		/// <summary>
+		/// Type additional information to describe the SLA
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("changedattributelist")]
+		public string ChangedAttributeList
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("changedattributelist");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("changedattributelist", value);
 			}
 		}
 		
@@ -161,30 +301,8 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 			}
 		}
 		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstatename")]
-		public string ComponentStateName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("componentstate"))
-				{
-					return this.FormattedValues["componentstate"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.FormattedValues["componentstate"] = value;
-			}
-		}
-		
 		/// <summary>
-		/// Unique identifier of the user who created the record.
+		/// Shows who created the record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
@@ -246,7 +364,7 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 		}
 		
 		/// <summary>
-		/// Date and time when the record was created.
+		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
@@ -264,7 +382,7 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who created the record.
+		/// Shows who created the record on behalf of another user.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
@@ -326,43 +444,83 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 		}
 		
 		/// <summary>
-		/// Sequence number of the import that created this record.
+		/// Type additional information to describe the SLA
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("importsequencenumber")]
-		public System.Nullable<int> ImportSequenceNumber
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("description")]
+		public string Description
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("importsequencenumber");
+				return this.GetAttributeValue<string>("description");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("importsequencenumber", value);
+				this.SetAttributeValue("description", value);
+			}
+		}
+		
+		/// <summary>
+		/// Exchange rate between the currency associated with the SLA record and the base currency.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
+		public System.Nullable<decimal> ExchangerAte
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<decimal>>("exchangerate");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("exchangerate", value);
+			}
+		}
+		
+		/// <summary>
+		/// Tells whether this SLA is the default one.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdefault")]
+		public System.Nullable<bool> IsDefault
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("isdefault");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("isdefault", value);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdefaultname")]
+		public string IsDefaultName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("isdefault"))
+				{
+					return this.FormattedValues["isdefault"];
+				}
+				else
+				{
+					return default(string);
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.FormattedValues["isdefault"] = value;
 			}
 		}
 		
 		/// <summary>
 		/// For internal use only.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("iscustomizable")]
-		public Microsoft.Xrm.Sdk.BooleanManagedProperty IsCustomizable
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.BooleanManagedProperty>("iscustomizable");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("iscustomizable", value);
-			}
-		}
-		
-		/// <summary>
-		/// Indicates whether the solution component is part of a managed solution.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismanaged")]
 		public System.Nullable<bool> IsManaged
@@ -379,30 +537,8 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 			}
 		}
 		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismanagedname")]
-		public string IsManagedName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("ismanaged"))
-				{
-					return this.FormattedValues["ismanaged"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.FormattedValues["ismanaged"] = value;
-			}
-		}
-		
 		/// <summary>
-		/// Unique identifier of the user who modified the record.
+		/// Shows who last updated the record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
@@ -464,7 +600,7 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 		}
 		
 		/// <summary>
-		/// Date and time when the record was modified.
+		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
@@ -482,7 +618,7 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who modified the record.
+		/// Shows who created the record on behalf of another user.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
@@ -544,32 +680,50 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 		}
 		
 		/// <summary>
-		/// Select the Custom API registered in dataverse
+		/// Type a descriptive name of the service level agreement (SLA).
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapi")]
-		public Microsoft.Xrm.Sdk.EntityReference Msdyn_CustomApi
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("name")]
+		public string Name
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_customapi");
+				return this.GetAttributeValue<string>("name");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("msdyn_customapi", value);
+				this.SetAttributeValue("name", value);
 			}
 		}
 		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapiname")]
-		public string Msdyn_CustomApiName
+		/// <summary>
+		/// Choose the entity type that the SLA is defined.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objecttypecode")]
+		public virtual Sla_ObjectTypeCode? ObjectTypeCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				if (this.FormattedValues.Contains("msdyn_customapi"))
+				return ((Sla_ObjectTypeCode?)(EntityOptionSetEnum.GetEnum(this, "objecttypecode")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("objecttypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objecttypecodename")]
+		public string ObjectTypeCodename
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("objecttypecode"))
 				{
-					return this.FormattedValues["msdyn_customapi"];
+					return this.FormattedValues["objecttypecode"];
 				}
 				else
 				{
@@ -579,262 +733,7 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.FormattedValues["msdyn_customapi"] = value;
-			}
-		}
-		
-		/// <summary>
-		/// Select the request parameter of the Custom API that should contain the input from Unified Routing
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapirequestparameter")]
-		public Microsoft.Xrm.Sdk.EntityReference Msdyn_CustomApiRequestParameter
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_customapirequestparameter");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("msdyn_customapirequestparameter", value);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapirequestparametername")]
-		public string Msdyn_CustomApiRequestParameterName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("msdyn_customapirequestparameter"))
-				{
-					return this.FormattedValues["msdyn_customapirequestparameter"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.FormattedValues["msdyn_customapirequestparameter"] = value;
-			}
-		}
-		
-		/// <summary>
-		/// Select the response property of the Custom API which will contain the output that needs to be parsed by Unified Routing
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapiresponseproperty")]
-		public Microsoft.Xrm.Sdk.EntityReference Msdyn_CustomApiResponseProperty
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_customapiresponseproperty");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("msdyn_customapiresponseproperty", value);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapiresponsepropertyname")]
-		public string Msdyn_CustomApiResponsePropertyName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("msdyn_customapiresponseproperty"))
-				{
-					return this.FormattedValues["msdyn_customapiresponseproperty"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.FormattedValues["msdyn_customapiresponseproperty"] = value;
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapirulesetconfigurationid")]
-		public System.Nullable<System.Guid> Msdyn_CustomApiRuleSetConfigurationId
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("msdyn_customapirulesetconfigurationid");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("msdyn_customapirulesetconfigurationid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapirulesetconfigurationid")]
-		public override System.Guid Id
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return base.Id;
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.Msdyn_CustomApiRuleSetConfigurationId = value;
-			}
-		}
-		
-		/// <summary>
-		/// Name of the Custom API record that can be selected in routing rules
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_name")]
-		public string Msdyn_Name
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("msdyn_name");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("msdyn_name", value);
-			}
-		}
-		
-		/// <summary>
-		/// Persist the output data from the Custom API to be used in further rules
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_persistoutputdata")]
-		public System.Nullable<bool> Msdyn_PersistOutputData
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<bool>>("msdyn_persistoutputdata");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("msdyn_persistoutputdata", value);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_persistoutputdataname")]
-		public string Msdyn_PersistOutputDataName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("msdyn_persistoutputdata"))
-				{
-					return this.FormattedValues["msdyn_persistoutputdata"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.FormattedValues["msdyn_persistoutputdata"] = value;
-			}
-		}
-		
-		/// <summary>
-		/// Refresh the work items details before invoking the Custom API 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_refreshinputdata")]
-		public System.Nullable<bool> Msdyn_RefreshInputData
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<bool>>("msdyn_refreshinputdata");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("msdyn_refreshinputdata", value);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_refreshinputdataname")]
-		public string Msdyn_RefreshInputDataName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("msdyn_refreshinputdata"))
-				{
-					return this.FormattedValues["msdyn_refreshinputdata"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.FormattedValues["msdyn_refreshinputdata"] = value;
-			}
-		}
-		
-		/// <summary>
-		/// Unique Name for the entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_uniquename")]
-		public string Msdyn_UniqueName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("msdyn_uniquename");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("msdyn_uniquename", value);
-			}
-		}
-		
-		/// <summary>
-		/// Date and time that the record was migrated.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overriddencreatedon")]
-		public System.Nullable<System.DateTime> OverriddenCreatedOn
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("overriddencreatedon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("overriddencreatedon", value);
+				this.FormattedValues["objecttypecode"] = value;
 			}
 		}
 		
@@ -857,7 +756,7 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 		}
 		
 		/// <summary>
-		/// Owner Id
+		/// Enter the user or team who owns the SLA. This field is updated every time the item is assigned to a different user.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
 		public Microsoft.Xrm.Sdk.EntityReference OwnerId
@@ -874,9 +773,6 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 			}
 		}
 		
-		/// <summary>
-		/// Name of the owner
-		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owneridname")]
 		public string OwnerIdName
 		{
@@ -899,9 +795,6 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 			}
 		}
 		
-		/// <summary>
-		/// Yomi name of the owner
-		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owneridyominame")]
 		public string OwnerIdYomiName
 		{
@@ -1001,6 +894,160 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 		}
 		
 		/// <summary>
+		/// Shows the primary entity that the SLA has been created for.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("primaryentityotc")]
+		public System.Nullable<int> PrimaryEntItYoTC
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("primaryentityotc");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("primaryentityotc", value);
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier of the SLA.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
+		public System.Nullable<System.Guid> SlaId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("slaid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("slaid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
+		public override System.Guid Id
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return base.Id;
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SlaId = value;
+			}
+		}
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaidunique")]
+		public System.Nullable<System.Guid> SlaIdUnique
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("slaidunique");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("slaidunique", value);
+			}
+		}
+		
+		/// <summary>
+		/// Select the type of service level agreement (SLA).
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slatype")]
+		public virtual Sla_SlatyPe? SlatyPe
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((Sla_SlatyPe?)(EntityOptionSetEnum.GetEnum(this, "slatype")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("slatype", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slatypename")]
+		public string SlaTypeName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("slatype"))
+				{
+					return this.FormattedValues["slatype"];
+				}
+				else
+				{
+					return default(string);
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.FormattedValues["slatype"] = value;
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaversion")]
+		public virtual Sla_SlaVersion? SlaVersion
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((Sla_SlaVersion?)(EntityOptionSetEnum.GetEnum(this, "slaversion")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("slaversion", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaversionname")]
+		public string SlaVersionName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("slaversion"))
+				{
+					return this.FormattedValues["slaversion"];
+				}
+				else
+				{
+					return default(string);
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.FormattedValues["slaversion"] = value;
+			}
+		}
+		
+		/// <summary>
 		/// Unique identifier of the associated solution.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("solutionid")]
@@ -1019,15 +1066,15 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 		}
 		
 		/// <summary>
-		/// Status of the Custom API Ruleset Configuration
+		/// Shows whether the Service Level Agreement (SLA) is active or inactive.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
-		public virtual Msdyn_CustomApiRuleSetConfiguration_StateCode? StateCode
+		public virtual Sla_StateCode? StateCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((Msdyn_CustomApiRuleSetConfiguration_StateCode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
+				return ((Sla_StateCode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1059,15 +1106,15 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 		}
 		
 		/// <summary>
-		/// Reason for the status of the Custom API Ruleset Configuration
+		/// Select the status of the service level agreement (SLA).
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public virtual Msdyn_CustomApiRuleSetConfiguration_StatusCode? StatusCode
+		public virtual Sla_StatusCode? StatusCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((Msdyn_CustomApiRuleSetConfiguration_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
+				return ((Sla_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1117,43 +1164,47 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 		}
 		
 		/// <summary>
-		/// For internal use only.
+		/// Unique identifier of the currency associated with the SLA record.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezoneruleversionnumber")]
-		public System.Nullable<int> TimeZoneRuleVersionNumber
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("timezoneruleversionnumber");
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("transactioncurrencyid");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("timezoneruleversionnumber", value);
+				this.SetAttributeValue("transactioncurrencyid", value);
 			}
 		}
 		
-		/// <summary>
-		/// Time zone code that was in use when the record was created.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
-		public System.Nullable<int> UtcConversionTimeZoneCode
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyidname")]
+		public string TransactionCurrencyIdName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("utcconversiontimezonecode");
+				if (this.FormattedValues.Contains("transactioncurrencyid"))
+				{
+					return this.FormattedValues["transactioncurrencyid"];
+				}
+				else
+				{
+					return default(string);
+				}
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("utcconversiontimezonecode", value);
+				this.FormattedValues["transactioncurrencyid"] = value;
 			}
 		}
 		
 		/// <summary>
-		/// Version Number
+		/// Version number of the SLA.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
 		public System.Nullable<long> VersionNumber
@@ -1171,84 +1222,98 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 		}
 		
 		/// <summary>
-		/// N:1 msdyn_customapi_msdyn_customapirulesetconfiguration_CustomAPI
+		/// Workflow associated with the SLA.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapi")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_customapi_msdyn_customapirulesetconfiguration_CustomAPI")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApi Msdyn_CustomApi_Msdyn_CustomApiRuleSetConfiguration_CustomApi
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("workflowid")]
+		public Microsoft.Xrm.Sdk.EntityReference WorkflowId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApi>("msdyn_customapi_msdyn_customapirulesetconfiguration_CustomAPI", null);
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("workflowid");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApi>("msdyn_customapi_msdyn_customapirulesetconfiguration_CustomAPI", null, value);
+				this.SetAttributeValue("workflowid", value);
 			}
 		}
 		
-		/// <summary>
-		/// N:1 msdyn_customapirequestparameter_msdyn_customapirulesetconfiguration_CustomAPIRequestParameter
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapirequestparameter")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_customapirequestparameter_msdyn_customapirulesetconfiguration_CustomAPIRequ" +
-			"estParameter")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiRequestParameter Msdyn_CustomApiRequestParameter_Msdyn_CustomApiRuleSetConfiguration_CustomApiRequestParameter
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("workflowidname")]
+		public string WorkflowIdName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiRequestParameter>("msdyn_customapirequestparameter_msdyn_customapirulesetconfiguration_CustomAPIRequ" +
-						"estParameter", null);
+				if (this.FormattedValues.Contains("workflowid"))
+				{
+					return this.FormattedValues["workflowid"];
+				}
+				else
+				{
+					return default(string);
+				}
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiRequestParameter>("msdyn_customapirequestparameter_msdyn_customapirulesetconfiguration_CustomAPIRequ" +
-						"estParameter", null, value);
+				this.FormattedValues["workflowid"] = value;
 			}
 		}
 		
 		/// <summary>
-		/// N:1 msdyn_customapiresponseproperty_msdyn_customapirulesetconfiguration_CustomAPIResponseProperty
+		/// 1:N sla_slaitem_slaId
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapiresponseproperty")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_customapiresponseproperty_msdyn_customapirulesetconfiguration_CustomAPIResp" +
-			"onseProperty")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiResponseProperty Msdyn_CustomApiResponseProperty_Msdyn_CustomApiRuleSetConfiguration_CustomApiResponseProperty
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("sla_slaitem_slaId")]
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.SlaItem> Sla_SlaItem_SlaId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiResponseProperty>("msdyn_customapiresponseproperty_msdyn_customapirulesetconfiguration_CustomAPIResp" +
-						"onseProperty", null);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SlaItem>("sla_slaitem_slaId", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiResponseProperty>("msdyn_customapiresponseproperty_msdyn_customapirulesetconfiguration_CustomAPIResp" +
-						"onseProperty", null, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SlaItem>("sla_slaitem_slaId", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 team_msdyn_customapirulesetconfiguration
+		/// N:1 slabase_workflowid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("workflowid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("slabase_workflowid")]
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow SlaBase_WorkflowId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow>("slabase_workflowid", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Workflow>("slabase_workflowid", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 team_slaBase
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_msdyn_customapirulesetconfiguration")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundModels.Team Team_Msdyn_CustomApiRuleSetConfiguration
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_slaBase")]
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.Team Team_SlaBase
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Team>("team_msdyn_customapirulesetconfiguration", null);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Team>("team_slaBase", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Team>("team_msdyn_customapirulesetconfiguration", null, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Team>("team_slaBase", null, value);
 			}
 		}
 		
@@ -1257,7 +1322,7 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public Msdyn_CustomApiRuleSetConfiguration(object anonymousType) : 
+		public Sla(object anonymousType) : 
 				this()
 		{
             foreach (var p in anonymousType.GetType().GetProperties())
@@ -1275,9 +1340,9 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
                 {
                     case "id":
                         base.Id = (System.Guid)value;
-                        Attributes["msdyn_customapirulesetconfigurationid"] = base.Id;
+                        Attributes["slaid"] = base.Id;
                         break;
-                    case "msdyn_customapirulesetconfigurationid":
+                    case "slaid":
                         var id = (System.Nullable<System.Guid>) value;
                         if(id == null){ continue; }
                         base.Id = id.Value;

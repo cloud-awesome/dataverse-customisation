@@ -18,7 +18,7 @@ whoami</ActionsWhitelist>
     <AddOptionSetMetadataAttribute>false</AddOptionSetMetadataAttribute>
     <AdjustCasingForEnumOptions>true</AdjustCasingForEnumOptions>
     <AttributeBlacklist />
-    <BuilderSettingsJsonRelativePath>EarlyBoundEntities\builderSettings.json</BuilderSettingsJsonRelativePath>
+    <BuilderSettingsJsonRelativePath>EarlyBoundModels\builderSettings.json</BuilderSettingsJsonRelativePath>
     <CamelCaseClassNames>true</CamelCaseClassNames>
     <CamelCaseCustomWords />
     <CamelCaseMemberNames>true</CamelCaseMemberNames>
@@ -29,12 +29,14 @@ whoami</ActionsWhitelist>
     <CreateOneFilePerOptionSet>false</CreateOneFilePerOptionSet>
     <DeleteFilesFromOutputFolders>true</DeleteFilesFromOutputFolders>
     <EntitiesToSkip />
-    <EntitiesWhitelist>customapi|
+    <EntitiesWhitelist>canvasapp|
+customapi|
 customapirequestparameter|
 customapiresponseproperty|
 environmentvariabledefinition|
 environmentvariablevalue|
 msdyn_customapirulesetconfiguration|
+msdyn_slakpi|
 pluginassembly|
 pluginpackage|
 plugintype|
@@ -51,6 +53,9 @@ sdkmessagerequestfield|
 sdkmessageresponse|
 sdkmessageresponsefield|
 serviceendpoint|
+sla|
+slaitem|
+slakpiinstance|
 team|
 teamroles|
 workflow</EntitiesWhitelist>
@@ -140,7 +145,7 @@ VoiceMail</TokenCapitalizationOverrides>
   <MetadataQueryProviderService>DLaB.ModelBuilderExtensions.MetadataQueryProviderService,DLaB.ModelBuilderExtensions</MetadataQueryProviderService>
   <NamingService>DLaB.ModelBuilderExtensions.NamingService,DLaB.ModelBuilderExtensions</NamingService>
   <OptionSetsTypesFolder>EarlyBoundModels\OptionSets.cs</OptionSetsTypesFolder>
-  <Namespace>CloudAwesome.Dataverse.Core.EarlyBoundEntities</Namespace>
+  <Namespace>CloudAwesome.Dataverse.Core.EarlyBoundModels</Namespace>
   <ServiceContextName />
   <SuppressGeneratedCodeAttribute>true</SuppressGeneratedCodeAttribute>
   <SettingsVersion>2.2024.11.8</SettingsVersion>

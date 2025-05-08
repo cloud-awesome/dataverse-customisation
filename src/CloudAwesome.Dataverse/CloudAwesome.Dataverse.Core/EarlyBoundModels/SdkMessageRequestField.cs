@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
+namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 {
 	
 	
@@ -700,17 +700,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sdkmessagerequestid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("messagerequest_sdkmessagerequestfield")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageRequest MessageRequest_SdkMessageRequestField
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageRequest MessageRequest_SdkMessageRequestField
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageRequest>("messagerequest_sdkmessagerequestfield", null);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageRequest>("messagerequest_sdkmessagerequestfield", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.SdkMessageRequest>("messagerequest_sdkmessagerequestfield", null, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.SdkMessageRequest>("messagerequest_sdkmessagerequestfield", null, value);
 			}
 		}
 		

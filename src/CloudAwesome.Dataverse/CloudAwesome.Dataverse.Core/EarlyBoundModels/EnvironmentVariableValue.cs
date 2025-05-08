@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
+namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 {
 	
 	
@@ -948,17 +948,17 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("environmentvariabledefinitionid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("environmentvariabledefinition_environmentvariablevalue")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundEntities.EnvironmentVariableDefinition EnvironmentVariableDefinition_EnvironmentVariableValue
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.EnvironmentVariableDefinition EnvironmentVariableDefinition_EnvironmentVariableValue
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.EnvironmentVariableDefinition>("environmentvariabledefinition_environmentvariablevalue", null);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.EnvironmentVariableDefinition>("environmentvariabledefinition_environmentvariablevalue", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundEntities.EnvironmentVariableDefinition>("environmentvariabledefinition_environmentvariablevalue", null, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.EnvironmentVariableDefinition>("environmentvariabledefinition_environmentvariablevalue", null, value);
 			}
 		}
 		

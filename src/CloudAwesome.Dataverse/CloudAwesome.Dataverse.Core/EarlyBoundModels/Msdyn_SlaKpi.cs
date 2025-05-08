@@ -12,16 +12,13 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 {
 	
 	
-	/// <summary>
-	/// Configuration table for setting up custom APIs for usage inside the Unified routing system
-	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_customapirulesetconfiguration")]
-	public partial class Msdyn_CustomApiRuleSetConfiguration : Microsoft.Xrm.Sdk.Entity
+	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_slakpi")]
+	public partial class Msdyn_SlaKpi : Microsoft.Xrm.Sdk.Entity
 	{
 		
 		/// <summary>
-		/// Available fields, a the time of codegen, for the msdyn_customapirulesetconfiguration entity
+		/// Available fields, a the time of codegen, for the msdyn_slakpi entity
 		/// </summary>
 		public partial class Fields
 		{
@@ -46,23 +43,20 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
 			public const string ModifiedOnBehalfByName = "modifiedonbehalfbyname";
 			public const string ModifiedOnBehalfByYomiName = "modifiedonbehalfbyyominame";
-			public const string Msdyn_CustomApi = "msdyn_customapi";
-			public const string Msdyn_CustomApi_Msdyn_CustomApiRuleSetConfiguration_CustomApi = "msdyn_customapi_msdyn_customapirulesetconfiguration_CustomAPI";
-			public const string Msdyn_CustomApiName = "msdyn_customapiname";
-			public const string Msdyn_CustomApiRequestParameter = "msdyn_customapirequestparameter";
-			public const string Msdyn_CustomApiRequestParameter_Msdyn_CustomApiRuleSetConfiguration_CustomApiRequestParameter = "msdyn_customapirequestparameter_msdyn_customapirulesetconfiguration_CustomAPIRequestParameter";
-			public const string Msdyn_CustomApiRequestParameterName = "msdyn_customapirequestparametername";
-			public const string Msdyn_CustomApiResponseProperty = "msdyn_customapiresponseproperty";
-			public const string Msdyn_CustomApiResponseProperty_Msdyn_CustomApiRuleSetConfiguration_CustomApiResponseProperty = "msdyn_customapiresponseproperty_msdyn_customapirulesetconfiguration_CustomAPIResponseProperty";
-			public const string Msdyn_CustomApiResponsePropertyName = "msdyn_customapiresponsepropertyname";
-			public const string Msdyn_CustomApiRuleSetConfigurationId = "msdyn_customapirulesetconfigurationid";
-			public const string Id = "msdyn_customapirulesetconfigurationid";
+			public const string Msdyn_AdvancedPauseConfiguration = "msdyn_advancedpauseconfiguration";
+			public const string Msdyn_AdvancedPauseConfigurationName = "msdyn_advancedpauseconfigurationname";
+			public const string Msdyn_ApplicableFromDisplayName = "msdyn_applicablefromdisplayname";
+			public const string Msdyn_ApplicableFromField = "msdyn_applicablefromfield";
+			public const string Msdyn_Description = "msdyn_description";
+			public const string Msdyn_EntityDisplayName = "msdyn_entitydisplayname";
+			public const string Msdyn_EntityName = "msdyn_entityname";
+			public const string Msdyn_KPiField = "msdyn_kpifield";
+			public const string Msdyn_Msdyn_SlaKpi_SlaItem = "Msdyn_Msdyn_SlaKpi_SlaItem";
 			public const string Msdyn_Name = "msdyn_name";
-			public const string Msdyn_PersistOutputData = "msdyn_persistoutputdata";
-			public const string Msdyn_PersistOutputDataName = "msdyn_persistoutputdataname";
-			public const string Msdyn_RefreshInputData = "msdyn_refreshinputdata";
-			public const string Msdyn_RefreshInputDataName = "msdyn_refreshinputdataname";
-			public const string Msdyn_UniqueName = "msdyn_uniquename";
+			public const string Msdyn_PauseConfigurationXml = "msdyn_pauseconfigurationxml";
+			public const string Msdyn_SlaKpiId = "msdyn_slakpiid";
+			public const string Id = "msdyn_slakpiid";
+			public const string Msdyn_WorkflowInfo = "msdyn_workflowinfo";
 			public const string OverriddenCreatedOn = "overriddencreatedon";
 			public const string OverwriteTime = "overwritetime";
 			public const string OwnerId = "ownerid";
@@ -78,52 +72,50 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 			public const string StatusCode = "statuscode";
 			public const string StatusCodename = "statuscodename";
 			public const string SupportingSolutionId = "supportingsolutionid";
-			public const string Team_Msdyn_CustomApiRuleSetConfiguration = "team_msdyn_customapirulesetconfiguration";
+			public const string Team_Msdyn_SlaKpi = "team_msdyn_slakpi";
 			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
 			public const string UtcConversionTimeZoneCode = "utcconversiontimezonecode";
 			public const string VersionNumber = "versionnumber";
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public Msdyn_CustomApiRuleSetConfiguration(System.Guid id) : 
+		public Msdyn_SlaKpi(System.Guid id) : 
 				base(EntityLogicalName, id)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public Msdyn_CustomApiRuleSetConfiguration(string keyName, object keyValue) : 
+		public Msdyn_SlaKpi(string keyName, object keyValue) : 
 				base(EntityLogicalName, keyName, keyValue)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public Msdyn_CustomApiRuleSetConfiguration(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
+		public Msdyn_SlaKpi(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
 				base(EntityLogicalName, keyAttributes)
 		{
 		}
-		
-		public const string AlternateKeys = "componentstate,msdyn_uniquename,overwritetime";
 		
 		/// <summary>
 		/// Default Constructor.
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public Msdyn_CustomApiRuleSetConfiguration() : 
+		public Msdyn_SlaKpi() : 
 				base(EntityLogicalName)
 		{
 		}
 		
-		public const string PrimaryIdAttribute = "msdyn_customapirulesetconfigurationid";
+		public const string PrimaryIdAttribute = "msdyn_slakpiid";
 		
 		public const string PrimaryNameAttribute = "msdyn_name";
 		
-		public const string EntitySchemaName = "msdyn_customapirulesetconfiguration";
+		public const string EntitySchemaName = "msdyn_slakpi";
 		
-		public const string EntityLogicalName = "msdyn_customapirulesetconfiguration";
+		public const string EntityLogicalName = "msdyn_slakpi";
 		
-		public const string EntityLogicalCollectionName = "msdyn_customapirulesetconfigurations";
+		public const string EntityLogicalCollectionName = "msdyn_slakpis";
 		
-		public const string EntitySetName = "msdyn_customapirulesetconfigurations";
+		public const string EntitySetName = "msdyn_slakpis";
 		
 		/// <summary>
 		/// For internal use only.
@@ -543,33 +535,30 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 			}
 		}
 		
-		/// <summary>
-		/// Select the Custom API registered in dataverse
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapi")]
-		public Microsoft.Xrm.Sdk.EntityReference Msdyn_CustomApi
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_advancedpauseconfiguration")]
+		public System.Nullable<bool> Msdyn_AdvancedPauseConfiguration
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_customapi");
+				return this.GetAttributeValue<System.Nullable<bool>>("msdyn_advancedpauseconfiguration");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("msdyn_customapi", value);
+				this.SetAttributeValue("msdyn_advancedpauseconfiguration", value);
 			}
 		}
 		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapiname")]
-		public string Msdyn_CustomApiName
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_advancedpauseconfigurationname")]
+		public string Msdyn_AdvancedPauseConfigurationName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				if (this.FormattedValues.Contains("msdyn_customapi"))
+				if (this.FormattedValues.Contains("msdyn_advancedpauseconfiguration"))
 				{
-					return this.FormattedValues["msdyn_customapi"];
+					return this.FormattedValues["msdyn_advancedpauseconfiguration"];
 				}
 				else
 				{
@@ -579,133 +568,102 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.FormattedValues["msdyn_customapi"] = value;
+				this.FormattedValues["msdyn_advancedpauseconfiguration"] = value;
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_applicablefromdisplayname")]
+		public string Msdyn_ApplicableFromDisplayName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("msdyn_applicablefromdisplayname");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("msdyn_applicablefromdisplayname", value);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_applicablefromfield")]
+		public string Msdyn_ApplicableFromField
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("msdyn_applicablefromfield");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("msdyn_applicablefromfield", value);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_description")]
+		public string Msdyn_Description
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("msdyn_description");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("msdyn_description", value);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_entitydisplayname")]
+		public string Msdyn_EntityDisplayName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("msdyn_entitydisplayname");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("msdyn_entitydisplayname", value);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_entityname")]
+		public string Msdyn_EntityName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("msdyn_entityname");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("msdyn_entityname", value);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_kpifield")]
+		public string Msdyn_KPiField
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("msdyn_kpifield");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("msdyn_kpifield", value);
 			}
 		}
 		
 		/// <summary>
-		/// Select the request parameter of the Custom API that should contain the input from Unified Routing
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapirequestparameter")]
-		public Microsoft.Xrm.Sdk.EntityReference Msdyn_CustomApiRequestParameter
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_customapirequestparameter");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("msdyn_customapirequestparameter", value);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapirequestparametername")]
-		public string Msdyn_CustomApiRequestParameterName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("msdyn_customapirequestparameter"))
-				{
-					return this.FormattedValues["msdyn_customapirequestparameter"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.FormattedValues["msdyn_customapirequestparameter"] = value;
-			}
-		}
-		
-		/// <summary>
-		/// Select the response property of the Custom API which will contain the output that needs to be parsed by Unified Routing
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapiresponseproperty")]
-		public Microsoft.Xrm.Sdk.EntityReference Msdyn_CustomApiResponseProperty
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_customapiresponseproperty");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("msdyn_customapiresponseproperty", value);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapiresponsepropertyname")]
-		public string Msdyn_CustomApiResponsePropertyName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("msdyn_customapiresponseproperty"))
-				{
-					return this.FormattedValues["msdyn_customapiresponseproperty"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.FormattedValues["msdyn_customapiresponseproperty"] = value;
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapirulesetconfigurationid")]
-		public System.Nullable<System.Guid> Msdyn_CustomApiRuleSetConfigurationId
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("msdyn_customapirulesetconfigurationid");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("msdyn_customapirulesetconfigurationid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapirulesetconfigurationid")]
-		public override System.Guid Id
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return base.Id;
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.Msdyn_CustomApiRuleSetConfigurationId = value;
-			}
-		}
-		
-		/// <summary>
-		/// Name of the Custom API record that can be selected in routing rules
+		/// The name of the custom entity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_name")]
 		public string Msdyn_Name
@@ -722,101 +680,74 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 			}
 		}
 		
-		/// <summary>
-		/// Persist the output data from the Custom API to be used in further rules
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_persistoutputdata")]
-		public System.Nullable<bool> Msdyn_PersistOutputData
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_pauseconfigurationxml")]
+		public string Msdyn_PauseConfigurationXml
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("msdyn_persistoutputdata");
+				return this.GetAttributeValue<string>("msdyn_pauseconfigurationxml");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("msdyn_persistoutputdata", value);
+				this.SetAttributeValue("msdyn_pauseconfigurationxml", value);
 			}
 		}
 		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_persistoutputdataname")]
-		public string Msdyn_PersistOutputDataName
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_slakpiid")]
+		public System.Nullable<System.Guid> Msdyn_SlaKpiId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				if (this.FormattedValues.Contains("msdyn_persistoutputdata"))
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("msdyn_slakpiid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("msdyn_slakpiid", value);
+				if (value.HasValue)
 				{
-					return this.FormattedValues["msdyn_persistoutputdata"];
+					base.Id = value.Value;
 				}
 				else
 				{
-					return default(string);
+					base.Id = System.Guid.Empty;
 				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.FormattedValues["msdyn_persistoutputdata"] = value;
 			}
 		}
 		
-		/// <summary>
-		/// Refresh the work items details before invoking the Custom API 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_refreshinputdata")]
-		public System.Nullable<bool> Msdyn_RefreshInputData
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_slakpiid")]
+		public override System.Guid Id
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("msdyn_refreshinputdata");
+				return base.Id;
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("msdyn_refreshinputdata", value);
+				this.Msdyn_SlaKpiId = value;
 			}
 		}
 		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_refreshinputdataname")]
-		public string Msdyn_RefreshInputDataName
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_workflowinfo")]
+		public string Msdyn_WorkflowInfo
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				if (this.FormattedValues.Contains("msdyn_refreshinputdata"))
-				{
-					return this.FormattedValues["msdyn_refreshinputdata"];
-				}
-				else
-				{
-					return default(string);
-				}
+				return this.GetAttributeValue<string>("msdyn_workflowinfo");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.FormattedValues["msdyn_refreshinputdata"] = value;
-			}
-		}
-		
-		/// <summary>
-		/// Unique Name for the entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_uniquename")]
-		public string Msdyn_UniqueName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("msdyn_uniquename");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("msdyn_uniquename", value);
+				this.SetAttributeValue("msdyn_workflowinfo", value);
 			}
 		}
 		
@@ -1019,15 +950,15 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 		}
 		
 		/// <summary>
-		/// Status of the Custom API Ruleset Configuration
+		/// Status of the SLAKPI
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
-		public virtual Msdyn_CustomApiRuleSetConfiguration_StateCode? StateCode
+		public virtual Msdyn_SlaKpi_StateCode? StateCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((Msdyn_CustomApiRuleSetConfiguration_StateCode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
+				return ((Msdyn_SlaKpi_StateCode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1059,15 +990,15 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 		}
 		
 		/// <summary>
-		/// Reason for the status of the Custom API Ruleset Configuration
+		/// Reason for the status of the SLAKPI
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public virtual Msdyn_CustomApiRuleSetConfiguration_StatusCode? StatusCode
+		public virtual Msdyn_SlaKpi_StatusCode? StatusCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((Msdyn_CustomApiRuleSetConfiguration_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
+				return ((Msdyn_SlaKpi_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1171,84 +1102,39 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 		}
 		
 		/// <summary>
-		/// N:1 msdyn_customapi_msdyn_customapirulesetconfiguration_CustomAPI
+		/// 1:N msdyn_msdyn_slakpi_slaitem
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapi")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_customapi_msdyn_customapirulesetconfiguration_CustomAPI")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApi Msdyn_CustomApi_Msdyn_CustomApiRuleSetConfiguration_CustomApi
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_msdyn_slakpi_slaitem")]
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Dataverse.Core.EarlyBoundModels.SlaItem> Msdyn_Msdyn_SlaKpi_SlaItem
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApi>("msdyn_customapi_msdyn_customapirulesetconfiguration_CustomAPI", null);
+				return this.GetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SlaItem>("msdyn_msdyn_slakpi_slaitem", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApi>("msdyn_customapi_msdyn_customapirulesetconfiguration_CustomAPI", null, value);
+				this.SetRelatedEntities<CloudAwesome.Dataverse.Core.EarlyBoundModels.SlaItem>("msdyn_msdyn_slakpi_slaitem", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 msdyn_customapirequestparameter_msdyn_customapirulesetconfiguration_CustomAPIRequestParameter
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapirequestparameter")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_customapirequestparameter_msdyn_customapirulesetconfiguration_CustomAPIRequ" +
-			"estParameter")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiRequestParameter Msdyn_CustomApiRequestParameter_Msdyn_CustomApiRuleSetConfiguration_CustomApiRequestParameter
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiRequestParameter>("msdyn_customapirequestparameter_msdyn_customapirulesetconfiguration_CustomAPIRequ" +
-						"estParameter", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiRequestParameter>("msdyn_customapirequestparameter_msdyn_customapirulesetconfiguration_CustomAPIRequ" +
-						"estParameter", null, value);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 msdyn_customapiresponseproperty_msdyn_customapirulesetconfiguration_CustomAPIResponseProperty
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_customapiresponseproperty")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_customapiresponseproperty_msdyn_customapirulesetconfiguration_CustomAPIResp" +
-			"onseProperty")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiResponseProperty Msdyn_CustomApiResponseProperty_Msdyn_CustomApiRuleSetConfiguration_CustomApiResponseProperty
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiResponseProperty>("msdyn_customapiresponseproperty_msdyn_customapirulesetconfiguration_CustomAPIResp" +
-						"onseProperty", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.CustomApiResponseProperty>("msdyn_customapiresponseproperty_msdyn_customapirulesetconfiguration_CustomAPIResp" +
-						"onseProperty", null, value);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 team_msdyn_customapirulesetconfiguration
+		/// N:1 team_msdyn_slakpi
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_msdyn_customapirulesetconfiguration")]
-		public CloudAwesome.Dataverse.Core.EarlyBoundModels.Team Team_Msdyn_CustomApiRuleSetConfiguration
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_msdyn_slakpi")]
+		public CloudAwesome.Dataverse.Core.EarlyBoundModels.Team Team_Msdyn_SlaKpi
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Team>("team_msdyn_customapirulesetconfiguration", null);
+				return this.GetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Team>("team_msdyn_slakpi", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Team>("team_msdyn_customapirulesetconfiguration", null, value);
+				this.SetRelatedEntity<CloudAwesome.Dataverse.Core.EarlyBoundModels.Team>("team_msdyn_slakpi", null, value);
 			}
 		}
 		
@@ -1257,7 +1143,7 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public Msdyn_CustomApiRuleSetConfiguration(object anonymousType) : 
+		public Msdyn_SlaKpi(object anonymousType) : 
 				this()
 		{
             foreach (var p in anonymousType.GetType().GetProperties())
@@ -1275,9 +1161,9 @@ namespace CloudAwesome.Dataverse.Core.EarlyBoundModels
                 {
                     case "id":
                         base.Id = (System.Guid)value;
-                        Attributes["msdyn_customapirulesetconfigurationid"] = base.Id;
+                        Attributes["msdyn_slakpiid"] = base.Id;
                         break;
-                    case "msdyn_customapirulesetconfigurationid":
+                    case "msdyn_slakpiid":
                         var id = (System.Nullable<System.Guid>) value;
                         if(id == null){ continue; }
                         base.Id = id.Value;
