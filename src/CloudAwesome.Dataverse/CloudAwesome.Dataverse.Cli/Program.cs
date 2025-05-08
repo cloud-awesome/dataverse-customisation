@@ -1,19 +1,22 @@
-﻿using CloudAwesome.Dataverse.Cli.Commands;
+﻿using System.Reflection;
+using CloudAwesome.Dataverse.Cli.Commands;
 using Spectre.Console.Cli;
 
 namespace CloudAwesome.Dataverse.Cli;
 
 public static class Program
 {
+	private const string CliName = "dvcli";
+	
 	static void Main(string[] args)
 	{
-		Console.WriteLine("Hello, World!");
+		Console.WriteLine($"--------\n{CliName}, version {GetCliVersion()}\n--------");
 
 		var cli = new CommandApp();
 
 		cli.Configure(config =>
 		{
-			config.SetApplicationName("dvcli");
+			config.SetApplicationName(CliName);
 			config.AddBranch("plugins", settings =>
 			{
 				settings.AddCommand<PlaceholderCommand>("placeholder");
@@ -58,5 +61,20 @@ public static class Program
 
 			cli.Run(args);
 		});
+	}
+
+	private static string GetCliVersion()
+	{
+		var version = Assembly.GetExecutingAssembly()
+			.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?
+			.InformationalVersion;
+
+		var cleanVersion = string.Empty;
+		if (version != null)
+		{
+			cleanVersion = version.Split('+')[0];
+		}
+		
+		return cleanVersion;
 	}
 }
