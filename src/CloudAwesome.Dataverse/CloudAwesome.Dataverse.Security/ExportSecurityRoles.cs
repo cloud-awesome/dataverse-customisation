@@ -1,5 +1,5 @@
 ﻿using CloudAwesome.Dataverse.Core;
-using CloudAwesome.Dataverse.Core.EarlyBoundEntities;
+using CloudAwesome.Dataverse.Core.EarlyBoundModels;
 using CloudAwesome.Dataverse.Security.Models;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
@@ -44,34 +44,26 @@ public class ExportSecurityRoles
 			if (teamRolesQuery.Entities.Count == 0)
 			{
 				t.Warning($"Could not find the team with ID {manifestTeam.Id} ({manifestTeam.Name}) in the TeamRoles table. " +
-				        $"Either the team does not exist or it has not security roles assigned.");
+				        $"Either the team does not exist or it has no security roles assigned.");
 				
 				continue;
 			}
 
 			var teamRoles = teamRolesQuery.Entities.Select(e => e.ToEntity<TeamRoles>()).ToList();
-
+			
 			var team = new TeamModel()
 			{
 				Name = manifestTeam.Name,
 				Id = manifestTeam.Id
 			};
-
+			
 			foreach (var teamRole in teamRoles)
 			{
-				var role = new SecurityRole()
-				{
-					Id = teamRole.RoleId!.Value
-				};
-
 				var roleNameAddress = $"roleAlias.{Role.Fields.Name}";
-				if (teamRole.Contains(roleNameAddress) && 
-				    teamRole[$"roleAlias.{Role.Fields.Name}"] is AliasedValue aliasedValue)
-				{
-					role.Name = aliasedValue.Value.ToString();
-				}
+				if (!teamRole.Contains(roleNameAddress) ||
+				    teamRole[roleNameAddress] is not AliasedValue aliasedValue) continue;
 				
-				team.Roles.Add(role);
+				team.Roles.Add(aliasedValue.Value.ToString()!);
 			}
 			
 			importManifest.Teams.Add(team);

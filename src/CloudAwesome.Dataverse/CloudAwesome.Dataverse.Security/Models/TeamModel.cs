@@ -11,5 +11,8 @@ public class TeamModel
 	public Guid Id { get; set; }
 
 	[JsonPropertyName("roles")] 
-	public List<SecurityRole> Roles { get; set; } = new List<SecurityRole>();
+	public List<string> Roles { get; set; } = new List<string>();
+	
+	[JsonPropertyName("apps")]
+	public List<string> Apps { get; set; } = new List<string>();
 }
