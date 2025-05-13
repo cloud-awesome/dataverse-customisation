@@ -9,5 +9,7 @@
         public bool AllCaseCreationRules { get; set; }
         public bool AllBusinessRules { get; set; }
         public bool AllSlas { get; set; }
+
+        public bool SetSlasAsDefault { get; set; } = true;
     }
 }

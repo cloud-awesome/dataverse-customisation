@@ -7,11 +7,13 @@ namespace CloudAwesome.Dataverse.Processes;
 
 public class ProcessActivation
 {
+	private bool activate = false;
+	
 	public void SetStatusFromManifest(ProcessActivationManifest manifest, IOrganizationService client, TracingHelper t)
 	{
 		t.Debug($"Entering ProcessActivationWrapper.SetStatusFromManifest");
 
-		var activate = manifest.Status == ProcessActivationStatus.Enabled;
+		activate = manifest.Status == ProcessActivationStatus.Enabled;
 		var traceMessagePrefixMessage = activate ? "Enabling" : "Deactivating";
 		
 		t.Info($"{traceMessagePrefixMessage} processes");
@@ -40,9 +42,9 @@ public class ProcessActivation
 			{
 				var slas = GetSlasFromSolution(client, solution.Name);
 				var slaStatus = TargetSlaStatus(activate);
-				var slaState = TargetFlowState(activate);
+				var slaState = TargetSlasState(activate);
 				
-				ProcessSlas(slas, slaState, slaStatus, client, t);
+				ProcessSlas(slas, slaState, slaStatus, solution.SetSlasAsDefault, client, t);
 			}
 		}
 		
@@ -112,16 +114,31 @@ public class ProcessActivation
 	}
 
 	private void ProcessSlas(EntityCollection slas, OptionSetValue slaState, OptionSetValue slaStatus, 
-		IOrganizationService client, TracingHelper t)
+		bool setAsDefault, IOrganizationService client, TracingHelper t)
 	{
 		var i = 0;
 		
 		foreach (var sla in slas.Entities)
 		{
-			var slaRecord = (new Sla(Guid.Parse(sla["objectid"].ToString() ?? throw new InvalidOperationException()))
-				.Retrieve(client));
+			var slaRecord = new Sla(Guid.Parse(sla["objectid"].ToString() ?? throw new InvalidOperationException()))
+				.Retrieve(client);
 			i++;
 
+			if (slaRecord.Attributes[Sla.Fields.StateCode].Equals(slaState))
+			{
+				t.Info($"{i}/{slas.Entities.Count}. '{slaRecord["name"]}' already at target state");
+				
+				if (setAsDefault && activate && !slaRecord.Attributes[Sla.Fields.IsDefault].Equals(true))
+				{
+					slaRecord.Attributes[Sla.Fields.IsDefault] = true;
+					client.Update(slaRecord);
+					
+					t.Info($"  - '{slaRecord["name"]}' set to default");
+				}
+				
+				continue;
+			}
+			
 			try
 			{
 				var setState = new SetStateRequest
@@ -132,6 +149,13 @@ public class ProcessActivation
 				};
 
 				client.Execute(setState);
+
+				if (setAsDefault && activate)
+				{
+					var defaultSla = new Sla(slaRecord.Id);
+					defaultSla.IsDefault = true;
+					client.Update(defaultSla);
+				}
 				
 				t.Info($"{i}/{slas.Entities.Count}. '{slaRecord["name"]}' updated");
 			}

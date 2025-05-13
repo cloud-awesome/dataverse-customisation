@@ -1,4 +1,5 @@
-﻿using CloudAwesome.Dataverse.Cli.CommandInterfaces;
+﻿using System.ComponentModel;
+using CloudAwesome.Dataverse.Cli.CommandInterfaces;
 using CloudAwesome.Dataverse.Core;
 using CloudAwesome.Dataverse.Core.Models;
 using CloudAwesome.Dataverse.Core.PlatformModels;
@@ -37,7 +38,8 @@ public class ProcessActivationCommand: Command<ProcessActivationSettings>
 						Name = settings.SolutionName,
 						AllFlows = settings.AllFlows,
 						AllPluginSteps = settings.AllPluginSteps,
-						AllSlas = settings.AllSlas
+						AllSlas = settings.AllSlas,
+						SetSlasAsDefault = settings.SetSlasAsDefault
 					}
 				],
 				Status = activate
@@ -64,11 +66,15 @@ public class ProcessActivationSettings : SupportsDataverseConnection
 	public string SolutionName { get; set; }
 	
 	[CommandOption("--all-flows")]
-	public bool AllFlows { get; set; }
+	public bool AllFlows { get; set; } = false;
 	
 	[CommandOption("--all-plugins")]
-	public bool AllPluginSteps { get; set; }
+	public bool AllPluginSteps { get; set; } = false;
 	
 	[CommandOption("--all-slas")]
-	public bool AllSlas { get; set; }
+	public bool AllSlas { get; set; } = false;
+	
+	[CommandOption("--default-slas")]
+	[DefaultValue(true)]
+	public bool SetSlasAsDefault { get; set; } = true;
 }
