@@ -5,7 +5,7 @@ namespace CloudAwesome.Dataverse.Customisation;
 public class SetEnvironmentVariableManifest
 {
 	[JsonPropertyName("variables")]
-	public List<KeyValuePair> Variables { get; set; }
+	public List<KeyValuePair> Variables { get; set; } = new List<KeyValuePair>();
 }
 
 public class KeyValuePair
