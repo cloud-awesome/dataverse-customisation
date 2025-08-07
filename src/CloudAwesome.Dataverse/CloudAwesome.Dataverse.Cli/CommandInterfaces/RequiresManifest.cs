@@ -3,7 +3,7 @@ using Spectre.Console.Cli;
 
 namespace CloudAwesome.Dataverse.Cli.CommandInterfaces;
 
-public abstract class RequiresManifest: CommandSettings
+public interface IRequiresManifest
 {
 	
 }

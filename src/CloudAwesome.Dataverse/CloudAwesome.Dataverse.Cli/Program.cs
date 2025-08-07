@@ -19,7 +19,10 @@ public static class Program
 			config.SetApplicationName(CliName);
 			config.AddBranch("plugins", settings =>
 			{
-				settings.AddCommand<PlaceholderCommand>("placeholder");
+				/*settings.AddCommand<PluginRegistrationCommand>("register").WithData(true);
+				settings.AddCommand<PluginRegistrationCommand>("unregister").WithData(false);*/
+				settings.AddCommand<PlaceholderCommand>("register").WithData(true);
+				settings.AddCommand<PlaceholderCommand>("unregister").WithData(false);
 			});
 	
 			config.AddBranch("customisations", settings =>
@@ -57,6 +60,7 @@ public static class Program
 			config.AddBranch("test", settings =>
 			{
 				settings.AddCommand<WhoAmICommand>("who-am-i");
+				settings.AddCommand<TestGetAccessToken>("get-access-token");
 			});
 
 			cli.Run(args);

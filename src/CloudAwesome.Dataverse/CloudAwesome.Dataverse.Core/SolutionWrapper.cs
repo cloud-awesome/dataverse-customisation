@@ -7,13 +7,6 @@ namespace CloudAwesome.Dataverse.Core;
 
 public static class SolutionWrapper
     {
-        /*public static string DefineSolutionNameFromManifest(PluginManifest manifest, CdsPluginAssembly assembly)
-        {
-            return !string.IsNullOrEmpty(assembly.SolutionName) ? 
-                assembly.SolutionName : 
-                manifest.SolutionName;
-        } */
-            
         public static void AddSolutionComponent(IOrganizationService client, string solutionName,
             Guid solutionComponentId, ComponentType solutionComponentTypeCode)
         {
