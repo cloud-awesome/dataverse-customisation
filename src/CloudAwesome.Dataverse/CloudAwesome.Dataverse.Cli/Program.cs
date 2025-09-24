@@ -28,6 +28,7 @@ public static class Program
 			config.AddBranch("customisations", settings =>
 			{
 				settings.AddCommand<SetEnvironmentVariableCommand>("set-environment-variable");
+				settings.AddCommand<PlaceholderCommand>("create-mailboxes");
 			});
 	
 			config.AddBranch("processes", settings =>

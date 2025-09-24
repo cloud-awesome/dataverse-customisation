@@ -1,4 +1,5 @@
 ﻿using Microsoft.Identity.Client;
+using Spectre.Console;
 using Spectre.Console.Cli;
 
 namespace CloudAwesome.Dataverse.Cli.Commands;
@@ -75,7 +76,7 @@ public class TestGetAccessToken: Command<TestGetAccessTokenSettings>
     }
 }
 
-public class TestGetAccessTokenSettings: CommandSettings
+public sealed class TestGetAccessTokenSettings: CommandSettings
 {
 	[CommandOption("--url")]
 	public string? Url { get; set; }
@@ -85,4 +86,14 @@ public class TestGetAccessTokenSettings: CommandSettings
 	
     [CommandOption("--client-id")]
     public string? ClientId { get; set; }
+
+    public override ValidationResult Validate()
+    {
+        if (string.IsNullOrEmpty(Url))
+        {
+            return ValidationResult.Error("URL parameter must be passed through. Pass through the target dataverse environment using the --url flag");
+        }
+        
+        return ValidationResult.Success();
+    }
 }
