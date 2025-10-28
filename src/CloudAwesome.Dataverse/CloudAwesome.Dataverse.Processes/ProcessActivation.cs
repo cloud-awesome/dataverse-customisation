@@ -9,7 +9,7 @@ public class ProcessActivation
 {
 	private bool activate = false;
 	
-	public void SetStatusFromManifest(ProcessActivationManifest manifest, IOrganizationService client, TracingHelper t)
+	public void SetStatusFromManifest(IOrganizationService client, TracingHelper t, ProcessActivationManifest manifest)
 	{
 		t.Debug($"Entering ProcessActivationWrapper.SetStatusFromManifest");
 

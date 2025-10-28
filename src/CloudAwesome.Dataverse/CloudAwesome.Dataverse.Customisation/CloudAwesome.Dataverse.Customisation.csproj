@@ -7,10 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Remove="Class1.cs" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\CloudAwesome.Dataverse.Core\CloudAwesome.Dataverse.Core.csproj" />
       <ProjectReference Include="..\CloudAwesome.Dataverse.Processes\CloudAwesome.Dataverse.Processes.csproj" />
       <ProjectReference Include="..\CloudAwesome.Dataverse.Security\CloudAwesome.Dataverse.Security.csproj" />

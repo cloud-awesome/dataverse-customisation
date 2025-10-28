@@ -8,7 +8,7 @@ namespace CloudAwesome.Dataverse.Security;
 
 public class ExportSecurityRoles
 {
-	public void Run(ExportSecurityRolesManifest manifest, IOrganizationService client, TracingHelper t)
+	public void Run(IOrganizationService client, TracingHelper t, ExportSecurityRolesManifest manifest)
 	{
 		t.Debug($"Entering ExportSecurityRoles.Run");
 

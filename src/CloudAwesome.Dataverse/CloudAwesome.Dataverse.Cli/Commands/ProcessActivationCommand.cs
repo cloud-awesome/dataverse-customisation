@@ -6,7 +6,6 @@ using CloudAwesome.Dataverse.Core.PlatformModels;
 using CloudAwesome.Dataverse.Processes;
 using Microsoft.Extensions.Logging;
 using Spectre.Console.Cli;
-using ProcessActivation = CloudAwesome.Dataverse.Customisation.ProcessActivation;
 
 namespace CloudAwesome.Dataverse.Cli.Commands;
 
@@ -51,7 +50,7 @@ public class ProcessActivationCommand: Command<ProcessActivationSettings>
 		}
 		
 		var process = new ProcessActivation();
-		process.Run(client, tracer, manifest);
+		process.SetStatusFromManifest(client, tracer, manifest);
 
 		return 0;
 	}

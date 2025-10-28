@@ -1,7 +1,6 @@
 ﻿using CloudAwesome.Dataverse.Cli.CommandInterfaces;
 using CloudAwesome.Dataverse.Core;
 using CloudAwesome.Dataverse.Core.Models;
-using CloudAwesome.Dataverse.Customisation;
 using CloudAwesome.Dataverse.Security;
 using Microsoft.Extensions.Logging;
 using Spectre.Console.Cli;
@@ -34,8 +33,8 @@ public class ExportSecurityRolesCommand: Command<ExportSecurityRolesSettings>
 		
 		var client = DataverseConnectionExtensions.GetServiceClient(settings.ConnectionDetails);
 		
-		var process = new SecurityRoleAssignment();
-		process.Export(client, tracer, manifest);
+		var process = new ExportSecurityRoles();
+		process.Run(client, tracer, manifest);
 
 		return 0;
 	}

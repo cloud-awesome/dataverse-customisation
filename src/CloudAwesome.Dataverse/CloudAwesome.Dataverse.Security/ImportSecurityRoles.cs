@@ -10,7 +10,7 @@ public class ImportSecurityRoles
 {
 	private readonly Dictionary<(string roleName, Guid businessUnitId), Guid> _roleLookup = new();
 	
-	public void Run(ImportSecurityRolesManifest manifest, IOrganizationService client, TracingHelper t)
+	public void Run(IOrganizationService client, TracingHelper t, ImportSecurityRolesManifest manifest)
 	{
 		t.Debug($"Entering ImportSecurityRoles.Run");
 		PreloadRoles(client, t);

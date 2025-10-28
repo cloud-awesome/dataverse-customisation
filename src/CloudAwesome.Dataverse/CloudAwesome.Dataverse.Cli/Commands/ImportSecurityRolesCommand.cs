@@ -27,8 +27,8 @@ public class ImportSecurityRolesCommand: Command<ImportSecurityRolesSettings>
 		var manifest = SerialisationWrapper.DeserialiseJsonFromFile<ImportSecurityRolesManifest>(settings.Manifest);
 		var client = DataverseConnectionExtensions.GetServiceClient(settings.ConnectionDetails);
 		
-		var process = new SecurityRoleAssignment();
-		process.Import(client, tracer, manifest);
+		var process = new ImportSecurityRoles();
+		process.Run(client, tracer, manifest);
 
 		return 0;
 	}
