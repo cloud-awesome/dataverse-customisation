@@ -1,0 +1,45 @@
+﻿# Build output
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+[Bb]uild/
+[Ll]og/
+TestResult*/
+
+# Packaging
+nupkg/
+*.nupkg
+*.snupkg
+
+# Rider / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+*.sln.iml
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# NuGet
+packages/
+*.nuget.props
+*.nuget.targets
+
+# Publish / artifacts
+artifacts/
+publish/
+out/
