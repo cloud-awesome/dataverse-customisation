@@ -2,7 +2,7 @@
 using CloudAwesome.Dataverse.Core.PlatformModels;
 using Microsoft.Xrm.Sdk;
 
-namespace CloudAwesome.Dataverse.Processe.Plugins
+namespace CloudAwesome.Dataverse.Processes.Plugins
 {
     internal static class RegisterEntityImage
     {

@@ -1,6 +1,5 @@
 ﻿using CloudAwesome.Dataverse.Core;
 using CloudAwesome.Dataverse.Core.PlatformModels;
-using CloudAwesome.Dataverse.Processe.Plugins;
 using CloudAwesome.Dataverse.Processes.Plugins;
 using CloudAwesome.Xrm.Customisation.Models;
 using Microsoft.Xrm.Sdk;
@@ -92,7 +91,7 @@ public class PluginRegistration
                     pluginAssembly.GetExistingQuery(pluginAssemblyInfo.Version)
                         .RetrieveSingleRecord(client);
 
-                if (existingAssembly == null) return;
+                if (existingAssembly == null) continue;
 
                 var childPluginTypesResults = PluginQueries.GetChildPluginTypesQuery(existingAssembly.ToEntityReference()).RetrieveMultiple(client);
                 var pluginsList = childPluginTypesResults.Entities.Select(e => e.Id).ToList();
