@@ -237,7 +237,7 @@ jobs:
       matrix:
         include: ${{ fromJson(needs.detector.outputs.matrix) }}
     uses: ./.github/workflows/template-dotnet.yml
-    environment: publish
+    # environment: publish
     with:
       project_name: ${{ matrix.name }}
       project_path: ${{ matrix.path }}
