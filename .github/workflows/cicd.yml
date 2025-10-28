@@ -1,0 +1,247 @@
+﻿name: CI/CD
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: cicd-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  ENABLE_POWERPAGES: "false"
+  ENABLE_PROJECTOPS: "false"
+  PROJECT_MAP_FILE: .github/project-map.json
+  # Global change indicators that trigger all public projects + cli
+  GLOBAL_PATHS: |
+    Directory.Build.props
+    Directory.Packages.props
+    **/*.sln
+
+jobs:
+  detector:
+    name: Detect changed projects and compute version
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      version: ${{ steps.version.outputs.version }}
+      has_work: ${{ steps.set-matrix.outputs.has_work }}
+    steps:
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine diff range
+        id: diff
+        shell: bash
+        run: |
+          BEFORE="${{ github.event.before }}"
+          if [ -z "$BEFORE" ] || [[ "$BEFORE" == "0000000000000000000000000000000000000000" ]]; then
+            git fetch origin main --quiet
+            BASE=$(git merge-base origin/main "${GITHUB_SHA}")
+            echo "base=$BASE" >> "$GITHUB_OUTPUT"
+            echo "mode=merge-base" >> "$GITHUB_OUTPUT"
+          else
+            echo "base=$BEFORE" >> "$GITHUB_OUTPUT"
+            echo "mode=before-sha" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Ensure jq is available
+        shell: bash
+        run: |
+          if ! command -v jq >/dev/null 2>&1; then
+            sudo apt-get update -y
+            sudo apt-get install -y jq
+          fi
+          jq --version
+
+      - name: List changed files
+        id: changed
+        shell: bash
+        run: |
+          BASE="${{ steps.diff.outputs.base }}"
+          echo "Using diff base: $BASE"
+          git diff --name-only "$BASE" "${GITHUB_SHA}" > changed.txt
+          echo "Changed files:" && cat changed.txt || true
+          CHANGED_JSON=$(jq -R -s -c 'split("\n") | map(select(length>0))' < changed.txt)
+          echo "files=$CHANGED_JSON" >> "$GITHUB_OUTPUT"
+
+      - name: Compute VERSION (UTC yyyy.MM.dd.HHmm)
+        id: version
+        shell: bash
+        run: |
+          VERSION=$(date -u +"%Y.%m.%d.%H%M")
+          echo "Computed VERSION=$VERSION"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Build project matrix from changes
+        id: set-matrix
+        shell: bash
+        run: |
+          set -euo pipefail
+          MAP_FILE="${PROJECT_MAP_FILE}"
+          if [ ! -f "$MAP_FILE" ]; then
+            echo "::error::Project map not found at $MAP_FILE"; exit 1
+          fi
+
+          # Load flags
+          ENABLE_POWERPAGES=${ENABLE_POWERPAGES,,}
+          ENABLE_PROJECTOPS=${ENABLE_PROJECTOPS,,}
+
+          # Read map
+          MAP=$(cat "$MAP_FILE")
+          cli_path=$(echo "$MAP" | jq -r '.cli.path')
+
+          # Derive project directories for matching
+          get_dir() { dirname "$1"; }
+
+          declare -A selected
+          any_public_changed=false
+          only_cli_changed=true
+          core_only=true
+
+          # Convert GLOBAL_PATHS to an array
+          IFS=$'\n' read -r -d '' -a GLOBAL_ARRAY < <(printf '%s\0' "$GLOBAL_PATHS") || true
+
+          # Check for global changes
+          global_hit=false
+          while IFS= read -r file; do
+            for pat in "${GLOBAL_ARRAY[@]}"; do
+              if [[ "$pat" == **/* ]]; then
+                # Use extended glob: convert **/*.sln to regex
+                if echo "$file" | grep -Eq "$(echo "$pat" | sed 's#\*\*#.*#g; s#\*#([^/]*)#g; s#\.#\\.#g')"; then
+                  global_hit=true
+                fi
+              else
+                if [[ "$file" == *"$pat"* ]]; then
+                  global_hit=true
+                fi
+              fi
+            done
+          done < changed.txt
+
+          if $global_hit; then
+            echo "Global change detected; selecting all public projects + cli"
+            for key in $(echo "$MAP" | jq -r 'keys[]'); do
+              is_public=$(echo "$MAP" | jq -r --arg k "$key" '.[$k].public')
+              is_disabled=$(echo "$MAP" | jq -r --arg k "$key" '.[$k].disabled // false')
+              ppath=$(echo "$MAP" | jq -r --arg k "$key" '.[$k].path')
+
+              if [ "$key" = "cli" ]; then
+                selected[cli]="$ppath"
+              elif [ "$is_public" = "true" ]; then
+                # Respect feature flags for disabled projects
+                if [ "$key" = "powerpages" ] && [ "$ENABLE_POWERPAGES" != "true" ]; then continue; fi
+                if [ "$key" = "projectops" ] && [ "$ENABLE_PROJECTOPS" != "true" ]; then continue; fi
+                if [ "$is_disabled" = "true" ]; then continue; fi
+                selected[$key]="$ppath"
+              fi
+            done
+            any_public_changed=true
+            only_cli_changed=false
+            core_only=false
+          else
+            # Map each changed file to a project by directory containment
+            while IFS= read -r file; do
+              [ -z "$file" ] && continue
+
+              for key in $(echo "$MAP" | jq -r 'keys[]'); do
+                ppath=$(echo "$MAP" | jq -r --arg k "$key" '.[$k].path')
+                pdir=$(dirname "$ppath")
+                is_public=$(echo "$MAP" | jq -r --arg k "$key" '.[$k].public')
+                is_disabled=$(echo "$MAP" | jq -r --arg k "$key" '.[$k].disabled // false')
+
+                if [[ "$file" == $pdir/* ]]; then
+                  if [ "$key" = "core" ]; then
+                    core_only=$core_only && true
+                    continue
+                  fi
+
+                  if [ "$key" = "cli" ]; then
+                    selected[cli]="$ppath"
+                  else
+                    # Respect feature flags and disabled markers
+                    if [ "$key" = "powerpages" ] && [ "$ENABLE_POWERPAGES" != "true" ]; then continue; fi
+                    if [ "$key" = "projectops" ] && [ "$ENABLE_PROJECTOPS" != "true" ]; then continue; fi
+                    if [ "$is_disabled" = "true" ]; then continue; fi
+                    selected[$key]="$ppath"
+                    if [ "$is_public" = "true" ]; then any_public_changed=true; fi
+                  fi
+                fi
+              done
+
+              # Any non-cli file will make only_cli_changed false
+              if [[ "$file" != $(dirname "$cli_path")/* ]]; then
+                only_cli_changed=false
+              fi
+
+              # If file is not under core, then it's not core-only
+              if [[ "$file" != $(dirname $(echo "$MAP" | jq -r '.core.path'))/* ]]; then
+                core_only=false
+              fi
+            done < changed.txt
+          fi
+
+          # Apply dependency rule: if any public project changed, include cli
+          if $any_public_changed; then
+            selected[cli]="$cli_path"
+          fi
+
+          # If only cli changed, ensure only cli is selected
+          if $only_cli_changed; then
+            # remove all except cli
+            for k in "${!selected[@]}"; do
+              if [ "$k" != "cli" ]; then unset 'selected[$k]'; fi
+            done
+          fi
+
+          # Ignore core-only changes (no public builds)
+          if $core_only && [ ${#selected[@]} -eq 0 ]; then
+            echo "Core-only changes detected; no builds required."
+          fi
+
+          # Produce matrix JSON
+          matrix_items=()
+          for key in "${!selected[@]}"; do
+            ppath=${selected[$key]}
+            matrix_items+=("{\"name\":\"$key\",\"path\":\"$ppath\",\"should_publish\":true}")
+          done
+
+          if [ ${#matrix_items[@]} -eq 0 ]; then
+            MATRIX_JSON='[]'
+            HAS_WORK=false
+          else
+            MATRIX_JSON=$(printf '[%s]' "$(IFS=,; echo "${matrix_items[*]}")")
+            HAS_WORK=true
+          fi
+
+          echo "matrix=$MATRIX_JSON" >> "$GITHUB_OUTPUT"
+          echo "has_work=$HAS_WORK" >> "$GITHUB_OUTPUT"
+          echo "Matrix: $MATRIX_JSON"
+
+      - name: Notify if no work
+        if: ${{ steps.set-matrix.outputs.has_work != 'true' }}
+        run: echo "::notice::No public projects changed; skipping build/publish."
+
+  build_publish:
+    name: Build and Publish
+    needs: detector
+    if: ${{ needs.detector.outputs.has_work == 'true' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJson(needs.detector.outputs.matrix) }}
+    uses: ./.github/workflows/template-dotnet.yml
+    environment: publish
+    with:
+      project_name: ${{ matrix.name }}
+      project_path: ${{ matrix.path }}
+      should_publish: true
+      version: ${{ needs.detector.outputs.version }}
+      is_cli: ${{ matrix.name == 'cli' }}
+    secrets: inherit

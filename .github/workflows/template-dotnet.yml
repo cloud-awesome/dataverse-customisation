@@ -1,0 +1,82 @@
+﻿name: Reusable .NET Build/Pack/Publish
+
+on:
+  workflow_call:
+    inputs:
+      project_name:
+        description: 'Project name used for artifact naming'
+        required: true
+        type: string
+      project_path:
+        description: 'Relative path to the .csproj file'
+        required: true
+        type: string
+      should_publish:
+        description: 'Whether to publish the produced package(s) to NuGet.org'
+        required: true
+        type: boolean
+      dotnet_version:
+        description: 'Dotnet SDK version to use'
+        required: false
+        default: '8.0'
+        type: string
+      version:
+        description: 'Version to pass to dotnet pack (e.g., yyyy.MM.dd.HHmm)'
+        required: true
+        type: string
+      is_cli:
+        description: 'Indicates if the project is the CLI (reserved for future use)'
+        required: false
+        default: false
+        type: boolean
+    secrets:
+      NUGET_API_KEY:
+        required: false
+
+jobs:
+  build_pack_publish:
+    name: Build/Pack${{ inputs.should_publish && format(' (+Publish) - {0}', inputs.project_name) || format(' - {0}', inputs.project_name) }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK ${{ inputs.dotnet_version }}
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ inputs.dotnet_version }}
+          cache: true
+          cache-dependency-path: |
+            **/*.csproj
+            **/packages.lock.json
+
+      - name: Restore
+        run: dotnet restore "${{ inputs.project_path }}"
+
+      - name: Build (Release)
+        run: dotnet build "${{ inputs.project_path }}" -c Release --no-restore
+
+      - name: Test (placeholder no-op)
+        run: echo "No tests enabled yet. This is a deliberate no-op stage."
+
+      - name: Pack
+        run: |
+          mkdir -p artifacts
+          dotnet pack "${{ inputs.project_path }}" -c Release -o ./artifacts /p:Version=${{ inputs.version }} --no-build
+
+      - name: Upload nupkg artifacts
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: nupkgs-${{ inputs.project_name }}
+          path: artifacts/*.nupkg
+
+      - name: Publish to NuGet.org
+        if: ${{ inputs.should_publish && github.ref == 'refs/heads/main' }}
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        run: |
+          dotnet nuget push ./artifacts/*.nupkg \
+            --source https://api.nuget.org/v3/index.json \
+            --api-key "$NUGET_API_KEY" \
+            --skip-duplicate

@@ -1,0 +1,32 @@
+﻿{
+  "cli": {
+    "path": "CloudAwesome.Dataverse.Cli/CloudAwesome.Dataverse.Cli.csproj",
+    "public": true
+  },
+  "customisation": {
+    "path": "CloudAwesome.Dataverse.Customisation/CloudAwesome.Dataverse.Customisation.csproj",
+    "public": true
+  },
+  "processes": {
+    "path": "CloudAwesome.Dataverse.Processes/CloudAwesome.Dataverse.Processes.csproj",
+    "public": true
+  },
+  "security": {
+    "path": "CloudAwesome.Dataverse.Security/CloudAwesome.Dataverse.Security.csproj",
+    "public": true
+  },
+  "powerpages": {
+    "path": "CloudAwesome.Dataverse.PowerPages/CloudAwesome.Dataverse.PowerPages.csproj",
+    "public": true,
+    "disabled": true
+  },
+  "projectops": {
+    "path": "CloudAwesome.Dataverse.ProjectOps/CloudAwesome.Dataverse.ProjectOps.csproj",
+    "public": true,
+    "disabled": true
+  },
+  "core": {
+    "path": "CloudAwesome.Dataverse.Core/CloudAwesome.Dataverse.Core.csproj",
+    "public": false
+  }
+}
