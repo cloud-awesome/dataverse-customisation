@@ -12,17 +12,26 @@ public class SetEnvironmentVariableCommand: Command<SetEnvironmentVariableSettin
 {
 	public override int Execute(CommandContext context, SetEnvironmentVariableSettings settings)
 	{
-		var client = DataverseConnectionExtensions.GetServiceClient(settings.ConnectionDetails);
-		
 		var tracer = new TracingHelper(new LoggingConfiguration
 		{
 			LoggerConfigurationType = LoggingConfigurationType.Console,
 			LogLevelToTrace = LogLevel.Debug
 		});
 
-		var manifest = settings.Manifest is null 
-			? new SetEnvironmentVariableManifest() 
-			: SerialisationWrapper.DeserialiseJsonFromFile<SetEnvironmentVariableManifest>(settings.Manifest);
+		SetEnvironmentVariableManifest manifest = new SetEnvironmentVariableManifest();
+		if (settings.Manifest is not null)
+		{
+			try
+			{
+				manifest =
+					SerialisationWrapper.DeserialiseJsonFromFile<SetEnvironmentVariableManifest>(settings.Manifest);
+			}
+			catch (Exception e)
+			{
+				tracer.Error(e.Message);
+				return -1;
+			}
+		}
 
 		if (settings.VariableDefinitionName is not null && settings.VariableDefinitionValue is not null)
 		{
@@ -32,6 +41,8 @@ public class SetEnvironmentVariableCommand: Command<SetEnvironmentVariableSettin
 				Value = settings.VariableDefinitionValue
 			});
 		}
+		
+		var client = DataverseConnectionExtensions.GetServiceClient(settings.ConnectionDetails);
 		
 		var process = new SetEnvironmentVariable();
 		//process.Run(client, tracer, settings.VariableDefinitionName, settings.VariableDefinitionValue);

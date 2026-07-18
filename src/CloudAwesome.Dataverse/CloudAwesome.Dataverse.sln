@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Dataverse.Proj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Dataverse.PowerPages", "CloudAwesome.Dataverse.PowerPages\CloudAwesome.Dataverse.PowerPages.csproj", "{C1933990-F0AD-46E4-9B1D-B65D802FFF0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Dataverse.Cli.Test", "CloudAwesome.Dataverse.Cli.Test\CloudAwesome.Dataverse.Cli.Test.csproj", "{F45613CA-7A5F-4EEA-897D-DCE4BE81708B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{C1933990-F0AD-46E4-9B1D-B65D802FFF0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1933990-F0AD-46E4-9B1D-B65D802FFF0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1933990-F0AD-46E4-9B1D-B65D802FFF0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F45613CA-7A5F-4EEA-897D-DCE4BE81708B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F45613CA-7A5F-4EEA-897D-DCE4BE81708B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F45613CA-7A5F-4EEA-897D-DCE4BE81708B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F45613CA-7A5F-4EEA-897D-DCE4BE81708B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
