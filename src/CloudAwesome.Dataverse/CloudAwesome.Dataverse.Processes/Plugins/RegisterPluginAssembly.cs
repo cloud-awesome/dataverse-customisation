@@ -6,7 +6,7 @@ namespace CloudAwesome.Dataverse.Processes.Plugins
 {
     internal static class RegisterPluginAssembly
     {
-        internal static EntityReference Run(IOrganizationService client, PluginRegistrationManifest manifest, 
+        internal static EntityReference? Run(IOrganizationService client, PluginRegistrationManifest manifest, 
             CdsPluginAssembly pluginAssembly, string targetSolutionName, TracingHelper t)
         {
             t.Debug($"Processing Assembly FriendlyName {pluginAssembly.FriendlyName}");

@@ -13,7 +13,7 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels
     public class CdsEntityImage
     {
         [JsonPropertyName("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [JsonPropertyName("postImage")]
         public bool PostImage { get; set; }
@@ -24,7 +24,7 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels
         public EntityImageType Type { get; set; }
 
         [JsonPropertyName("attributes")]
-        public string[] Attributes { get; set; }
+        public string[] Attributes { get; set; } = Array.Empty<string>();
         
         public EntityReference Register(IOrganizationService client, EntityReference parentStep)
         {

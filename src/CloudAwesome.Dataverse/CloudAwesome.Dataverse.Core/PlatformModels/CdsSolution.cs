@@ -2,7 +2,7 @@
 {
     public class CdsSolution
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         public bool AllPluginSteps { get; set; }
         public bool AllFlows { get; set; }
         public bool AllWorkflows { get; set; }

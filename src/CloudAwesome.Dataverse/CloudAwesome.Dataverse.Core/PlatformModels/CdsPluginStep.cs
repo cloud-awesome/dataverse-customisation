@@ -11,13 +11,13 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels
     public class CdsPluginStep
     {
         [JsonPropertyName("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [JsonPropertyName("friendlyName")]
-        public string FriendlyName { get; set; }
+        public string FriendlyName { get; set; } = string.Empty;
 
         [JsonPropertyName("description")]
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
         [JsonPropertyName("stage")]
         public SdkMessageProcessingStep_Stage Stage { get; set; }
@@ -26,10 +26,10 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels
         public SdkMessageProcessingStep_Mode ExecutionMode { get; set; }
 
         [JsonPropertyName("message")]
-        public string Message { get; set; }
+        public string Message { get; set; } = string.Empty;
 
         [JsonPropertyName("primaryEntity")]
-        public string PrimaryEntity { get; set; }
+        public string PrimaryEntity { get; set; } = string.Empty;
 
         [JsonPropertyName("executionOrder")]
         public int ExecutionOrder { get; set; }
@@ -38,18 +38,18 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels
         public bool AsyncAutoDelete { get; set; }
 
         [JsonPropertyName("unsecureConfiguration")]
-        public string UnsecureConfiguration { get; set; }
+        public string UnsecureConfiguration { get; set; } = string.Empty;
 
         [JsonPropertyName("secureConfiguration")]
-        public string SecureConfiguration { get; set; }
+        public string SecureConfiguration { get; set; } = string.Empty;
 
         [JsonPropertyName("filteringAttributes")]
         [XmlArrayItem("Attribute")]
-        public string[] FilteringAttributes { get; set; }
+        public string[] FilteringAttributes { get; set; } = Array.Empty<string>();
 
         [JsonPropertyName("entityImages")]
         [XmlArrayItem("EntityImage")]
-        public CdsEntityImage[] EntityImages { get; set; }
+        public CdsEntityImage[] EntityImages { get; set; } = Array.Empty<CdsEntityImage>();
         
         public EntityReference Register(IOrganizationService client, EntityReference parentPluginType,
             EntityReference sdkMessage, EntityReference sdkMessageFilter)

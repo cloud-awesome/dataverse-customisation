@@ -39,7 +39,7 @@ public static class EntityModel
                 }
                 else
                 {
-                    XmlDocument formXml = null;
+                    XmlDocument? formXml = null;
                     
                     var attributeModel = new AttributeModel();
                     foreach (var attribute in entity.Attributes)

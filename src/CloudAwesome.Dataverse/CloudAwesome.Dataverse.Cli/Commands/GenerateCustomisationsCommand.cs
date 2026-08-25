@@ -20,7 +20,7 @@ public class GenerateCustomisationsCommand: Command<GenerateCustomisationsSettin
 		});
 
 		var process = new GenerateConfigurations();
-		process.Run(client, tracer, settings.Manifest);
+		process.Run(client, tracer, settings.Manifest ?? throw new InvalidOperationException("A manifest is required."));
 		
 		return 0;
 	}

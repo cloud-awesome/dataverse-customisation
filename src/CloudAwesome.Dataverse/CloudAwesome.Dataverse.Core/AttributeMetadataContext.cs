@@ -8,7 +8,7 @@ public class AttributeMetadataContext
 {
 	public readonly Dictionary<CdsAttributeDataType, IAttributeMetadataType> Strategies = new Dictionary<CdsAttributeDataType, IAttributeMetadataType>();
 
-	public AttributeMetadataContext(CdsAttribute attribute, string publisherPrefix, AttributeMetadata existingMetadata = null)
+	public AttributeMetadataContext(CdsAttribute attribute, string publisherPrefix, AttributeMetadata? existingMetadata = null)
 	{
 		Strategies.Add(CdsAttributeDataType.Boolean, new BooleanAttributeMetadataType(attribute, publisherPrefix, existingMetadata));
 		Strategies.Add(CdsAttributeDataType.DateTime, new DateTimeAttributeMetadataType(attribute, publisherPrefix, existingMetadata));

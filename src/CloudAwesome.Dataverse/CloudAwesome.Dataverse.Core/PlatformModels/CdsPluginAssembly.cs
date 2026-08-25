@@ -23,19 +23,19 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels
         }
 
         [JsonPropertyName("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [JsonPropertyName("friendlyName")]
-        public string FriendlyName { get; set; }
+        public string FriendlyName { get; set; } = string.Empty;
 
         /// <summary>
         /// FilePath to the built assembly dll
         /// </summary>
         [JsonPropertyName("filePath")]
-        public string Assembly { get; set; }
+        public string Assembly { get; set; } = string.Empty;
 
         [JsonPropertyName("solutionName")]
-        public string SolutionName { get; set; }
+        public string SolutionName { get; set; } = string.Empty;
 
         /// <summary>
         /// Process all child plugins/steps - Used in the ProcessActivation function
@@ -46,15 +46,15 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels
         /// Child plugins
         /// </summary>
         [JsonPropertyName("plugins")]
-        public CdsPlugin[] Plugins { get; set; }
+        public CdsPlugin[] Plugins { get; set; } = Array.Empty<CdsPlugin>();
 
         /// <summary>
         /// Grandchild steps
         /// </summary>
         [JsonPropertyName("steps")]
-        public CdsPluginStep[] Steps { get; set; }
+        public CdsPluginStep[] Steps { get; set; } = Array.Empty<CdsPluginStep>();
 
-        public EntityReference Register(IOrganizationService client, PluginAssemblyInfo pluginAssemblyInfo = null)
+        public EntityReference Register(IOrganizationService client, PluginAssemblyInfo? pluginAssemblyInfo = null)
         {
             if (pluginAssemblyInfo == null)
             {
@@ -77,7 +77,7 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels
             return assemblyEntity.CreateOrUpdate(client, existingAssemblyQuery);
         }
         
-        public bool Unregister(IOrganizationService client, PluginAssemblyInfo pluginAssemblyInfo = null)
+        public bool Unregister(IOrganizationService client, PluginAssemblyInfo? pluginAssemblyInfo = null)
         {
             if (pluginAssemblyInfo == null)
             {

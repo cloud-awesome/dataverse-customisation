@@ -36,13 +36,13 @@ public static class DataverseConnectionExtensions
 	{
 		return dataverseConnection.ConnectionType switch
 		{
-			DataverseConnectionType.AppRegistration => GetServiceClient(dataverseConnection.Url,
-				dataverseConnection.ClientId, dataverseConnection.ClientSecret),
+			DataverseConnectionType.AppRegistration => GetServiceClient(dataverseConnection.Url!,
+				dataverseConnection.ClientId!, dataverseConnection.ClientSecret!),
 			
-			DataverseConnectionType.ConnectionString => GetServiceClient(dataverseConnection.ConnectionString),
+			DataverseConnectionType.ConnectionString => GetServiceClient(dataverseConnection.ConnectionString!),
 			
-			DataverseConnectionType.BearerToken => GetServiceClient(dataverseConnection.Url,
-				dataverseConnection.BearerToken),
+			DataverseConnectionType.BearerToken => GetServiceClient(dataverseConnection.Url!,
+				dataverseConnection.BearerToken!),
 			
 			DataverseConnectionType.UserNameAndPassword => throw new NotImplementedException(),
 			_ => throw new ArgumentOutOfRangeException()

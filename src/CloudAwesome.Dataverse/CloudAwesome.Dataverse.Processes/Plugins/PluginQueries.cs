@@ -36,7 +36,7 @@ namespace CloudAwesome.Dataverse.Processes.Plugins
                         new ConditionExpression(SdkMessageFilter.Fields.PrimaryObjectTypeCode, 
                             ConditionOperator.Equal, entityName),
                         new ConditionExpression(SdkMessageFilter.Fields.SdkMessageId, 
-                            ConditionOperator.Equal, sdkMessageId.ToString())
+                            ConditionOperator.Equal, sdkMessageId)
                     }
                 }
             };

@@ -18,7 +18,8 @@ namespace CloudAwesome.Dataverse.Core
             
             using (var fs = File.OpenRead(filePath))
             {
-                return JsonSerializer.Deserialize<T>(fs, options);
+                return JsonSerializer.Deserialize<T>(fs, options)
+                       ?? throw new InvalidOperationException($"Could not deserialize '{filePath}' as {typeof(T).Name}.");
             }
         }
 

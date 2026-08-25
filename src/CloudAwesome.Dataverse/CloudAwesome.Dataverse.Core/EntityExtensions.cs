@@ -30,7 +30,7 @@ public static class EntityExtensions
     /// <exception cref="OperationPreventedException">Throws when primary GUID of the record is null</exception>
     public static void Delete(this Entity entity, IOrganizationService organizationService)
     {
-        if (entity.Id == Guid.Empty || entity.Id == null)
+        if (entity.Id == Guid.Empty)
         {
             throw new Exception("Cannot delete a record if GUID is null");
         }
@@ -46,7 +46,7 @@ public static class EntityExtensions
     /// <returns>EntityReference of the updated record</returns>
     public static EntityReference Update(this Entity entity, IOrganizationService organizationService)
     {
-        if (entity.Id == Guid.Empty || entity.Id == null)
+        if (entity.Id == Guid.Empty)
         {
             throw new Exception("Cannot update a record if GUID is null");
         }
@@ -111,7 +111,7 @@ public static class EntityExtensions
     /// <param name="excludeAttributesList">Optional list of attribute schema names to ignore from clone</param>
     /// <exception cref="Exception">Throws a generic exception if the source and target entities are not of the same type (based on logical name)</exception>
     /// <returns>Cloned Entity. Use entity.ToEntity&lt;&gt;() to parse into an early bound entity type as required</returns>
-    public static Entity CloneFrom(this Entity targetEntity, Entity sourceEntity, List<string> excludeAttributesList = null)
+    public static Entity CloneFrom(this Entity targetEntity, Entity sourceEntity, List<string>? excludeAttributesList = null)
     {
         if (targetEntity.LogicalName != sourceEntity.LogicalName)
         {

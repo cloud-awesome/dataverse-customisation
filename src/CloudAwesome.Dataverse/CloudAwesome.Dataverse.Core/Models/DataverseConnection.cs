@@ -16,35 +16,35 @@ public class DataverseConnection
 	/// <summary>
 	/// CDS Connection string, required if ConnectionType == ConnectionString
 	/// </summary>
-	public string ConnectionString { get; set; }
+	public string? ConnectionString { get; set; }
 
 	/// <summary>
 	/// Base URL for CDS environment. Required if ConnectionType == AppRegistration or UserNameAndPassword
 	/// </summary>
-	public string Url { get; set; }
+	public string? Url { get; set; }
 
 	/// <summary>
 	/// Required if ConnectionType == UserNAmeAndPassword
 	/// </summary>
-	public string UserName { get; set; }
+	public string? UserName { get; set; }
 
 	/// <summary>
 	/// Required if ConnectionType == UserNAmeAndPassword
 	/// </summary>
-	public string Password { get; set; }
+	public string? Password { get; set; }
 
 	/// <summary>
 	/// Required if ConnectionType == AppRegistration
 	/// </summary>
-	public string ClientId { get; set; }
+	public string? ClientId { get; set; }
 
 	/// <summary>
 	/// Required if ConnectionType == AppRegistration
 	/// </summary>
-	public string ClientSecret { get; set; }
+	public string? ClientSecret { get; set; }
         
 	/// <summary>
 	/// Required if ConnectionType = BearerToken
 	/// </summary>
-	public string BearerToken { get; set; }
+	public string? BearerToken { get; set; }
 }

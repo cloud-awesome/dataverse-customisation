@@ -22,6 +22,8 @@ public class PluginRegistration
 		{
             var targetSolutionName = DefineSolutionNameFromManifest(manifest, pluginAssembly);
             var createdAssembly = RegisterPluginAssembly.Run(client, manifest, pluginAssembly, targetSolutionName, t);
+            if (createdAssembly == null) continue;
+
             if (manifest.UpdateAssemblyOnly) continue;
             
             foreach (var plugin in pluginAssembly.Plugins)
@@ -34,10 +36,10 @@ public class PluginRegistration
                     {
                         var createdStep = RegisterPluginStep.Run(pluginStep, createdPluginType, targetSolutionName, client, t);
                         
-                        if (pluginStep.EntityImages.Any()) continue;
+                        if (!pluginStep.EntityImages.Any()) continue;
                         foreach (var entityImage in pluginStep.EntityImages)
                         {
-                            var image = RegisterEntityImage.Run(entityImage, createdStep, client, t);
+                            RegisterEntityImage.Run(entityImage, createdStep, client, t);
                         }
                     }
                 }

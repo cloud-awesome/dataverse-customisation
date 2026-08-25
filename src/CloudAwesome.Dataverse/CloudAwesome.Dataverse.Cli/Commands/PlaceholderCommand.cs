@@ -17,5 +17,5 @@ public class PlaceholderSettings : CommandSettings
 {
 	[CommandArgument(0, "<text>")]
 	[Description("Just any text for a placeholder")]
-	public string Text { get; set; }
+	public string Text { get; set; } = string.Empty;
 }

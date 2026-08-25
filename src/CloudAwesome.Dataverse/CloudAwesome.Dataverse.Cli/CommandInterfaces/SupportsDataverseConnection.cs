@@ -20,46 +20,46 @@ public abstract class SupportsDataverseConnection: CommandSettings
 	}
 	
 	[CommandOption("--url")]
-	public string Url
+	public string? Url
 	{
 		get => ConnectionDetails.Url; 
 		set => ConnectionDetails.Url = value;
 	}
 
 	[CommandOption("--client-id")]
-	public string ClientId
+	public string? ClientId
 	{
 		get => ConnectionDetails.ClientId;
 		set => ConnectionDetails.ClientId = value;
 	}
         
 	[CommandOption("--client-secret")]
-	public string clientSecret
+	public string? clientSecret
 	{
 		set => ConnectionDetails.ClientSecret = value;
 	}
         
 	[CommandOption("--username")]
-	public string UserName
+	public string? UserName
 	{
 		set => ConnectionDetails.UserName = value;
 	}
         
 	[CommandOption("--password")]
-	public string UserPassword
+	public string? UserPassword
 	{
 		set => ConnectionDetails.Password = value;
 	}
 	
 	[CommandOption("--connection-string")]
-	public string ConnectionString
+	public string? ConnectionString
 	{
 		get => ConnectionDetails.ConnectionString;
 		set => ConnectionDetails.ConnectionString = value;
 	}
 
 	[CommandOption("--bearer-token")]
-	public string BearerToken
+	public string? BearerToken
 	{
 		get => ConnectionDetails.BearerToken;
 		set => ConnectionDetails.BearerToken = value;

@@ -9,5 +9,5 @@ public class ExportSecurityRolesManifest
 	public List<TeamModel> Teams { get; set; } = new List<TeamModel>();
 	
 	[JsonPropertyName("outputFilePath")]
-	public string OutputFilePath { get; set; }
+	public string OutputFilePath { get; set; } = string.Empty;
 }

@@ -10,16 +10,16 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels
     public class CdsCustomApi
     {
         [JsonPropertyName("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [JsonPropertyName("friendlyName")]
-        public string FriendlyName { get; set; }
+        public string FriendlyName { get; set; } = string.Empty;
 
         [JsonPropertyName("description")]
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
         [JsonPropertyName("executePrivilegeName")]
-        public string ExecutePrivilegeName { get; set; }
+        public string ExecutePrivilegeName { get; set; } = string.Empty;
 
         [JsonPropertyName("isFunction")]
         public bool? IsFunction { get; set; }
@@ -27,7 +27,7 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels
         [JsonPropertyName("isPrivate")]
         public bool? IsPrivate { get; set; }
         
-        public EntityReference ParentPlugin { get; set; }
+        public EntityReference? ParentPlugin { get; set; }
 
         /*[JsonPropertyName("allowedCustomProcessingStepName")]
         public CustomAPI_AllowedCustomProcessingStepType AllowedCustomProcessingStepType { get; set; }

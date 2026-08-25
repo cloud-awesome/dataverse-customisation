@@ -11,26 +11,26 @@ public enum CdsAttributeDataType
 
 public class CdsAttribute
 {
-	public string PublisherPrefix;
-	public string SolutionName;
+	public string PublisherPrefix = string.Empty;
+	public string SolutionName = string.Empty;
 
-	public string EntitySchemaName { get; set; }
-	public string DisplayName { get; set; }
-	public string SchemaName { get; set; }
+	public string EntitySchemaName { get; set; } = string.Empty;
+	public string DisplayName { get; set; } = string.Empty;
+	public string SchemaName { get; set; } = string.Empty;
 	public CdsAttributeDataType DataType { get; set; }
-	public string GlobalOptionSet { get; set; } // TODO - OptionSet Default Value
-	public string Description { get; set; }
+	public string GlobalOptionSet { get; set; } = string.Empty; // TODO - OptionSet Default Value
+	public string Description { get; set; } = string.Empty;
 	public AttributeRequiredLevel RequiredLevel { get; set; }
 	public bool IsAuditEnabled { get; set; }
-	public string SourceType { get; set; }
+	public string SourceType { get; set; } = string.Empty;
 	public int? MaxLength { get; set; }
 	public DateTimeFormat DateTimeFormat { get; set; }
 	public StringFormat? StringFormat { get; set; }
-	public string AutoNumberFormat { get; set; }
+	public string AutoNumberFormat { get; set; } = string.Empty;
 	public int? MinValue { get; set; }
 	public int? MaxValue { get; set; }
-	public string ReferencedEntity { get; set; }
-	public string RelationshipNameSuffix { get; set; }
+	public string ReferencedEntity { get; set; } = string.Empty;
+	public string RelationshipNameSuffix { get; set; } = string.Empty;
 	public bool ParentCascade { get; set; }
 	public bool AddToForm { get; set; }
 	public int? AddToViewOrder { get; set; }

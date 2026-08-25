@@ -7,9 +7,9 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels.AttributeMetadataTypes
     {
         private readonly CdsAttribute _attribute;
         private readonly string _publisherPrefix;
-        private readonly AttributeMetadata _existingMetadata;
+        private readonly AttributeMetadata? _existingMetadata;
 
-        public IntegerAttributeMetadataType(CdsAttribute attribute, string publisherPrefix, AttributeMetadata existingMetadata = null)
+        public IntegerAttributeMetadataType(CdsAttribute attribute, string publisherPrefix, AttributeMetadata? existingMetadata = null)
         {
             _attribute = attribute;
             _publisherPrefix = publisherPrefix;

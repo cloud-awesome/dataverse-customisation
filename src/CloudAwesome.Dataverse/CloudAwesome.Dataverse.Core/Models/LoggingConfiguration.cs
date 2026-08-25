@@ -19,12 +19,12 @@ public class LoggingConfiguration
 	/// <summary>
 	/// Azure Application insights connection string. Required if LoggerConfigurationType == ApplicationInsights
 	/// </summary>
-	public string ApplicationInsightsConnectionString { get; set; }
+	public string? ApplicationInsightsConnectionString { get; set; }
 
 	/// <summary>
 	/// Filepath to .txt file for output. Required if LoggerConfigurationType == TextFile
 	/// </summary>
-	public string TextFileOutputPath { get; set; }
+	public string? TextFileOutputPath { get; set; }
 
 	/// <summary>
 	/// Microsoft.Extensions.Logging.LogLevel. Any traces below this level will be ignored

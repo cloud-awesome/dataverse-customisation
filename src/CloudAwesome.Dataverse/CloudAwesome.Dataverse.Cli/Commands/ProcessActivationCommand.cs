@@ -62,7 +62,7 @@ public class ProcessActivationSettings : SupportsDataverseConnection
 	public ProcessActivationManifest? Manifest { get; set; }
 	
 	[CommandOption("--solution")]
-	public string SolutionName { get; set; }
+	public string SolutionName { get; set; } = string.Empty;
 	
 	[CommandOption("--all-flows")]
 	public bool AllFlows { get; set; } = false;

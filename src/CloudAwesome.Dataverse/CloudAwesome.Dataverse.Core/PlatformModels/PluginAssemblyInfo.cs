@@ -20,6 +20,11 @@ namespace CloudAwesome.Xrm.Customisation.Models
         {
             var assemblyFileInfo = new FileInfo(assemblyFilePath);
             var assembly = Assembly.LoadFile(assemblyFileInfo.FullName);
+            if (assembly.FullName == null)
+            {
+                throw new InvalidOperationException($"Assembly '{assemblyFilePath}' did not expose a full assembly name.");
+            }
+
             var assemblyParts = assembly.FullName.Split(',');
 
             Version = assemblyParts[1].Split('=')[1].Trim();

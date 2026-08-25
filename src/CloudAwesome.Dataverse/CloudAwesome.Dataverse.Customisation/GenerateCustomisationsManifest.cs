@@ -7,7 +7,7 @@ namespace CloudAwesome.Dataverse.Customisation;
 public class GenerateCustomisationsManifest
 {
 	[JsonPropertyName("solutionName")]
-	public string SolutionName { get; set; }
+	public string SolutionName { get; set; } = string.Empty;
 	
 	[JsonPropertyName("clobber")]
 	public bool Clobber { get; set; }

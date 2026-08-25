@@ -13,7 +13,17 @@ namespace CloudAwesome.Dataverse.Processes.Plugins
             t.Debug($"Processing Step = {pluginStep.FriendlyName}");
 
             var sdkMessage = PluginQueries.GetSdkMessageQuery(pluginStep.Message).RetrieveSingleRecord(client);
+            if (sdkMessage == null)
+            {
+                throw new InvalidOperationException($"SDK message '{pluginStep.Message}' could not be found.");
+            }
+
             var sdkMessageFilter = PluginQueries.GetSdkMessageFilterQuery(pluginStep.PrimaryEntity, sdkMessage.Id).RetrieveSingleRecord(client);
+            if (sdkMessageFilter == null)
+            {
+                throw new InvalidOperationException(
+                    $"SDK message filter for entity '{pluginStep.PrimaryEntity}' and message '{pluginStep.Message}' could not be found.");
+            }
 
             var createdStep = pluginStep.Register(client, parentPluginType, sdkMessage.ToEntityReference(), sdkMessageFilter.ToEntityReference());
             t.Info($"Plugin step {pluginStep.FriendlyName} registered with ID {createdStep.Id}");

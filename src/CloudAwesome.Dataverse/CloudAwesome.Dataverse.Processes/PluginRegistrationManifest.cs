@@ -8,11 +8,11 @@ namespace CloudAwesome.Dataverse.Processes;
 public class PluginRegistrationManifest
 {
 	[JsonPropertyName("$schema")]
-	public string JsonSchema { get; set; }
+	public string JsonSchema { get; set; } = string.Empty;
 	
 	[JsonPropertyName("solutionName")]
 	[JsonInclude]
-	public string SolutionName { get; set; }
+	public string SolutionName { get; set; } = string.Empty;
 	
 	[JsonPropertyName("clobber")]
 	[JsonInclude]
@@ -22,13 +22,13 @@ public class PluginRegistrationManifest
 	public bool UpdateAssemblyOnly { get; set; }
 
 	[JsonPropertyName("logging")]
-	public LoggingConfiguration LoggingConfiguration { get; set; }
+	public LoggingConfiguration LoggingConfiguration { get; set; } = new();
 
 	[JsonPropertyName("dataverseConnection")]
-	public DataverseConnection DataverseConnection { get; set; }
+	public DataverseConnection DataverseConnection { get; set; } = new();
 
 	[JsonPropertyName("assemblies")]
-	public CdsPluginAssembly[] PluginAssemblies { get; set; }
+	public CdsPluginAssembly[] PluginAssemblies { get; set; } = Array.Empty<CdsPluginAssembly>();
 
 	/*[JsonPropertyName("serviceEndpoints")]
 	[XmlArrayItem("ServiceEndpoint")]

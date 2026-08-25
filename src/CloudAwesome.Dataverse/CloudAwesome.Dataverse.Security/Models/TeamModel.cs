@@ -5,7 +5,7 @@ namespace CloudAwesome.Dataverse.Security.Models;
 public class TeamModel
 {
 	[JsonPropertyName("name")]
-	public string Name { get; set; }
+	public string Name { get; set; } = string.Empty;
 
 	[JsonPropertyName("id")]
 	public Guid Id { get; set; }

@@ -12,21 +12,21 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels
     public class CdsPlugin
     {
         [JsonPropertyName("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         
         [JsonPropertyName("friendlyName")]
-        public string FriendlyName { get; set; }
+        public string FriendlyName { get; set; } = string.Empty;
 
         [JsonPropertyName("description")]
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
-        public EntityReference ParentAssembly { get; set; }
+        public EntityReference? ParentAssembly { get; set; }
 
         [JsonPropertyName("steps")]
-        public CdsPluginStep[] Steps { get; set; }
+        public CdsPluginStep[] Steps { get; set; } = Array.Empty<CdsPluginStep>();
 
         [JsonPropertyName("customApis")]
-        public CdsCustomApi[] CustomApis { get; set; }
+        public CdsCustomApi[] CustomApis { get; set; } = Array.Empty<CdsCustomApi>();
         
         public EntityReference Register(IOrganizationService client, EntityReference parentAssembly)
         {
@@ -39,6 +39,11 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels
 
         public EntityReference Register(IOrganizationService client)
         {
+            if (ParentAssembly == null)
+            {
+                throw new InvalidOperationException("Parent assembly must be set before registering a plugin type.");
+            }
+
             var pluginType = new PluginType()
             {
                 PluginAssemblyId = this.ParentAssembly,

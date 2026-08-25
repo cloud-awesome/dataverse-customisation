@@ -8,8 +8,8 @@ public enum ProcessActivationStatus { Enabled = 1, Disabled = 2 }
 public class ProcessActivationManifest
 {
 	public ProcessActivationStatus Status { get; set; }
-	public DataverseConnection DataverseConnection { get; set; }
-	public LoggingConfiguration LoggingConfiguration { get; set; }
+	public DataverseConnection DataverseConnection { get; set; } = new();
+	public LoggingConfiguration LoggingConfiguration { get; set; } = new();
 
 	public CdsPluginAssembly[] PluginAssemblies { get; set; } = Array.Empty<CdsPluginAssembly>();
 

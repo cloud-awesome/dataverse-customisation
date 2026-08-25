@@ -6,16 +6,16 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels
 {
     public class CdsEntity
     {
-        public string _solutionName;
-        public string _publisherPrefix;
-        private string _pluralName;
-        private string _description;
-        private string _primaryAttributeName;
+        public string _solutionName = string.Empty;
+        public string _publisherPrefix = string.Empty;
+        private string? _pluralName;
+        private string? _description;
+        private string? _primaryAttributeName;
         private int _primaryAttributeMaxLength;
-        private string _primaryAttributeDescription;
+        private string? _primaryAttributeDescription;
 
-        public string DisplayName { get; set; }
-        public string SchemaName { get; set; }
+        public string DisplayName { get; set; } = string.Empty;
+        public string SchemaName { get; set; } = string.Empty;
 
         public string Description
         {
@@ -32,7 +32,7 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels
         
         public string PrimaryAttributeName
         {
-            get => _primaryAttributeName;
+            get => _primaryAttributeName ?? "Name";
             set => _primaryAttributeName = value ?? "Name";
         }
 
@@ -58,7 +58,7 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels
         public bool? IsValidForQueue { get; set; }
         public bool? ChangeTrackingEnabled { get; set; }
         
-        public string NavigationColour { get; set; }
+        public string NavigationColour { get; set; } = string.Empty;
 
         public bool AllBusinessRules { get; set; }
         
