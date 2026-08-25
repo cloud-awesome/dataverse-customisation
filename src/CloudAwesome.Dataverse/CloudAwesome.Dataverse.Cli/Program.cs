@@ -27,8 +27,10 @@ public static class Program
 	
 			config.AddBranch("customisations", settings =>
 			{
+				settings.AddCommand<GenerateCustomisationsCommand>("generate").WithData(true);
+				//settings.AddCommand<PlaceholderCommand>("teardown").WithData(false);
 				settings.AddCommand<SetEnvironmentVariableCommand>("set-environment-variable");
-				settings.AddCommand<PlaceholderCommand>("create-mailboxes");
+				//settings.AddCommand<PlaceholderCommand>("create-mailboxes");
 			});
 	
 			config.AddBranch("processes", settings =>
