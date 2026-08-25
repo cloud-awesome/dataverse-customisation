@@ -1,5 +1,4 @@
 ﻿using Microsoft.ApplicationInsights;
-using Microsoft.ApplicationInsights.Channel;
 using Microsoft.ApplicationInsights.DataContracts;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.Extensions.Logging;
@@ -14,7 +13,7 @@ namespace CloudAwesome.Dataverse.Core.Loggers
     {
         private readonly LogLevel _logLevel;
         private readonly string _connectionString;
-        private TelemetryClient _telemetryClient;
+        private TelemetryClient? _telemetryClient;
         private readonly TelemetryConfiguration _telemetryConfiguration;
 
         /// <summary>
@@ -30,17 +29,6 @@ namespace CloudAwesome.Dataverse.Core.Loggers
             _telemetryConfiguration = TelemetryConfiguration.CreateDefault();
         }
 
-        public AppInsightsLogger(LogLevel logLevel, string connectionString, ITelemetryChannel telemetryChannel)
-        {
-            _logLevel = logLevel;
-            _connectionString = connectionString;
-
-            _telemetryConfiguration = new TelemetryConfiguration
-            {
-                TelemetryChannel = telemetryChannel
-            };
-        }
-
         /// <summary>
         /// Register a log entry in AppInsights
         /// </summary>
@@ -50,7 +38,7 @@ namespace CloudAwesome.Dataverse.Core.Loggers
         /// <param name="state"></param>
         /// <param name="exception"></param>
         /// <param name="formatter"></param>
-        public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
+        public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter)
         {
             if (!IsEnabled(logLevel))
             {
@@ -92,9 +80,9 @@ namespace CloudAwesome.Dataverse.Core.Loggers
             return logLevel >= _logLevel;
         }
 
-        public IDisposable BeginScope<TState>(TState state)
+        public IDisposable? BeginScope<TState>(TState state) where TState : notnull
         {
-            throw new NotImplementedException();
+            return null;
         }
     }
 }

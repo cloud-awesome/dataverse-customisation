@@ -9,7 +9,7 @@ namespace CloudAwesome.Dataverse.Cli.Commands;
 
 public class ExportSecurityRolesCommand: Command<ExportSecurityRolesSettings>
 {
-	public override int Execute(CommandContext context, ExportSecurityRolesSettings settings)
+	protected override int Execute(CommandContext context, ExportSecurityRolesSettings settings, CancellationToken cancellationToken)
 	{
 		var tracer = new TracingHelper(new LoggingConfiguration
 		{

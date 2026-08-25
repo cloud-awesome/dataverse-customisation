@@ -5,7 +5,7 @@ namespace CloudAwesome.Dataverse.Cli.Commands;
 
 public class PluginRegistrationCommand: Command<PluginRegistrationSettings>
 {
-	public override int Execute(CommandContext context, PluginRegistrationSettings settings)
+	protected override int Execute(CommandContext context, PluginRegistrationSettings settings, CancellationToken cancellationToken)
 	{
 		Console.WriteLine("Just testing...");
 		return 0;

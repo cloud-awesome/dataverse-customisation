@@ -11,7 +11,7 @@ namespace CloudAwesome.Dataverse.Cli.Commands;
 
 public class ProcessActivationCommand: Command<ProcessActivationSettings>
 {
-	public override int Execute(CommandContext context, ProcessActivationSettings settings)
+	protected override int Execute(CommandContext context, ProcessActivationSettings settings, CancellationToken cancellationToken)
 	{
 		var client = DataverseConnectionExtensions.GetServiceClient(settings.ConnectionDetails);
 

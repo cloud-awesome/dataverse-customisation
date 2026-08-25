@@ -10,7 +10,7 @@ namespace CloudAwesome.Dataverse.Cli.Commands;
 
 public class ImportSecurityRolesCommand: Command<ImportSecurityRolesSettings>
 {
-	public override int Execute(CommandContext context, ImportSecurityRolesSettings settings)
+	protected override int Execute(CommandContext context, ImportSecurityRolesSettings settings, CancellationToken cancellationToken)
 	{
 		var tracer = new TracingHelper(new LoggingConfiguration
 		{

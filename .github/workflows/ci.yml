@@ -21,7 +21,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: 10.0.x
 
       - name: Restore
         run: dotnet restore CloudAwesome.Dataverse.sln
@@ -31,3 +31,4 @@ jobs:
 
       - name: Test
         run: dotnet test CloudAwesome.Dataverse.sln --configuration Release --no-build --logger trx --results-directory TestResults
+

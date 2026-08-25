@@ -2,7 +2,7 @@
     
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net8.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
 
@@ -15,13 +15,13 @@
         <Description>Automate common, time-consuming, error prone, or otherwise non-automatable tasks during customisation and configuration of Dataverse/Dynamics 365 CE</Description>
         <PackageProjectUrl>https://github.com/Cloud-Awesome/dataverse-customisation</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Cloud-Awesome/dataverse-customisation</RepositoryUrl>
-        <PackageLicenseUrl>https://github.com/Cloud-Awesome/dataverse-customisation/blob/main/LICENSE</PackageLicenseUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.PowerPlatform.Dataverse.Client" Version="1.2.3" />
-      <PackageReference Include="Spectre.Console.Cli" Version="0.49.1" />
+      <PackageReference Include="Microsoft.PowerPlatform.Dataverse.Client" Version="1.2.26" />
+      <PackageReference Include="Spectre.Console.Cli" Version="0.55.0" />
     </ItemGroup>
 
     <ItemGroup>

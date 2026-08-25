@@ -11,7 +11,7 @@ namespace CloudAwesome.Dataverse.Cli.Commands;
 
 public class WhoAmICommand: Command<WhoAmISettings>
 {
-	public override int Execute(CommandContext context, WhoAmISettings settings)
+	protected override int Execute(CommandContext context, WhoAmISettings settings, CancellationToken cancellationToken)
 	{
 		var client = DataverseConnectionExtensions.GetServiceClient(settings.ConnectionDetails);
 

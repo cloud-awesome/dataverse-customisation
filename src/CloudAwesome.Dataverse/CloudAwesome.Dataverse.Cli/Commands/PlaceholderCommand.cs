@@ -6,7 +6,7 @@ namespace CloudAwesome.Dataverse.Cli.Commands;
 
 public class PlaceholderCommand: Command<PlaceholderSettings>
 {
-	public override int Execute(CommandContext context, PlaceholderSettings settings)
+	protected override int Execute(CommandContext context, PlaceholderSettings settings, CancellationToken cancellationToken)
 	{
 		AnsiConsole.MarkupLine($"[green]Running 'placeholder' command with placeholder:[/] {settings.Text}");
 		return 0;

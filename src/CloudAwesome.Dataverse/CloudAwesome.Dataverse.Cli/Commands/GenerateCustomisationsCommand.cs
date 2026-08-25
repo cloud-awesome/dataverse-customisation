@@ -9,7 +9,7 @@ namespace CloudAwesome.Dataverse.Cli.Commands;
 
 public class GenerateCustomisationsCommand: Command<GenerateCustomisationsSettings>
 {
-	public override int Execute(CommandContext context, GenerateCustomisationsSettings settings)
+	protected override int Execute(CommandContext context, GenerateCustomisationsSettings settings, CancellationToken cancellationToken)
 	{
 		var client = DataverseConnectionExtensions.GetServiceClient(settings.ConnectionDetails);
 		

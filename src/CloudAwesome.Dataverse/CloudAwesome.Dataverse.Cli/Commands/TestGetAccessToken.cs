@@ -6,7 +6,7 @@ namespace CloudAwesome.Dataverse.Cli.Commands;
 
 public class TestGetAccessToken: Command<TestGetAccessTokenSettings>
 {
-	public override int Execute(CommandContext context, TestGetAccessTokenSettings settings)
+	protected override int Execute(CommandContext context, TestGetAccessTokenSettings settings, CancellationToken cancellationToken)
 	{
         // Default values
         string defaultClientId = "7376191c-f402-4c39-b190-47f0ab154c6c";

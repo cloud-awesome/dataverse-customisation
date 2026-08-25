@@ -10,7 +10,7 @@ namespace CloudAwesome.Dataverse.Cli.Commands;
 
 public class SetEnvironmentVariableCommand: Command<SetEnvironmentVariableSettings>
 {
-	public override int Execute(CommandContext context, SetEnvironmentVariableSettings settings)
+	protected override int Execute(CommandContext context, SetEnvironmentVariableSettings settings, CancellationToken cancellationToken)
 	{
 		var client = DataverseConnectionExtensions.GetServiceClient(settings.ConnectionDetails);
 		
