@@ -1,6 +1,4 @@
-﻿using System.ServiceModel;
-using System.Xml.Serialization;
-using Microsoft.Xrm.Sdk;
+﻿using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata;
 
@@ -8,8 +6,8 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels
 {
     public class CdsEntity
     {
-        private string _solutionName;
-        private string _publisherPrefix;
+        public string _solutionName;
+        public string _publisherPrefix;
         private string _pluralName;
         private string _description;
         private string _primaryAttributeName;
@@ -64,10 +62,108 @@ namespace CloudAwesome.Dataverse.Core.PlatformModels
 
         public bool AllBusinessRules { get; set; }
         
-        /*public CdsAttribute[] Attributes { get; set; }
+        public CdsAttribute[]? Attributes { get; set; }
 
-        public CdsEntityPermission[] EntityPermissions { get; set; }*/
+        /*public CdsEntityPermission[] EntityPermissions { get; set; }*/
+        
+        public void Create(IOrganizationService client)
+        {
+            var entityMetadata = new EntityMetadata()
+            {
+                LogicalName = SchemaName,
+                SchemaName = SchemaName,
+                DisplayName = DisplayName.CreateLabelFromString(),
+                DisplayCollectionName = PluralName.CreateLabelFromString(),
+                OwnershipType = OwnershipType,
+                IsActivity = IsActivity,
+                Description = Description.CreateLabelFromString(),
+                IsQuickCreateEnabled = IsQuickCreateEnabled,
+                IsAuditEnabled = new BooleanManagedProperty(GetBooleanValue(IsAuditEnabled, false)),
+                IsDuplicateDetectionEnabled = new BooleanManagedProperty(GetBooleanValue(IsDuplicateDetectionEnabled, false)),
+                IsBusinessProcessEnabled = IsBusinessProcessEnabled,
+                IsDocumentManagementEnabled = IsDocumentManagementEnabled,
+                IsValidForQueue = new BooleanManagedProperty(GetBooleanValue(IsValidForQueue, false)),
+                ChangeTrackingEnabled = ChangeTrackingEnabled,
+                HasActivities = HasActivities,
+                HasNotes = HasNotes
+            };
 
+            var isActivityEntity = IsActivity != null && IsActivity.Value; 
+
+            if (isActivityEntity)
+            {
+                entityMetadata.OwnershipType = OwnershipTypes.UserOwned;
+                entityMetadata.IsAvailableOffline = true;
+                entityMetadata.HasNotes = true;
+                entityMetadata.IsDuplicateDetectionEnabled = new BooleanManagedProperty(true);
+                entityMetadata.ChangeTrackingEnabled = true;
+                entityMetadata.IsOfflineInMobileClient = new BooleanManagedProperty(true);
+                entityMetadata.HasFeedback = true;
+                entityMetadata.IsConnectionsEnabled = new BooleanManagedProperty(true);
+                entityMetadata.IsValidForQueue = new BooleanManagedProperty(true);
+            }
+
+            var primaryAttribute = new StringAttributeMetadata()
+            {
+                LogicalName = isActivityEntity? "Subject": string.Format($"{_publisherPrefix}_name"),
+                SchemaName = isActivityEntity? "Subject": string.Format($"{_publisherPrefix}_name"),
+                DisplayName = string.IsNullOrEmpty(PrimaryAttributeName) 
+                    ? "A custom entity".CreateLabelFromString() 
+                    : PrimaryAttributeName.CreateLabelFromString(),
+                MaxLength = PrimaryAttributeMaxLength,
+                Description = PrimaryAttributeDescription.CreateLabelFromString()
+            };
+
+            var createEntityRequest = new CreateEntityRequest()
+            {
+                HasNotes = entityMetadata.HasNotes != null && entityMetadata.HasNotes.Value,
+                Entity = entityMetadata,
+                SolutionUniqueName = _solutionName,
+                PrimaryAttribute = primaryAttribute
+            };
+            client.Execute(createEntityRequest);
+        }
+
+        public Entity Retrieve(IOrganizationService client, CdsEntity entity)
+        {
+            // c.f. https://dev.azure.com/cloud-awesome/_git/Argus?path=%2FAdministration%2FAdmin%20Library%2FDocumentationHelper.cs&version=GBdevelop&line=16&lineEnd=17&lineStartColumn=1&lineEndColumn=1&lineStyle=plain&_a=contents
+            
+            var retrieveEntityRequest = new RetrieveEntityRequest()
+            {
+                LogicalName = entity.SchemaName
+            };
+
+            var retrieveEntityResponse = (RetrieveEntityResponse) client.Execute(retrieveEntityRequest);
+
+            //this.DisplayName = retrieveEntityResponse.EntityMetadata.DisplayName.LocalizedLabels
+
+            throw new NotImplementedException();
+        }
+
+        public void Update(IOrganizationService client, EntityMetadata metadata)
+        {
+            metadata.DisplayName = string.IsNullOrEmpty(DisplayName) ? metadata.DisplayName: DisplayName.CreateLabelFromString();
+            metadata.DisplayCollectionName = string.IsNullOrEmpty(PluralName) ? metadata.DisplayCollectionName: PluralName.CreateLabelFromString();
+            metadata.Description = string.IsNullOrEmpty(Description) ? metadata.Description: Description.CreateLabelFromString();
+            metadata.IsQuickCreateEnabled = GetBooleanValue(IsQuickCreateEnabled, metadata.IsQuickCreateEnabled);
+            metadata.IsAuditEnabled = new BooleanManagedProperty(GetBooleanValue(IsAuditEnabled, metadata.IsAuditEnabled.Value));
+            metadata.IsDuplicateDetectionEnabled = new BooleanManagedProperty(GetBooleanValue(IsDuplicateDetectionEnabled, metadata.IsDuplicateDetectionEnabled.Value));
+            metadata.IsBusinessProcessEnabled = GetBooleanValue(IsBusinessProcessEnabled, metadata.IsBusinessProcessEnabled);
+            metadata.IsDocumentManagementEnabled = GetBooleanValue(IsDocumentManagementEnabled, metadata.IsDocumentManagementEnabled);
+            metadata.IsValidForQueue = new BooleanManagedProperty(GetBooleanValue(IsValidForQueue, metadata.IsValidForQueue.Value));
+            metadata.ChangeTrackingEnabled = GetBooleanValue(ChangeTrackingEnabled, metadata.ChangeTrackingEnabled);
+            metadata.HasNotes = GetBooleanValue(HasNotes, metadata.HasNotes);
+            metadata.HasActivities = GetBooleanValue(HasNotes, metadata.HasActivities);
+
+            var updateEntityRequest = new UpdateEntityRequest()
+            {
+                Entity = metadata,
+                MergeLabels = false,
+                SolutionUniqueName = _solutionName,
+            };
+
+            client.Execute(updateEntityRequest);
+        }
         
         /// <summary>
         /// Logic for updating boolean values in CRM.
