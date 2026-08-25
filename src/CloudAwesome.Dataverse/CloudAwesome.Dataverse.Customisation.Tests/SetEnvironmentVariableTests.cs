@@ -62,6 +62,7 @@ public class SetEnvironmentVariableTests
         });
     }
 
+// TODO - Note for Wednesday! Remove this whole class and replace with dataverse-simulate.
     private sealed class InMemoryOrganizationService(params Entity[] seedRecords) : IOrganizationService
     {
         private readonly List<Entity> _records = seedRecords.ToList();
