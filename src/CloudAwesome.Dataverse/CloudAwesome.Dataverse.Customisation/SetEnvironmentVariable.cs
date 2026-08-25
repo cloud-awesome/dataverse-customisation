@@ -53,7 +53,7 @@ public class SetEnvironmentVariable
 					newValue.Create(client);
 			
 					t.Info($"A value for Environment Variable ({variableValue.Key}) has been created");
-					return;
+					continue;
 				}
 				case > 1:
 					// This shouldn't be possible, so just including as a possible edge case

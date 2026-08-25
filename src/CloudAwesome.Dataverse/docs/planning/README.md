@@ -35,6 +35,7 @@ Primary docs:
 
 - [testing-strategy.md](testing-strategy.md)
 - [work-packages/foundation.md](work-packages/foundation.md)
+- [public-interface-decisions.md](public-interface-decisions.md)
 
 ### Stage 2: Bug Fixes And Refactoring
 

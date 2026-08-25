@@ -1,5 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# 
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Dataverse.Customisation", "CloudAwesome.Dataverse.Customisation\CloudAwesome.Dataverse.Customisation.csproj", "{454929D1-F166-457E-A8B0-70A258BE5903}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Dataverse.Cli", "CloudAwesome.Dataverse.Cli\CloudAwesome.Dataverse.Cli.csproj", "{6F237B9F-2468-4A05-B9E0-6D8BE74A1F4D}"
@@ -13,6 +14,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Dataverse.ProjectOps", "CloudAwesome.Dataverse.ProjectOps\CloudAwesome.Dataverse.ProjectOps.csproj", "{4153E6D2-DF88-4E82-B038-1BD6FF3CBEE5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Dataverse.PowerPages", "CloudAwesome.Dataverse.PowerPages\CloudAwesome.Dataverse.PowerPages.csproj", "{C1933990-F0AD-46E4-9B1D-B65D802FFF0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Dataverse.Core.Tests", "CloudAwesome.Dataverse.Core.Tests\CloudAwesome.Dataverse.Core.Tests.csproj", "{E3D4FD15-D74E-4B23-9B8F-078C667E6860}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Dataverse.Cli.Tests", "CloudAwesome.Dataverse.Cli.Tests\CloudAwesome.Dataverse.Cli.Tests.csproj", "{FAAF49DF-C6F0-40DA-8694-81C24A71E8DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Dataverse.Customisation.Tests", "CloudAwesome.Dataverse.Customisation.Tests\CloudAwesome.Dataverse.Customisation.Tests.csproj", "{0F8F971B-B9BF-4CE8-AA0D-208CC5278A7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,5 +55,17 @@ Global
 		{C1933990-F0AD-46E4-9B1D-B65D802FFF0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1933990-F0AD-46E4-9B1D-B65D802FFF0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1933990-F0AD-46E4-9B1D-B65D802FFF0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3D4FD15-D74E-4B23-9B8F-078C667E6860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3D4FD15-D74E-4B23-9B8F-078C667E6860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3D4FD15-D74E-4B23-9B8F-078C667E6860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3D4FD15-D74E-4B23-9B8F-078C667E6860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAAF49DF-C6F0-40DA-8694-81C24A71E8DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAAF49DF-C6F0-40DA-8694-81C24A71E8DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAAF49DF-C6F0-40DA-8694-81C24A71E8DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAAF49DF-C6F0-40DA-8694-81C24A71E8DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F8F971B-B9BF-4CE8-AA0D-208CC5278A7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F8F971B-B9BF-4CE8-AA0D-208CC5278A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F8F971B-B9BF-4CE8-AA0D-208CC5278A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F8F971B-B9BF-4CE8-AA0D-208CC5278A7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

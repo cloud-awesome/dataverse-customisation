@@ -48,7 +48,7 @@ public abstract class SupportsDataverseConnection: CommandSettings
 	[CommandOption("--password")]
 	public string UserPassword
 	{
-		set => ConnectionDetails.UserName = value;
+		set => ConnectionDetails.Password = value;
 	}
 	
 	[CommandOption("--connection-string")]
