@@ -4,7 +4,7 @@ Generated: 2026-08-25
 
 ## Current Solution
 
-The local solution builds on .NET 8 and contains these production projects:
+The local solution targets .NET 10 and contains these production projects:
 
 - `CloudAwesome.Dataverse.Core`
 - `CloudAwesome.Dataverse.Customisation`
@@ -14,7 +14,7 @@ The local solution builds on .NET 8 and contains these production projects:
 - `CloudAwesome.Dataverse.PowerPages`
 - `CloudAwesome.Dataverse.ProjectOps`
 
-There is a `CloudAwesome.Dataverse.Cli.Test` directory in the checkout, but it is not included in `CloudAwesome.Dataverse.sln` and no test `.csproj` was found during the scan.
+The solution now includes unit test projects for Core, CLI, Customisation, Processes, and Security. `dotnet test CloudAwesome.Dataverse.sln --no-restore` runs locally without requiring a live Dataverse environment.
 
 The current repo has 18 open GitHub issues. The deprecated repo has a richer legacy codebase and a test project covering serialization, model defaults, validation, plugin registration, service endpoint registration, and customisation helpers.
 
@@ -113,8 +113,8 @@ This skips entity image creation when images are present.
 
 ### Security Role Assignment
 
-- Export command validates `--output-filepath` but does not apply the CLI override back onto the deserialized manifest before running export.
-- Import removes surplus roles by design. This is useful but destructive enough to require explicit tests and documentation.
+- Export command applies `--output-filepath` back onto the deserialized manifest before running export.
+- Import removes surplus roles by design. This behaviour now has unit coverage, but still needs explicit user-facing documentation.
 - There is no final audit output option yet, matching issue #32.
 
 ### Core Utilities
@@ -145,4 +145,3 @@ Useful old test groups to port or re-express:
 - model validation for entities, attributes, plugin assemblies, plugins, steps, and images;
 - plugin manifest validation;
 - plugin registration happy paths, clobber, update-assembly-only, missing assembly, logging, service endpoints, and custom APIs.
-

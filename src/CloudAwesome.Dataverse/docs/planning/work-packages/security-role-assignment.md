@@ -13,8 +13,8 @@ Stabilize team-role import/export and add pipeline-friendly audit output.
 
 - `ExportSecurityRoles` can produce an import manifest for supplied teams.
 - `ImportSecurityRoles` preloads roles by name and business unit, adds missing team roles, and removes surplus team roles.
-- CLI output path override is validated but not applied to the manifest before export.
-- There are no tests.
+- CLI output path override is validated and applied to the manifest before export.
+- Unit tests cover export manifest output, no-op import, add-only import, remove-only import, mixed add/remove import, and duplicate role names across business units.
 
 ## Intended Behaviour
 
@@ -26,10 +26,10 @@ Stabilize team-role import/export and add pipeline-friendly audit output.
 
 ## Bite-Sized Tasks
 
-1. Extract role diff calculation into a unit-testable function if needed.
-2. Add tests for add-only, remove-only, no-op, and mixed diff cases.
-3. Add tests for duplicate roles in different business units.
-4. Fix CLI `--output-filepath` override behaviour.
+1. Complete: add tests for add-only, remove-only, no-op, and mixed diff cases.
+2. Complete: add tests for duplicate roles in different business units.
+3. Complete: fix CLI `--output-filepath` override behaviour.
+4. Optional: extract role diff calculation into a unit-testable function if the import logic grows further.
 5. Add optional audit output flag to manifest and CLI.
 6. Add integration test against controlled test teams and roles.
 7. Document destructive behaviour and safe pipeline usage.
@@ -40,4 +40,3 @@ Stabilize team-role import/export and add pipeline-friendly audit output.
 - CLI output override works.
 - Optional final audit output lists effective team-role assignments.
 - Tests prove surplus role removal behaviour.
-

@@ -30,6 +30,8 @@ public class ExportSecurityRolesCommand: Command<ExportSecurityRolesSettings>
 			tracer.Error("OutputFilePath has not been provided (either in the manifest or as a command line argument)");
 			return -1;
 		}
+
+		ApplyOutputFilePathOverride(manifest, settings.OutputFilePath);
 		
 		var client = DataverseConnectionExtensions.GetServiceClient(settings.ConnectionDetails);
 		
@@ -37,6 +39,14 @@ public class ExportSecurityRolesCommand: Command<ExportSecurityRolesSettings>
 		process.Run(client, tracer, manifest);
 
 		return 0;
+	}
+
+	public static void ApplyOutputFilePathOverride(ExportSecurityRolesManifest manifest, string? outputFilePath)
+	{
+		if (!string.IsNullOrEmpty(outputFilePath))
+		{
+			manifest.OutputFilePath = outputFilePath;
+		}
 	}
 }
 

@@ -6,7 +6,7 @@ Create a testable, consistent foundation before feature work continues.
 
 ## Current State
 
-- No test project is included in the current solution.
+- Unit test projects are included for Core, CLI, Customisation, Processes, and Security.
 - Build succeeds but produces 97 warnings.
 - CLI command and manifest patterns vary by feature.
 - Some runtime paths throw `NotImplementedException`.
@@ -29,12 +29,12 @@ Create a testable, consistent foundation before feature work continues.
 
 ## Bite-Sized Tasks
 
-1. Add `CloudAwesome.Dataverse.Core.Tests` with serialization and connection option tests.
-2. Add `CloudAwesome.Dataverse.Cli.Tests` with command settings tests.
-4. Add regression tests for the current known bugs that do not need a live Dataverse environment.
-5. Write `docs/planning/public-interface-decisions.md` covering API/CLI/manifest boundaries.
-6. Add CI for restore, build, and unit tests.
-7. Add an opt-in integration test project skeleton with environment variable requirements.
+1. Complete: add `CloudAwesome.Dataverse.Core.Tests` with serialization tests.
+2. Complete: add `CloudAwesome.Dataverse.Cli.Tests` with command settings and CLI override tests.
+3. Complete: add feature regression tests for Customisation, Processes, and Security paths that do not need a live Dataverse environment.
+4. Complete: write `docs/planning/public-interface-decisions.md` covering API/CLI/manifest boundaries.
+5. Add CI for restore, build, and unit tests.
+6. Add an opt-in integration test project skeleton with environment variable requirements.
 
 ## Acceptance Criteria
 
@@ -46,4 +46,3 @@ Create a testable, consistent foundation before feature work continues.
 ## Dependencies
 
 - Network access to restore any new test packages.
-
