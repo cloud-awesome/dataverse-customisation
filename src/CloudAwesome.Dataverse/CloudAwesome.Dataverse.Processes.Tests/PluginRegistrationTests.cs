@@ -12,16 +12,22 @@ namespace CloudAwesome.Dataverse.Processes.Tests;
 [TestFixture]
 public class PluginRegistrationTests
 {
-    public IOrganizationService Service = null!;
+    private IOrganizationService _organizationService = null!;
+    
+    [SetUp]
+    public void SetUp()
+    {
+        _organizationService = _organizationService.Simulate();
+    }
     
     [Test]
     public void Register_creates_plugin_assembly_type_step_image_and_adds_components_to_solution()
     {
         var sdkMessageId = Guid.NewGuid();
         var sdkMessageFilterId = Guid.NewGuid();
-        Service = Service.Simulate();
+        
         var solutionRequests = new List<AddSolutionComponentRequest>();
-        Service
+        _organizationService
             .Simulated()
             .CustomOrgRequests().Add<AddSolutionComponentRequest>(
                 (request, _) => 
@@ -33,13 +39,13 @@ public class PluginRegistrationTests
                     };
                 });
 
-        Service.Simulated().Data().Add(
+        _organizationService.Simulated().Data().Add(
             new SdkMessage
             {
                 Id = sdkMessageId,
                 Name = "Create"
             });
-        Service.Simulated().Data().Add(
+        _organizationService.Simulated().Data().Add(
             new Entity(SdkMessageFilter.EntityLogicalName)
             {
                 Id = sdkMessageFilterId,
@@ -98,12 +104,12 @@ public class PluginRegistrationTests
             ]
         };
 
-        PluginRegistration.Register(manifest, Service, new TracingHelper());
+        PluginRegistration.Register(manifest, _organizationService, new TracingHelper());
 
-        var createdAssembly = Service.Simulated().Data().Get(PluginAssembly.EntityLogicalName).Single();
-        var createdPluginType = Service.Simulated().Data().Get(PluginType.EntityLogicalName).Single();
-        var createdStep = Service.Simulated().Data().Get(SdkMessageProcessingStep.EntityLogicalName).Single();
-        var createdImage = Service.Simulated().Data().Get(SdkMessageProcessingStepImage.EntityLogicalName).Single();
+        var createdAssembly = _organizationService.Simulated().Data().Get(PluginAssembly.EntityLogicalName).Single();
+        var createdPluginType = _organizationService.Simulated().Data().Get(PluginType.EntityLogicalName).Single();
+        var createdStep = _organizationService.Simulated().Data().Get(SdkMessageProcessingStep.EntityLogicalName).Single();
+        var createdImage = _organizationService.Simulated().Data().Get(SdkMessageProcessingStepImage.EntityLogicalName).Single();
 
         Assert.That(createdAssembly.GetAttributeValue<string>(PluginAssembly.Fields.Name),
             Is.EqualTo("CloudAwesome.Dataverse.Processes.Tests"));

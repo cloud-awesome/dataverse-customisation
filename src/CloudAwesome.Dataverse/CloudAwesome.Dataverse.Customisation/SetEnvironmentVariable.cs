@@ -12,7 +12,7 @@ public class SetEnvironmentVariable
 		var environmentVariables = new QueryExpression
 		{
 			EntityName = EnvironmentVariableDefinition.EntityLogicalName,
-			ColumnSet = new ColumnSet(EnvironmentVariableDefinition.PrimaryIdAttribute, EnvironmentVariableDefinition.Fields.SchemaName, EnvironmentVariableDefinition.Fields.DisplayName),
+			ColumnSet = new ColumnSet(EnvironmentVariableDefinition.PrimaryIdAttribute, EnvironmentVariableDefinition.Fields.SchemaName),
 		}.RetrieveMultiple(client).Entities.ToList();
 		
 		var environmentVariableValues = new QueryExpression
