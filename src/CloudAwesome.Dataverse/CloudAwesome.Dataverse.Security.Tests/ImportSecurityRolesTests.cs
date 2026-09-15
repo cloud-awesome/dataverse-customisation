@@ -120,22 +120,71 @@ public class ImportSecurityRolesTests
         
         Assert.That(teamRelatedEntities.Count, Is.EqualTo(1));
         Assert.That(teamRelatedEntities[0].ContainsKey(new Relationship(Team.Fields.TeamRoles_Association)));
-        // TODO - check the actual role that's related
+        
+        var relatedRoles =
+            teamRelatedEntities[0][new Relationship(Team.Fields.TeamRoles_Association)]
+                .Entities
+                .Select(relatedEntity => relatedEntity.ToEntity<Role>())
+                .ToList();
+        
+        Assert.That(relatedRoles.Count, Is.EqualTo(1));
+        Assert.That(relatedRoles.Single().RoleId, Is.EqualTo(roleId));
+        Assert.That(relatedRoles.Single().Name, Is.EqualTo("Basic User"));
     }
 
-    /*
+    
     [Test]
+    [Ignore("Awaiting bug fix in dataverse-simulate")]
     public void Run_removes_surplus_roles()
     {
-        var roleId = AddRole("Basic User", _businessUnitId);
-        AssignRole(TeamId, roleId);
-
-        RunImport([]);
-
-        AssertAssignedRoleIds([]);
+        // Arrange
+        var roleId = Guid.NewGuid();
+        _organizationService.Simulated().Data().Add(
+            new Role
+            {
+                Id = roleId,
+                Name = "Basic User",
+                BusinessUnitId = new EntityReference("businessunit", _businessUnitId) 
+            });
+        _organizationService.Simulated().Data().Add(
+            new TeamRoles
+            {
+                Id = Guid.NewGuid(),
+                TeamId = TeamId,
+                RoleId = roleId
+            });
+        
+        var manifest = new ImportSecurityRolesManifest
+        {
+            Teams =
+            [
+                new TeamModel
+                {
+                    Id = TeamId,
+                    Name = "Delivery Team",
+                    Roles = []
+                }
+            ]
+        };
+        
+        // Outputs dataverse-simulate log messages to the console
+        var tracer = new TracingHelper(new ConsoleLogger(LogLevel.Debug));
+        
+        //Act
+        new ImportSecurityRoles().Run(_organizationService, tracer, manifest);
+        
+        //Assert
+        var teamRelatedEntities = 
+            _organizationService
+                .Simulated().Data().Get<Team>()
+                .Where(teamRole => teamRole.TeamId == TeamId)
+                .Select(r => r.RelatedEntities)
+                .ToList();
+        
+        Assert.That(teamRelatedEntities.Count, Is.EqualTo(0));
     }
 
-    [Test]
+    /*[Test]
     public void Run_adds_missing_roles_and_removes_surplus_roles()
     {
         var existingRoleId = AddRole("Basic User", _businessUnitId);
