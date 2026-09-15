@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.cloudawesome.dev/dataverse-simulate/metadata/v1/dataverse-simulate.metadata-manifest.schema.json",
+  "title": "CloudAwesome Dataverse simulate metadata generation manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [ "output", "entities" ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [ "path" ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "splitFilesPerEntity": {
+          "type": "boolean",
+          "default": false
+        },
+        "includeGeneratedOnUtc": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "entities": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "include": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "includeAllEntities": {
+          "type": "boolean",
+          "default": false
+        },
+        "includeRelatedEntities": {
+          "type": "boolean",
+          "default": false
+        },
+        "includeIntersectEntities": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "anyOf": [
+        {
+          "required": [ "include" ]
+        },
+        {
+          "properties": {
+            "includeAllEntities": {
+              "const": true
+            }
+          },
+          "required": [ "includeAllEntities" ]
+        }
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "includeAttributes": {
+          "type": "boolean",
+          "default": true
+        },
+        "includeRelationships": {
+          "type": "boolean",
+          "default": true
+        },
+        "includeAlternateKeys": {
+          "type": "boolean",
+          "default": true
+        },
+        "includeOptionLabels": {
+          "type": "boolean",
+          "default": false
+        },
+        "includeUnpublished": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.cloudawesome.dev/dataverse-simulate/metadata/v1/dataverse-simulate.metadata.entity.schema.json",
+  "title": "CloudAwesome Dataverse simulate entity metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [ "$schema", "contractVersion", "entity" ],
+  "properties": {
+    "$schema": {
+      "const": "https://schemas.cloudawesome.dev/dataverse-simulate/metadata/v1/dataverse-simulate.metadata.entity.schema.json"
+    },
+    "contractVersion": {
+      "const": "1.0"
+    },
+    "entity": {
+      "$ref": "dataverse-simulate.metadata.schema.json#/$defs/entity"
+    }
+  }
+}

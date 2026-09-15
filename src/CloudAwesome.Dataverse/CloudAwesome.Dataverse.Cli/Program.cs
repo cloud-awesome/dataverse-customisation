@@ -52,7 +52,7 @@ public static class Program
 	
 			config.AddBranch("document", settings =>
 			{
-				settings.AddCommand<PlaceholderCommand>("placeholder");
+				settings.AddCommand<GenerateMetadataCommand>("generate-metadata");
 			});
 	
 			config.AddBranch("project-ops", settings =>

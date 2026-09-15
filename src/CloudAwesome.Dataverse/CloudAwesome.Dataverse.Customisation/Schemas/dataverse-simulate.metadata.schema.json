@@ -1,0 +1,312 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.cloudawesome.dev/dataverse-simulate/metadata/v1/dataverse-simulate.metadata.schema.json",
+  "title": "CloudAwesome Dataverse simulate metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [ "$schema", "contractVersion", "source" ],
+  "anyOf": [
+    {
+      "required": [ "entities" ]
+    },
+    {
+      "required": [ "entityFiles" ]
+    }
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://schemas.cloudawesome.dev/dataverse-simulate/metadata/v1/dataverse-simulate.metadata.schema.json"
+    },
+    "contractVersion": {
+      "const": "1.0"
+    },
+    "generatedOnUtc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [ "publisher" ],
+      "properties": {
+        "environmentUrl": {
+          "type": "string"
+        },
+        "publisher": {
+          "const": "CloudAwesome.Dataverse.Cli"
+        },
+        "publisherVersion": {
+          "type": "string"
+        }
+      }
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entity"
+      }
+    },
+    "entityFiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [ "logicalName", "path" ],
+        "properties": {
+          "logicalName": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [ "logicalName", "attributes", "stateStatus", "alternateKeys", "relationships" ],
+      "properties": {
+        "logicalName": {
+          "type": "string"
+        },
+        "schemaName": {
+          "type": [ "string", "null" ]
+        },
+        "collectionLogicalName": {
+          "type": "string"
+        },
+        "collectionSchemaName": {
+          "type": "string"
+        },
+        "primaryIdAttribute": {
+          "type": [ "string", "null" ]
+        },
+        "primaryNameAttribute": {
+          "type": "string"
+        },
+        "ownershipType": {
+          "type": "string"
+        },
+        "isActivity": {
+          "type": "boolean"
+        },
+        "isIntersect": {
+          "type": "boolean"
+        },
+        "validMessages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/attribute"
+          }
+        },
+        "stateStatus": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/stateStatus"
+          }
+        },
+        "alternateKeys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/alternateKey"
+          }
+        },
+        "relationships": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relationship"
+          }
+        }
+      }
+    },
+    "attribute": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [ "logicalName", "isPrimaryId", "isPrimaryName", "lookupTargets", "options" ],
+      "properties": {
+        "logicalName": {
+          "type": "string"
+        },
+        "schemaName": {
+          "type": [ "string", "null" ]
+        },
+        "attributeType": {
+          "type": [ "string", "null" ]
+        },
+        "attributeTypeName": {
+          "type": "string"
+        },
+        "requiredLevel": {
+          "type": "string"
+        },
+        "isPrimaryId": {
+          "type": "boolean"
+        },
+        "isPrimaryName": {
+          "type": "boolean"
+        },
+        "isValidForCreate": {
+          "type": [ "boolean", "null" ]
+        },
+        "isValidForUpdate": {
+          "type": [ "boolean", "null" ]
+        },
+        "isValidForRead": {
+          "type": [ "boolean", "null" ]
+        },
+        "isSecured": {
+          "type": [ "boolean", "null" ]
+        },
+        "lookupTargets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "maxLength": {
+          "type": "integer"
+        },
+        "format": {
+          "type": "string"
+        },
+        "minValue": {
+          "type": "number"
+        },
+        "maxValue": {
+          "type": "number"
+        },
+        "precision": {
+          "type": "integer"
+        },
+        "dateTimeBehavior": {
+          "type": "string"
+        },
+        "defaultValue": true,
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/option"
+          }
+        }
+      }
+    },
+    "option": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [ "integer", "null" ]
+        },
+        "label": {
+          "type": "string"
+        },
+        "state": {
+          "type": "integer"
+        }
+      }
+    },
+    "stateStatus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [ "state", "statuses" ],
+      "properties": {
+        "state": {
+          "type": "integer"
+        },
+        "stateLabel": {
+          "type": "string"
+        },
+        "defaultStatus": {
+          "type": "integer"
+        },
+        "statuses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/status"
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [ "value" ],
+      "properties": {
+        "value": {
+          "type": "integer"
+        },
+        "label": {
+          "type": "string"
+        }
+      }
+    },
+    "alternateKey": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [ "attributeLogicalNames" ],
+      "properties": {
+        "keyName": {
+          "type": [ "string", "null" ]
+        },
+        "entityLogicalName": {
+          "type": [ "string", "null" ]
+        },
+        "attributeLogicalNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "keyStatus": {
+          "type": "string"
+        }
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [ "relationshipType" ],
+      "properties": {
+        "schemaName": {
+          "type": [ "string", "null" ]
+        },
+        "relationshipType": {
+          "enum": [ "one-to-many", "many-to-one", "many-to-many" ]
+        },
+        "referencingEntity": {
+          "type": "string"
+        },
+        "referencingAttribute": {
+          "type": "string"
+        },
+        "referencedEntity": {
+          "type": "string"
+        },
+        "referencedAttribute": {
+          "type": "string"
+        },
+        "intersectEntity": {
+          "type": "string"
+        },
+        "entityRole": {
+          "type": "string"
+        },
+        "cascadeConfiguration": {
+          "type": "object",
+          "additionalProperties": {
+            "type": [ "string", "null" ]
+          }
+        }
+      }
+    }
+  }
+}

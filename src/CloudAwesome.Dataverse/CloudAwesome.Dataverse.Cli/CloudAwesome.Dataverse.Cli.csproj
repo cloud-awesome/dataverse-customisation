@@ -28,6 +28,8 @@
       <ProjectReference Include="..\CloudAwesome.Dataverse.Core\CloudAwesome.Dataverse.Core.csproj" />
       <ProjectReference Include="..\CloudAwesome.Dataverse.Customisation\CloudAwesome.Dataverse.Customisation.csproj" />
         <None Include="README.md" Pack="true" PackagePath="\"/>
+        <None Include="..\CloudAwesome.Dataverse.Customisation\Schemas\*.json" Pack="true" PackagePath="schemas\"/>
+        <None Include="SampleManifests\generate-metadata-manifest.json" Pack="true" PackagePath="sample-manifests\"/>
     </ItemGroup>
 
 </Project>
