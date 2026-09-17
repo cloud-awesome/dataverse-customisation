@@ -22,6 +22,14 @@ Restore and modernise plugin registration as one of the first mature legacy pari
 
 ## Intended Behaviour
 
+Set up:
+- Create multiple separated plugin projects (outside of the main solution) with plugins, varying in complexity and number of individual plugins
+- Create an integration test project to enable 
+  - Registration of a sample plugin project
+  - Validation of real registration (plugins, steps, images, etc )
+  - Deletion after assertion 
+
+
 - Register or update plugin assemblies from a JSON manifest.
 - Register plugin types, steps, and entity images.
 - Support `clobber` by deleting manifest-referenced child records safely before re-registering.
