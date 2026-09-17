@@ -113,7 +113,7 @@ These are not automatically in scope for the new repo, but should be reviewed wh
 Before progressing to foundation fixes, a significant piece of functionality that will unblock several use cases, and facilitate user testing is to enable individual user login without requiring App Registrations or generating a bearer token. 
 
 - Maintain all existing connectivity functionality for other authentication routes. Backwards in this case is critical, but should be simple to maintain. 
-- If no connectivity details are provided when executing a command, it should be assumed that it is a manual user execution
+- If no connectivity details are provided when executing a command, it should be assumed that it is a manual user execution (e.g. going to the default browser to authenticate, as happens in 1st party Microsoft applications)
 - Manual user execution should accept standard log in, but how this works for a non-Microsoft, 3rd party application, needs to be agreed on. 
 
 There are several use cases that are important here: 
