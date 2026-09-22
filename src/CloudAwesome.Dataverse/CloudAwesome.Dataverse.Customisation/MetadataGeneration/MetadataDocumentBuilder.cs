@@ -42,6 +42,7 @@ public class MetadataDocumentBuilder
 			OwnershipType = entity.OwnershipType?.ToString(),
 			IsActivity = entity.IsActivity ?? false,
 			IsIntersect = entity.IsIntersect ?? false,
+			IsValidForQueue = entity.IsValidForQueue?.Value ?? false,
 			ValidMessages = GetValidMessages(entity),
 			Attributes = manifest.Metadata.IncludeAttributes ? MapAttributes(entity, manifest).ToList() : [],
 			StateStatus = manifest.Metadata.IncludeAttributes ? MapStateStatus(entity, manifest).ToList() : [],
