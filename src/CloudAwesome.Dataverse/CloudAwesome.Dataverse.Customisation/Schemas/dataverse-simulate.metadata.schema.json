@@ -67,7 +67,7 @@
     "entity": {
       "type": "object",
       "additionalProperties": false,
-      "required": [ "logicalName", "attributes", "stateStatus", "alternateKeys", "relationships" ],
+      "required": [ "logicalName", "isValidForQueue", "attributes", "stateStatus", "alternateKeys", "relationships" ],
       "properties": {
         "logicalName": {
           "type": "string"
@@ -94,6 +94,9 @@
           "type": "boolean"
         },
         "isIntersect": {
+          "type": "boolean"
+        },
+        "isValidForQueue": {
           "type": "boolean"
         },
         "validMessages": {

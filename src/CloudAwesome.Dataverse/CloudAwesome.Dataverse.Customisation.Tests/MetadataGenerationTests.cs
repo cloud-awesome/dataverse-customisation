@@ -69,6 +69,7 @@ public class MetadataGenerationTests
 			Assert.That(result.EntityCount, Is.EqualTo(2));
 			Assert.That(result.WrittenFiles, Has.Count.EqualTo(1));
 			Assert.That(document!.Entities.Select(entity => entity.LogicalName), Is.EqualTo(new[] { "account", "contact" }));
+			Assert.That(document.Entities[0].IsValidForQueue, Is.True);
 			Assert.That(document.Entities[0].Attributes.Select(attribute => attribute.LogicalName), Is.EqualTo(new[] { "accountid", "name" }));
 		});
 	}
@@ -119,6 +120,7 @@ public class MetadataGenerationTests
 		SetSdkProperty(entity, nameof(EntityMetadata.PrimaryIdAttribute), "accountid");
 		SetSdkProperty(entity, nameof(EntityMetadata.PrimaryNameAttribute), "name");
 		SetSdkProperty(entity, nameof(EntityMetadata.IsIntersect), false);
+		SetSdkProperty(entity, nameof(EntityMetadata.IsValidForQueue), new BooleanManagedProperty(true));
 		SetSdkProperty(entity, nameof(EntityMetadata.Attributes), new AttributeMetadata[]
 		{
 			new StringAttributeMetadata { LogicalName = "name", SchemaName = "Name", MaxLength = 160 },
@@ -144,6 +146,7 @@ public class MetadataGenerationTests
 		SetSdkProperty(entity, nameof(EntityMetadata.PrimaryIdAttribute), "contactid");
 		SetSdkProperty(entity, nameof(EntityMetadata.PrimaryNameAttribute), "fullname");
 		SetSdkProperty(entity, nameof(EntityMetadata.IsIntersect), false);
+		SetSdkProperty(entity, nameof(EntityMetadata.IsValidForQueue), new BooleanManagedProperty(false));
 		SetSdkProperty(entity, nameof(EntityMetadata.Attributes), new AttributeMetadata[]
 		{
 			contactId,

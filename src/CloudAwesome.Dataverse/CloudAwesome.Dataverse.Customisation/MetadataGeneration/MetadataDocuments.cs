@@ -108,6 +108,9 @@ public class MetadataEntity
 	[JsonPropertyName("isIntersect")]
 	public bool IsIntersect { get; set; }
 
+	[JsonPropertyName("isValidForQueue")]
+	public bool IsValidForQueue { get; set; }
+
 	[JsonPropertyName("validMessages")]
 	public List<string> ValidMessages { get; set; } = [];
 
