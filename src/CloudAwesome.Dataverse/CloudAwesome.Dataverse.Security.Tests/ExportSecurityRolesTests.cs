@@ -19,17 +19,20 @@ public class ExportSecurityRolesTests
     }
 
     [Test]
-    [Ignore("Awaiting bug fix in dataverse-simulate")]
     public void Run_writes_import_manifest_for_team_role_assignments()
     {
         var teamId = Guid.NewGuid();
         var businessUnitId = Guid.NewGuid();
         var outputFilePath = Path.Combine(TestContext.CurrentContext.WorkDirectory, $"{Guid.NewGuid()}.json");
 
-        AddTeam(teamId, "Delivery Team", businessUnitId);
-        AssignRole(teamId, AddRole("Basic User", businessUnitId));
-        AssignRole(teamId, AddRole("System Customizer", businessUnitId));
-
+        _organizationService.Simulated().SecurityModel()
+            .WithBusinessUnit(businessUnitId, "Root")
+            .WithTeam(teamId, businessUnitId, "Delivery Team")
+            .WithRole("Basic User")
+            .WithRole("System Customizer")
+            .AssignRoleToTeam("Basic User", teamId)
+            .AssignRoleToTeam("System Customizer", teamId);
+        
         var manifest = new ExportSecurityRolesManifest
         {
             OutputFilePath = outputFilePath,
@@ -50,41 +53,5 @@ public class ExportSecurityRolesTests
         Assert.That(team.Id, Is.EqualTo(teamId));
         Assert.That(team.Name, Is.EqualTo("Delivery Team"));
         Assert.That(team.Roles, Is.EquivalentTo(new[] { "Basic User", "System Customizer" }));
-    }
-
-    private void AddTeam(Guid teamId, string name, Guid businessUnitId)
-    {
-        _organizationService.Simulated().Data().Add(
-            new Team
-            {
-                Id = teamId,
-                Name = name,
-                BusinessUnitId = new EntityReference("businessunit", businessUnitId)
-            });
-    }
-
-    private Guid AddRole(string name, Guid businessUnitId)
-    {
-        var roleId = Guid.NewGuid();
-        _organizationService.Simulated().Data().Add(
-            new Role
-            {
-                Id = roleId,
-                Name = name,
-                BusinessUnitId = new EntityReference("businessunit", businessUnitId)
-            });
-
-        return roleId;
-    }
-
-    private void AssignRole(Guid teamId, Guid roleId)
-    {
-        _organizationService.Simulated().Data().Add(
-            new TeamRoles
-            {
-                Id = Guid.NewGuid(),
-                TeamId = teamId,
-                RoleId = roleId
-            });
     }
 }
