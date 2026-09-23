@@ -1,8 +1,10 @@
 using CloudAwesome.Dataverse.Core;
 using CloudAwesome.Dataverse.Core.EarlyBoundModels;
+using CloudAwesome.Dataverse.Core.Loggers;
 using CloudAwesome.Dataverse.Core.PlatformModels;
 using CloudAwesome.Xrm.Simulate;
 using Microsoft.Crm.Sdk.Messages;
+using Microsoft.Extensions.Logging;
 using Microsoft.Xrm.Sdk;
 using NUnit.Framework;
 
@@ -22,19 +24,6 @@ public class ProcessActivationTests
     [Test]
     public void SetStatusFromManifest_enables_all_flows_in_configured_solution()
     {
-        var setStateRequests = new List<SetStateRequest>();
-        _organizationService
-            .Simulated()
-            .CustomOrgRequests().Add<SetStateRequest>(
-                (request, _) => 
-                { 
-                    setStateRequests.Add(request); 
-                    return new OrganizationResponse 
-                    { 
-                        ResponseName = request.RequestName 
-                    }; 
-                });
-
         _organizationService.Simulated().Data().Add(_draftApprovalWorkflow);
         _organizationService.Simulated().Data().Add(_coreSolution);
         _organizationService.Simulated().Data().Add(_workflowSolutionComponent);
@@ -52,13 +41,15 @@ public class ProcessActivationTests
             ]
         };
 
-        new ProcessActivation().SetStatusFromManifest(_organizationService, new TracingHelper(), manifest);
+        var tracer = new TracingHelper(new ConsoleLogger(LogLevel.Debug));
+        
+        new ProcessActivation().SetStatusFromManifest(_organizationService, tracer, manifest);
 
-        var request = setStateRequests.Single();
-        Assert.That(request.EntityMoniker.LogicalName, Is.EqualTo(Workflow.EntityLogicalName));
-        Assert.That(request.EntityMoniker.Id, Is.EqualTo(FlowId));
-        Assert.That(request.State.Value, Is.EqualTo((int)Workflow_StateCode.Activated));
-        Assert.That(request.Status.Value, Is.EqualTo((int)Workflow_StatusCode.Activated));
+        var workflow = _organizationService.Simulated().Data().Get<Workflow>();
+        Assert.That(workflow.Count(), Is.EqualTo(1));
+        Assert.That(workflow.Single().Id, Is.EqualTo(FlowId));
+        Assert.That(workflow.Single().StateCode, Is.EqualTo(Workflow_StateCode.Activated));
+        Assert.That(workflow.Single().StatusCode, Is.EqualTo(Workflow_StatusCode.Activated));
     }
     
     private static readonly Guid SolutionId = Guid.NewGuid();
