@@ -52,6 +52,7 @@ Primary docs:
 
 - [current-state.md](current-state.md)
 - [work-packages/foundation.md](work-packages/foundation.md)
+- [work-packages/user-authentication.md](work-packages/user-authentication.md)
 - Feature-specific work packages in [work-packages](work-packages)
 
 ### Stage 3: Ported And New Functionality
