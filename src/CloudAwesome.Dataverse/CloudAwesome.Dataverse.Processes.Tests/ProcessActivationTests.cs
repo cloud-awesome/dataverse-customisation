@@ -51,9 +51,41 @@ public class ProcessActivationTests
         Assert.That(workflow.Single().StateCode, Is.EqualTo(Workflow_StateCode.Activated));
         Assert.That(workflow.Single().StatusCode, Is.EqualTo(Workflow_StatusCode.Activated));
     }
+
+    [Test]
+    public void SetStatusFromManifest_enables_all_plugin_steps_in_configured_solution()
+    {
+        _organizationService.Simulated().Data().Add(_disabledPluginStep);
+        _organizationService.Simulated().Data().Add(_coreSolution);
+        _organizationService.Simulated().Data().Add(_pluginStepSolutionComponent);
+
+        var manifest = new ProcessActivationManifest
+        {
+            Status = ProcessActivationStatus.Enabled,
+            Solutions =
+            [
+                new CdsSolution
+                {
+                    Name = "core_solution",
+                    AllPluginSteps = true
+                }
+            ]
+        };
+
+        var tracer = new TracingHelper(new ConsoleLogger(LogLevel.Debug));
+
+        new ProcessActivation().SetStatusFromManifest(_organizationService, tracer, manifest);
+
+        var pluginStep = _organizationService.Simulated().Data().Get<SdkMessageProcessingStep>();
+        Assert.That(pluginStep.Count(), Is.EqualTo(1));
+        Assert.That(pluginStep.Single().Id, Is.EqualTo(PluginStepId));
+        Assert.That(pluginStep.Single().StateCode, Is.EqualTo(SdkMessageProcessingStep_StateCode.Enabled));
+        Assert.That(pluginStep.Single().StatusCode, Is.EqualTo(SdkMessageProcessingStep_StatusCode.Enabled));
+    }
     
     private static readonly Guid SolutionId = Guid.NewGuid();
     private static readonly Guid FlowId = Guid.NewGuid();
+    private static readonly Guid PluginStepId = Guid.NewGuid();
 
     private readonly Workflow _draftApprovalWorkflow = new Workflow
     {
@@ -61,6 +93,14 @@ public class ProcessActivationTests
         Name = "Account approval flow",
         StateCode = Workflow_StateCode.Draft,
         StatusCode = Workflow_StatusCode.Draft
+    };
+
+    private readonly SdkMessageProcessingStep _disabledPluginStep = new SdkMessageProcessingStep
+    {
+        Id = PluginStepId,
+        Name = "Account create step",
+        StateCode = SdkMessageProcessingStep_StateCode.Disabled,
+        StatusCode = SdkMessageProcessingStep_StatusCode.Disabled
     };
     
     private readonly Entity _coreSolution = new Entity("solution")
@@ -74,6 +114,13 @@ public class ProcessActivationTests
     {
         ["componenttype"] = (int)ComponentType.Workflow,
         ["objectid"] = FlowId.ToString(),
+        ["solutionid"] = SolutionId
+    };
+
+    private readonly Entity _pluginStepSolutionComponent = new Entity("solutioncomponent")
+    {
+        ["componenttype"] = (int)ComponentType.SdkMessageProcessingStep,
+        ["objectid"] = PluginStepId.ToString(),
         ["solutionid"] = SolutionId
     };
 }

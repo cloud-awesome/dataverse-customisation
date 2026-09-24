@@ -58,7 +58,7 @@ public class ProcessActivation
 		
 		foreach (var step in steps.Entities)
 		{
-			var workflow = (new Workflow(Guid.Parse(step["objectid"].ToString() ?? throw new InvalidOperationException()))
+			var pluginStep = (new SdkMessageProcessingStep(Guid.Parse(step["objectid"].ToString() ?? throw new InvalidOperationException()))
 				.Retrieve(client));
 			i++;
 
@@ -66,18 +66,18 @@ public class ProcessActivation
 			{
 				var setState = new SetStateRequest
 				{
-					EntityMoniker = new EntityReference(workflow.LogicalName, workflow.Id),
+					EntityMoniker = new EntityReference(pluginStep.LogicalName, pluginStep.Id),
 					State = pluginState,
 					Status = pluginStatus
 				};
 
 				client.Execute(setState);
 				
-				t.Info($"{i}/{steps.Entities.Count}. '{workflow["name"]}' updated");
+				t.Info($"{i}/{steps.Entities.Count}. '{pluginStep["name"]}' updated");
 			}
 			catch (Exception e)
 			{
-				t.Error($"*** Failed to set: {i}/{steps.Entities.Count}. {workflow["name"]}, ({e.Message})");
+				t.Error($"*** Failed to set: {i}/{steps.Entities.Count}. {pluginStep["name"]}, ({e.Message})");
 			}
 		}
 	}

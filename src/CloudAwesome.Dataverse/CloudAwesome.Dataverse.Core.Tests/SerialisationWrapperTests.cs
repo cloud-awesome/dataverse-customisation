@@ -37,6 +37,19 @@ public class SerialisationWrapperTests
         Assert.That(json, Does.Contain("\"connectionType\": \"bearerToken\""));
     }
 
+    [Test]
+    public void DeserialiseJsonFromFile_throws_clear_exception_when_json_is_null()
+    {
+        var filePath = Path.Combine(TestContext.CurrentContext.WorkDirectory, $"{Guid.NewGuid()}.json");
+        File.WriteAllText(filePath, "null");
+
+        var exception = Assert.Throws<InvalidOperationException>(
+            () => SerialisationWrapper.DeserialiseJsonFromFile<TestConnectionModel>(filePath));
+
+        Assert.That(exception!.Message, Does.Contain($"Could not deserialize '{filePath}'"));
+        Assert.That(exception.Message, Does.Contain(nameof(TestConnectionModel)));
+    }
+
     private sealed class TestConnectionModel
     {
         [JsonPropertyName("connectionType")]

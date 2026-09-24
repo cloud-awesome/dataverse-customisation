@@ -1,9 +1,9 @@
 using System.Text.Json;
-using System.Reflection;
 using CloudAwesome.Dataverse.Core;
 using CloudAwesome.Dataverse.Customisation.MetadataGeneration;
+using CloudAwesome.Xrm.Simulate;
+using CloudAwesome.Xrm.Simulate.Metadata;
 using Microsoft.Xrm.Sdk;
-using Microsoft.Xrm.Sdk.Metadata;
 using NUnit.Framework;
 
 namespace CloudAwesome.Dataverse.Customisation.Tests;
@@ -58,9 +58,12 @@ public class MetadataGenerationTests
 	{
 		var outputPath = Path.Combine(TestContext.CurrentContext.WorkDirectory, $"{Guid.NewGuid():N}", "metadata.json");
 		var manifest = NewManifest(outputPath);
-		var generator = new GenerateMetadata(new FakeMetadataProvider(NewContactMetadata(), NewAccountMetadata()));
+		manifest.Entities.IncludeAllEntities = true;
+		manifest.Entities.Include = [];
+		var organizationService = CreateMetadataBackedService();
+		var generator = new GenerateMetadata();
 
-		var result = generator.Run(new EmptyOrganizationService(), new TracingHelper(), manifest);
+		var result = generator.Run(organizationService, new TracingHelper(), manifest);
 
 		var document = JsonSerializer.Deserialize<MetadataDocument>(File.ReadAllText(outputPath));
 
@@ -69,7 +72,7 @@ public class MetadataGenerationTests
 			Assert.That(result.EntityCount, Is.EqualTo(2));
 			Assert.That(result.WrittenFiles, Has.Count.EqualTo(1));
 			Assert.That(document!.Entities.Select(entity => entity.LogicalName), Is.EqualTo(new[] { "account", "contact" }));
-			Assert.That(document.Entities[0].IsValidForQueue, Is.True);
+			Assert.That(document.Entities[0].SchemaName, Is.EqualTo("Account"));
 			Assert.That(document.Entities[0].Attributes.Select(attribute => attribute.LogicalName), Is.EqualTo(new[] { "accountid", "name" }));
 		});
 	}
@@ -80,10 +83,10 @@ public class MetadataGenerationTests
 		var outputPath = Path.Combine(TestContext.CurrentContext.WorkDirectory, $"{Guid.NewGuid():N}", "metadata.index.json");
 		var manifest = NewManifest(outputPath);
 		manifest.Output.SplitFilesPerEntity = true;
+		var organizationService = CreateMetadataBackedService();
+		var generator = new GenerateMetadata();
 
-		var generator = new GenerateMetadata(new FakeMetadataProvider(NewAccountMetadata()));
-
-		var result = generator.Run(new EmptyOrganizationService(), new TracingHelper(), manifest);
+		var result = generator.Run(organizationService, new TracingHelper(), manifest);
 		var index = JsonSerializer.Deserialize<MetadataIndexDocument>(File.ReadAllText(outputPath));
 		var accountPath = Path.Combine(Path.GetDirectoryName(outputPath)!, "entities", "account.json");
 
@@ -104,116 +107,111 @@ public class MetadataGenerationTests
 		};
 	}
 
-	private static EntityMetadata NewAccountMetadata()
+	private static IOrganizationService CreateMetadataBackedService()
 	{
-		var accountId = new UniqueIdentifierAttributeMetadata { LogicalName = "accountid", SchemaName = "AccountId" };
-		SetSdkProperty(accountId, nameof(AttributeMetadata.IsPrimaryId), true);
-
-		var entity = new EntityMetadata
+		IOrganizationService organizationService = null!;
+		return organizationService.Simulate(new SimulatorOptions
 		{
-			LogicalName = "account",
-			SchemaName = "Account",
-			OwnershipType = OwnershipTypes.UserOwned,
-			IsActivity = false
-		};
+			Metadata = SimulatedMetadata.Load(CreateSimulatorMetadataIndex())
+		});
+	}
 
-		SetSdkProperty(entity, nameof(EntityMetadata.PrimaryIdAttribute), "accountid");
-		SetSdkProperty(entity, nameof(EntityMetadata.PrimaryNameAttribute), "name");
-		SetSdkProperty(entity, nameof(EntityMetadata.IsIntersect), false);
-		SetSdkProperty(entity, nameof(EntityMetadata.IsValidForQueue), new BooleanManagedProperty(true));
-		SetSdkProperty(entity, nameof(EntityMetadata.Attributes), new AttributeMetadata[]
+	private static string CreateSimulatorMetadataIndex()
+	{
+		var rootDirectory = Path.Combine(TestContext.CurrentContext.WorkDirectory, $"{Guid.NewGuid():N}");
+		var entityDirectory = Path.Combine(rootDirectory, "entities");
+		Directory.CreateDirectory(entityDirectory);
+
+		WriteJson(Path.Combine(rootDirectory, "metadata.index.json"), new MetadataIndexDocument
 		{
-			new StringAttributeMetadata { LogicalName = "name", SchemaName = "Name", MaxLength = 160 },
-			accountId
+			EntityFiles =
+			[
+				new MetadataEntityFile { LogicalName = "account", Path = "entities/account.json" },
+				new MetadataEntityFile { LogicalName = "contact", Path = "entities/contact.json" }
+			]
 		});
 
-		return entity;
-	}
-
-	private static EntityMetadata NewContactMetadata()
-	{
-		var contactId = new UniqueIdentifierAttributeMetadata { LogicalName = "contactid", SchemaName = "ContactId" };
-		SetSdkProperty(contactId, nameof(AttributeMetadata.IsPrimaryId), true);
-
-		var entity = new EntityMetadata
+		WriteJson(Path.Combine(entityDirectory, "account.json"), new MetadataEntityDocument
 		{
-			LogicalName = "contact",
-			SchemaName = "Contact",
-			OwnershipType = OwnershipTypes.UserOwned,
-			IsActivity = false
-		};
-
-		SetSdkProperty(entity, nameof(EntityMetadata.PrimaryIdAttribute), "contactid");
-		SetSdkProperty(entity, nameof(EntityMetadata.PrimaryNameAttribute), "fullname");
-		SetSdkProperty(entity, nameof(EntityMetadata.IsIntersect), false);
-		SetSdkProperty(entity, nameof(EntityMetadata.IsValidForQueue), new BooleanManagedProperty(false));
-		SetSdkProperty(entity, nameof(EntityMetadata.Attributes), new AttributeMetadata[]
-		{
-			contactId,
-			new StringAttributeMetadata { LogicalName = "fullname", SchemaName = "FullName", MaxLength = 160 }
+			Entity = new MetadataEntity
+			{
+				LogicalName = "account",
+				SchemaName = "Account",
+				CollectionLogicalName = "accounts",
+				CollectionSchemaName = "Accounts",
+				PrimaryIdAttribute = "accountid",
+				PrimaryNameAttribute = "name",
+				OwnershipType = "UserOwned",
+				IsValidForQueue = true,
+				Attributes =
+				[
+					NewPrimaryIdAttribute("accountid", "AccountId"),
+					NewStringAttribute("name", "Name")
+				]
+			}
 		});
 
-		return entity;
+		WriteJson(Path.Combine(entityDirectory, "contact.json"), new MetadataEntityDocument
+		{
+			Entity = new MetadataEntity
+			{
+				LogicalName = "contact",
+				SchemaName = "Contact",
+				CollectionLogicalName = "contacts",
+				CollectionSchemaName = "Contacts",
+				PrimaryIdAttribute = "contactid",
+				PrimaryNameAttribute = "fullname",
+				OwnershipType = "UserOwned",
+				Attributes =
+				[
+					NewPrimaryIdAttribute("contactid", "ContactId"),
+					NewStringAttribute("fullname", "FullName")
+				]
+			}
+		});
+
+		return Path.Combine(rootDirectory, "metadata.index.json");
 	}
 
-	private static void SetSdkProperty<T>(object target, string propertyName, T value)
+	private static MetadataAttribute NewPrimaryIdAttribute(string logicalName, string schemaName)
 	{
-		var property = target.GetType().GetProperty(propertyName, BindingFlags.Instance | BindingFlags.Public)
-		               ?? throw new InvalidOperationException($"Could not find property '{propertyName}'.");
-		var setter = property.GetSetMethod(true)
-		             ?? throw new InvalidOperationException($"Property '{propertyName}' does not have a setter.");
-
-		setter.Invoke(target, [value]);
+		return new MetadataAttribute
+		{
+			LogicalName = logicalName,
+			SchemaName = schemaName,
+			AttributeType = "Uniqueidentifier",
+			AttributeTypeName = "UniqueidentifierType",
+			RequiredLevel = "SystemRequired",
+			IsPrimaryId = true,
+			IsValidForCreate = true,
+			IsValidForUpdate = false,
+			IsValidForRead = true,
+			IsSecured = false
+		};
 	}
 
-	private sealed class FakeMetadataProvider(params EntityMetadata[] entities) : IMetadataProvider
+	private static MetadataAttribute NewStringAttribute(string logicalName, string schemaName)
 	{
-		public IReadOnlyCollection<EntityMetadata> RetrieveEntities(IOrganizationService client, MetadataGenerationManifest manifest)
+		return new MetadataAttribute
 		{
-			return entities;
-		}
+			LogicalName = logicalName,
+			SchemaName = schemaName,
+			AttributeType = "String",
+			AttributeTypeName = "StringType",
+			RequiredLevel = "None",
+			IsPrimaryName = true,
+			IsValidForCreate = true,
+			IsValidForUpdate = true,
+			IsValidForRead = true,
+			IsSecured = false,
+			MaxLength = 160,
+			Format = "Text"
+		};
 	}
 
-	private sealed class EmptyOrganizationService : IOrganizationService
+	private static void WriteJson<T>(string path, T value)
 	{
-		public Guid Create(Entity entity)
-		{
-			throw new NotImplementedException();
-		}
-
-		public Entity Retrieve(string entityName, Guid id, Microsoft.Xrm.Sdk.Query.ColumnSet columnSet)
-		{
-			throw new NotImplementedException();
-		}
-
-		public void Update(Entity entity)
-		{
-			throw new NotImplementedException();
-		}
-
-		public void Delete(string entityName, Guid id)
-		{
-			throw new NotImplementedException();
-		}
-
-		public OrganizationResponse Execute(OrganizationRequest request)
-		{
-			throw new NotImplementedException();
-		}
-
-		public void Associate(string entityName, Guid entityId, Relationship relationship, EntityReferenceCollection relatedEntities)
-		{
-			throw new NotImplementedException();
-		}
-
-		public void Disassociate(string entityName, Guid entityId, Relationship relationship, EntityReferenceCollection relatedEntities)
-		{
-			throw new NotImplementedException();
-		}
-
-		public EntityCollection RetrieveMultiple(Microsoft.Xrm.Sdk.Query.QueryBase query)
-		{
-			throw new NotImplementedException();
-		}
+		using var stream = File.Create(path);
+		JsonSerializer.Serialize(stream, value, new JsonSerializerOptions { WriteIndented = true });
 	}
 }
