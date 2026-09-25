@@ -38,6 +38,21 @@ public class SerialisationWrapperTests
     }
 
     [Test]
+    public void SerialiseJsonToFile_writes_interactive_user_connection_type()
+    {
+        var filePath = Path.Combine(TestContext.CurrentContext.WorkDirectory, $"{Guid.NewGuid()}.json");
+        var model = new TestConnectionModel
+        {
+            ConnectionType = DataverseConnectionType.InteractiveUser
+        };
+
+        SerialisationWrapper.SerialiseJsonToFile(filePath, model);
+
+        var json = File.ReadAllText(filePath);
+        Assert.That(json, Does.Contain("\"connectionType\": \"interactiveUser\""));
+    }
+
+    [Test]
     public void DeserialiseJsonFromFile_throws_clear_exception_when_json_is_null()
     {
         var filePath = Path.Combine(TestContext.CurrentContext.WorkDirectory, $"{Guid.NewGuid()}.json");

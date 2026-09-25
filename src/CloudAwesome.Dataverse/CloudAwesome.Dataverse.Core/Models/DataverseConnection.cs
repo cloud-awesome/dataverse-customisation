@@ -9,7 +9,7 @@ namespace CloudAwesome.Dataverse.Core.Models;
 public class DataverseConnection
 {
 	/// <summary>
-	/// Connection type. Currently supports a connection string, an AAD App registration, or username and password (not recommended)
+	/// Connection type. Supports a connection string, an AAD app registration, bearer token, or interactive user login.
 	/// </summary>
 	public DataverseConnectionType ConnectionType { get; set; }
 
@@ -19,7 +19,7 @@ public class DataverseConnection
 	public string? ConnectionString { get; set; }
 
 	/// <summary>
-	/// Base URL for CDS environment. Required if ConnectionType == AppRegistration or UserNameAndPassword
+	/// Base URL for CDS environment. Required if ConnectionType == AppRegistration, BearerToken, or InteractiveUser
 	/// </summary>
 	public string? Url { get; set; }
 
@@ -37,6 +37,16 @@ public class DataverseConnection
 	/// Required if ConnectionType == AppRegistration
 	/// </summary>
 	public string? ClientId { get; set; }
+
+	/// <summary>
+	/// Optional tenant ID used when ConnectionType == InteractiveUser. Defaults to the Microsoft Entra common authority.
+	/// </summary>
+	public string? TenantId { get; set; }
+
+	/// <summary>
+	/// Optional profile name for future interactive user profile selection.
+	/// </summary>
+	public string? ProfileName { get; set; }
 
 	/// <summary>
 	/// Required if ConnectionType == AppRegistration

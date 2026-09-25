@@ -8,7 +8,7 @@ public static class Program
 {
 	private const string CliName = "dvcli";
 	
-	static void Main(string[] args)
+	static int Main(string[] args)
 	{
 		Console.WriteLine($"--------\n{CliName}, version {GetCliVersion()}\n--------");
 
@@ -65,9 +65,9 @@ public static class Program
 				settings.AddCommand<WhoAmICommand>("who-am-i");
 				settings.AddCommand<TestGetAccessToken>("get-access-token");
 			});
-
-			cli.Run(args);
 		});
+
+		return cli.Run(args);
 	}
 
 	private static string GetCliVersion()
